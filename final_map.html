@@ -45,7 +45,6 @@
         .status-text { font-size: 12px; font-weight: bold; margin-top: 8px; color: #ff9800; }
         .stats-summary { font-size: 11px; color: #666; line-height: 1.5; border-top: 1px dashed #eee; margin-top: 8px; padding-top: 8px; }
     </style>
-    <link rel="icon" href="data:,">
 </head>
 <body>
 
@@ -213,24 +212,9 @@
 
         window.onload = function() {
             Promise.all([
-                // 1. 改为读取你刚才下载到本地的区县底图文件
-                fetch('./chengdu_bound.geojson').then(res => {
-                    if (!res.ok) throw new Error("找不到 chengdu_bound.geojson");
-                    return res.json();
-                }),
-                // 2. 增加严格的状态拦截，防止把 GitHub 的 HTML 404 页面当成 JSON 解析
-                fetch('./export.geojson').then(res => {
-                    if (!res.ok) throw new Error("找不到 export.geojson");
-                    const contentType = res.headers.get("content-type");
-                    if (contentType && contentType.indexOf("text/html") !== -1) {
-                        throw new Error("export.geojson 路径错误，GitHub 返回了网页");
-                    }
-                    return res.json();
-                }),
-                fetch('./routes.geojson').then(res => {
-                    if (!res.ok) throw new Error("找不到 routes.geojson");
-                    return res.json();
-                }).catch(() => ({ features: [] }))
+                fetch('https://geo.datav.aliyun.com/areas_v3/bound/510100_full.json').then(res => res.json()),
+                fetch('./export.geojson').then(res => res.json()),
+                fetch('./routes.geojson').then(res => res.json()).catch(() => ({ features: [] }))
             ])
             .then(([chengduMap, stationData, routeDataGeoJson]) => {
                 
