@@ -205,6 +205,12 @@
                     点击选择 CSV 文件
                 </label>
                 <input type="file" id="csvInput" accept=".csv" />
+
+                <div style="border-top: 1px solid #eee; margin: 20px 0 14px;"></div>
+                <div style="font-size:13px; color:#888; margin-bottom:12px;">或直接加载仓库内置的示范数据体验</div>
+                <button id="loadDemoBtn" class="custom-file-upload" style="border:none; background:#52c41a;">
+                    🚇 加载示范数据
+                </button>
             </div>
             <div id="sysStatus"></div>
         </div>
@@ -453,7 +459,65 @@
             });
         };
 
-        // ================= CSV 解析与注入 =================
+        // ================= CSV 解析核心函数 =================
+        function processCSVData(csvText) {
+            try {
+                globalStationFreq = {};
+                globalMaxFreq = 1;
+                globalTotalTrips = 0;
+                
+                const lines = csvText.trim().split(/\r?\n/);
+                for (let i = 1; i < lines.length; i++) {
+                    const cols = lines[i].split(',');
+                    if (cols.length >= 3) {
+                        globalTotalTrips++;
+                        let fromStation = cols[1].trim();
+                        let toStation = cols[2].trim();
+                        
+                        if (stationAliasMap[fromStation]) fromStation = stationAliasMap[fromStation];
+                        if (stationAliasMap[toStation]) toStation = stationAliasMap[toStation];
+                        
+                        if (fromStation && globalStationCoords[fromStation]) {
+                            globalStationFreq[fromStation] = (globalStationFreq[fromStation] || 0) + 1;
+                        }
+                        if (toStation && globalStationCoords[toStation]) {
+                            globalStationFreq[toStation] = (globalStationFreq[toStation] || 0) + 1;
+                        }
+                    }
+                }
+
+                for (let station in globalStationFreq) {
+                    if (globalStationFreq[station] > globalMaxFreq) globalMaxFreq = globalStationFreq[station];
+                }
+
+                let visitedCount = Object.keys(globalStationFreq).length;
+                let totalStations = Object.keys(globalStationCoords).length;
+
+                // 更新看板浮窗的统计文案
+                document.getElementById('statsSummary').innerHTML = `
+                    总记录: <b>${globalTotalTrips}</b> 笔 <br/>
+                    已打卡: <b>${visitedCount}</b> / ${totalStations} 站 <br/>
+                    最高极值: <b>${globalMaxFreq}</b> 次
+                `;
+
+                // 数据解析成功，重置导入区提示，并强制跳转到数据看板
+                document.getElementById('sysStatus').innerText = '✅ 数据注入成功，已为您切换至看板';
+                document.getElementById('sysStatus').style.color = '#4caf50';
+                setTimeout(() => {
+                    document.getElementById('sysStatus').innerText = ''; // 延时清理提示
+                }, 3000);
+                
+                switchMainTab('dashboard');
+                switchBoardType('map'); // 默认看地图
+                renderECharts();
+
+            } catch (error) {
+                document.getElementById('sysStatus').innerText = '❌ 文件格式错误无法解析';
+                document.getElementById('sysStatus').style.color = '#f44336';
+            }
+        }
+
+        // ================= CSV 注入：上传文件 =================
         document.getElementById('csvInput').addEventListener('change', function(e) {
             const file = e.target.files[0];
             if (!file) return;
@@ -463,63 +527,28 @@
 
             const reader = new FileReader();
             reader.onload = function(event) {
-                try {
-                    const csvText = event.target.result;
-                    globalStationFreq = {};
-                    globalMaxFreq = 1;
-                    globalTotalTrips = 0;
-                    
-                    const lines = csvText.trim().split(/\r?\n/);
-                    for (let i = 1; i < lines.length; i++) {
-                        const cols = lines[i].split(',');
-                        if (cols.length >= 3) {
-                            globalTotalTrips++;
-                            let fromStation = cols[1].trim();
-                            let toStation = cols[2].trim();
-                            
-                            if (stationAliasMap[fromStation]) fromStation = stationAliasMap[fromStation];
-                            if (stationAliasMap[toStation]) toStation = stationAliasMap[toStation];
-                            
-                            if (fromStation && globalStationCoords[fromStation]) {
-                                globalStationFreq[fromStation] = (globalStationFreq[fromStation] || 0) + 1;
-                            }
-                            if (toStation && globalStationCoords[toStation]) {
-                                globalStationFreq[toStation] = (globalStationFreq[toStation] || 0) + 1;
-                            }
-                        }
-                    }
-
-                    for (let station in globalStationFreq) {
-                        if (globalStationFreq[station] > globalMaxFreq) globalMaxFreq = globalStationFreq[station];
-                    }
-
-                    let visitedCount = Object.keys(globalStationFreq).length;
-                    let totalStations = Object.keys(globalStationCoords).length;
-
-                    // 更新看板浮窗的统计文案
-                    document.getElementById('statsSummary').innerHTML = `
-                        总记录: <b>${globalTotalTrips}</b> 笔 <br/> 
-                        已打卡: <b>${visitedCount}</b> / ${totalStations} 站 <br/> 
-                        最高极值: <b>${globalMaxFreq}</b> 次
-                    `;
-
-                    // 数据解析成功，重置导入区提示，并强制跳转到数据看板
-                    document.getElementById('sysStatus').innerText = '✅ 数据注入成功，已为您切换至看板';
-                    document.getElementById('sysStatus').style.color = '#4caf50';
-                    setTimeout(() => {
-                        document.getElementById('sysStatus').innerText = ''; // 延时清理提示
-                    }, 3000);
-                    
-                    switchMainTab('dashboard');
-                    switchBoardType('map'); // 默认看地图
-                    renderECharts();
-
-                } catch (error) {
-                    document.getElementById('sysStatus').innerText = '❌ 文件格式错误无法解析';
-                    document.getElementById('sysStatus').style.color = '#f44336';
-                }
+                processCSVData(event.target.result);
             };
-            reader.readAsText(file, 'UTF-8'); 
+            reader.readAsText(file, 'UTF-8');
+        });
+
+        // ================= CSV 注入：一键加载示范数据 =================
+        document.getElementById('loadDemoBtn').addEventListener('click', function() {
+            document.getElementById('sysStatus').innerText = '正在拉取示范数据...';
+            document.getElementById('sysStatus').style.color = '#1890ff';
+
+            fetch('./test.csv')
+                .then(res => {
+                    if (!res.ok) throw new Error('HTTP ' + res.status);
+                    return res.text();
+                })
+                .then(csvText => {
+                    processCSVData(csvText);
+                })
+                .catch(err => {
+                    document.getElementById('sysStatus').innerText = '❌ 示范数据拉取失败：' + err.message;
+                    document.getElementById('sysStatus').style.color = '#f44336';
+                });
         });
 
         window.addEventListener('resize', () => { if(chartInstance) chartInstance.resize(); });
