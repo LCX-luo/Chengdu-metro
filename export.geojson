@@ -1,0 +1,8151 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-05-23T15:50:30Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2726964537",
+        "name": "犀浦",
+        "name:en": "Xipu Railway Station",
+        "name:zh": "犀浦",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q8044753",
+        "wikipedia": "zh:犀浦站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9686662,
+          30.7612369
+        ]
+      },
+      "id": "node/2726964537"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2981320496",
+        "name": "百草路",
+        "name:en": "Baicao Road",
+        "name:zh": "百草路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9771766,
+          30.7355916
+        ]
+      },
+      "id": "node/2981320496"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2981320498",
+        "name": "金周路",
+        "name:en": "Jinzhou Road",
+        "name:zh": "金周路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9937837,
+          30.7241362
+        ]
+      },
+      "id": "node/2981320498"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3316038284",
+        "name": "大面铺",
+        "name:en": "Damianpu",
+        "name:zh": "大面铺",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1989423,
+          30.594997
+        ]
+      },
+      "id": "node/3316038284"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3316038285",
+        "name": "界牌",
+        "name:en": "Jiepai",
+        "name:zh": "界牌",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.2228454,
+          30.5853645
+        ]
+      },
+      "id": "node/3316038285"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3316038311",
+        "name": "连山坡",
+        "name:en": "Lianshanpo",
+        "name:zh": "连山坡",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.2104766,
+          30.5901384
+        ]
+      },
+      "id": "node/3316038311"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3316038313",
+        "name": "龙泉驿",
+        "name:en": "Longquanyi",
+        "name:zh": "龙泉驿",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q18669572"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.2659429,
+          30.5629008
+        ]
+      },
+      "id": "node/3316038313"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4064178132",
+        "name": "成都西站",
+        "name:en": "Chengdu West Railway Station",
+        "name:zh": "成都西站",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "09/12",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q22099778",
+        "wikipedia": "zh:成都西站站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9732887,
+          30.686382
+        ]
+      },
+      "id": "node/4064178132"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4079186997",
+        "name": "崔家店",
+        "name:en": "Cuijiadian",
+        "name:zh": "崔家店",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1338345,
+          30.6677491
+        ]
+      },
+      "id": "node/4079186997"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4079187090",
+        "name": "三瓦窑",
+        "name:en": "Sanwayao",
+        "name:zh": "三瓦窑",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0750502,
+          30.6066043
+        ]
+      },
+      "id": "node/4079187090"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4079187129",
+        "name": "武侯大道",
+        "name:en": "Wuhou Avenue",
+        "name:zh": "武侯大道",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0103594,
+          30.6399039
+        ]
+      },
+      "id": "node/4079187129"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4079187136",
+        "name": "龙爪堰",
+        "name:en": "Longzhuayan",
+        "name:zh": "龙爪堰",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0060088,
+          30.6544668
+        ]
+      },
+      "id": "node/4079187136"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4079187142",
+        "name": "东坡路",
+        "name:en": "Dongpo Road",
+        "name:zh": "东坡路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q45351127"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0059252,
+          30.6633826
+        ]
+      },
+      "id": "node/4079187142"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4079221269",
+        "name": "红牌楼",
+        "name:en": "Hongpailou",
+        "name:zh": "红牌楼",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0277688,
+          30.6375454
+        ]
+      },
+      "id": "node/4079221269"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4079221394",
+        "name": "衣冠庙",
+        "name:en": "Yiguanmiao",
+        "name:zh": "衣冠庙",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0495884,
+          30.6369087
+        ]
+      },
+      "id": "node/4079221394"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4079221402",
+        "name": "磨子桥",
+        "name:en": "Moziqiao",
+        "name:zh": "磨子桥",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q28412421",
+        "wikipedia": "en:Moziqiao station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0734434,
+          30.6399622
+        ]
+      },
+      "id": "node/4079221402"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4079221412",
+        "name": "新南门",
+        "name:en": "Xinnanmen",
+        "name:zh": "新南门",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q28412425"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0725706,
+          30.6465969
+        ]
+      },
+      "id": "node/4079221412"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5081771532",
+        "name": "双流机场1航站楼",
+        "name:en": "Terminal 1 of Shuangliu International Airport",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q38787087",
+        "wikipedia": "zh:双流机场1航站楼站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9573418,
+          30.5813458
+        ]
+      },
+      "id": "node/5081771532"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5081771535",
+        "name": "双流机场2航站楼",
+        "name:en": "Terminal 2 of Shuangliu International Airport",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q38787029",
+        "wikipedia": "zh:双流机场2航站楼站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9540935,
+          30.5722698
+        ]
+      },
+      "id": "node/5081771535"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5451167240",
+        "name": "宽窄巷子",
+        "name:en": "Kuanzhaixiangzi Alleys",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q22099766",
+        "wikipedia": "zh:宽窄巷子站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0479169,
+          30.6677721
+        ]
+      },
+      "id": "node/5451167240"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5616916004",
+        "name": "文化宫",
+        "name:en": "Cultural Palace",
+        "name:zh": "文化宫",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0072494,
+          30.674665
+        ]
+      },
+      "id": "node/5616916004"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5616916006",
+        "name": "太平园",
+        "name:en": "Tapingyuan",
+        "name:zh": "太平园",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0190851,
+          30.6279668
+        ]
+      },
+      "id": "node/5616916006"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5616916019",
+        "name": "成都东客站",
+        "name:en": "Chengdu East Railway Station",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q27910019",
+        "wikipedia": "zh:成都东客站站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1371745,
+          30.6317593
+        ]
+      },
+      "id": "node/5616916019"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5616916020",
+        "name": "驷马桥",
+        "name:en": "Sima Bridge",
+        "name:zh": "驷马桥",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0908517,
+          30.6979082
+        ]
+      },
+      "id": "node/5616916020"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5617074686",
+        "name": "春熙路",
+        "name:en": "Chunxi Road",
+        "name:zh": "春熙路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0769039,
+          30.6560366
+        ]
+      },
+      "id": "node/5617074686"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5617675904",
+        "name": "一品天下",
+        "name:en": "Yipintianxia",
+        "name:zh": "一品天下",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0180359,
+          30.6911776
+        ]
+      },
+      "id": "node/5617675904"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5617807167",
+        "name": "中医大·省医院",
+        "name:en": "Chengdu University of TCM & Sichuan Provincial People's Hospital",
+        "name:zh": "中医大·省医院",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q21017126",
+        "wikipedia": "zh:中医大·省医院站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0382106,
+          30.6686006
+        ]
+      },
+      "id": "node/5617807167"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5619295508",
+        "name": "桐梓林",
+        "name:en": "Tongzilin",
+        "name:zh": "桐梓林",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0646616,
+          30.6177436
+        ]
+      },
+      "id": "node/5619295508"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5621991563",
+        "name": "槐树店",
+        "name:en": "Huaishudian",
+        "name:zh": "槐树店",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1370649,
+          30.6513365
+        ]
+      },
+      "id": "node/5621991563"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5626291561",
+        "name": "天河路",
+        "name:en": "Tianhe Road",
+        "name:zh": "天河路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9739973,
+          30.7484271
+        ]
+      },
+      "id": "node/5626291561"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6156493772",
+        "name": "武侯立交",
+        "name:en": "Wuhou Flyover",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9913487,
+          30.6293974
+        ]
+      },
+      "id": "node/6156493772"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6156493778",
+        "name": "双凤桥",
+        "name:en": "Shuangfengqiao",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9675949,
+          30.6186158
+        ]
+      },
+      "id": "node/6156493778"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6156494013",
+        "name": "航都大街",
+        "name:en": "Hangdu Street",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9349063,
+          30.5938375
+        ]
+      },
+      "id": "node/6156494013"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6156494023",
+        "name": "迎春桥",
+        "name:en": "Yingchunqiao",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9318981,
+          30.5823846
+        ]
+      },
+      "id": "node/6156494023"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6156494045",
+        "name": "东升",
+        "name:en": "Dongsheng",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9233341,
+          30.5740226
+        ]
+      },
+      "id": "node/6156494045"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6156494052",
+        "name": "双流广场",
+        "name:en": "Shuangliu Square",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9185916,
+          30.5676774
+        ]
+      },
+      "id": "node/6156494052"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6157881407",
+        "name": "川藏立交",
+        "name:en": "Chuanzang Flyover",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0042002,
+          30.6258034
+        ]
+      },
+      "id": "node/6157881407"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6157881410",
+        "name": "龙桥路",
+        "name:en": "Longqiao Road",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9416936,
+          30.6066383
+        ]
+      },
+      "id": "node/6157881410"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6157881412",
+        "name": "三里坝",
+        "name:en": "Sanliba",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9126461,
+          30.5564946
+        ]
+      },
+      "id": "node/6157881412"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6278202088",
+        "name": "市二医院",
+        "name:en": "Chengdu Second People's Hospital",
+        "name:zh": "市二医院",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0814664,
+          30.663124
+        ]
+      },
+      "id": "node/6278202088"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6502256091",
+        "name": "华兴",
+        "name:en": "Huaxing",
+        "name:zh": "华兴",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "09/07",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9990075,
+          30.6012269
+        ]
+      },
+      "id": "node/6502256091"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6502256113",
+        "name": "武青南路",
+        "name:en": "Wuqing South Road",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "09/09",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9828028,
+          30.625724
+        ]
+      },
+      "id": "node/6502256113"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6502286199",
+        "name": "西北桥",
+        "name:en": "Xibei Bridge",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/20",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q80511166",
+        "wikipedia": "zh:西北桥站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0556233,
+          30.6881326
+        ]
+      },
+      "id": "node/6502286199"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6514796947",
+        "name": "西南财大",
+        "name:en": "Southwestern University of Finance and Economics",
+        "name:zh": "西南财大",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0180145,
+          30.6728811
+        ]
+      },
+      "id": "node/6514796947"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6514796948",
+        "name": "草堂北路",
+        "name:en": "Caotang North Road",
+        "name:zh": "草堂北路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0259724,
+          30.671548
+        ]
+      },
+      "id": "node/6514796948"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6533307893",
+        "name": "前锋路",
+        "name:en": "Qianfeng Road",
+        "name:zh": "前锋路",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "03/16;06/23",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0892935,
+          30.6806739
+        ]
+      },
+      "id": "node/6533307893"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6533307894",
+        "name": "红星桥",
+        "name:en": "Hongxing Bridge",
+        "name:zh": "红星桥",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0879756,
+          30.6736165
+        ]
+      },
+      "id": "node/6533307894"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6544756475",
+        "name": "兴隆湖",
+        "name:en": "Xinglong Lake",
+        "name:zh": "兴隆湖",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0737434,
+          30.4076612
+        ]
+      },
+      "id": "node/6544756475"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6594652054",
+        "name": "高朋大道",
+        "name:en": "Gaopeng Avenue",
+        "name:zh": "高朋大道",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/22",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0319174,
+          30.6187056
+        ]
+      },
+      "id": "node/6594652054"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6594652091",
+        "name": "东大路",
+        "name:en": "Dongdalu Road",
+        "name:zh": "东大路",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/13",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q28415014",
+        "wikipedia": "zh:东大路站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1096421,
+          30.6360419
+        ]
+      },
+      "id": "node/6594652091"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089243999",
+        "name": "九道堰",
+        "name:en": "Jiudiaoyan",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81188463",
+        "wikipedia": "zh:九道堰站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0801743,
+          30.7738765
+        ]
+      },
+      "id": "node/7089243999"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244000",
+        "name": "杜家碾",
+        "name:en": "Dujianian",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81192352",
+        "wikipedia": "zh:杜家碾站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0723633,
+          30.7739514
+        ]
+      },
+      "id": "node/7089244000"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244002",
+        "name": "大丰",
+        "name:en": "Dafeng",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q81192580",
+        "wikipedia": "zh:大丰站 (成都市)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0632186,
+          30.773979
+        ]
+      },
+      "id": "node/7089244002"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244003",
+        "name": "石犀公园",
+        "name:en": "Shixi Park",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q81193183",
+        "wikipedia": "zh:石犀公园站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0573092,
+          30.7622262
+        ]
+      },
+      "id": "node/7089244003"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244004",
+        "name": "皇花园",
+        "name:en": "Huanghuayuan",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81193469",
+        "wikipedia": "zh:皇花园站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.057268,
+          30.7548258
+        ]
+      },
+      "id": "node/7089244004"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244005",
+        "name": "陆家桥",
+        "name:en": "Lujiaqiao",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81193702",
+        "wikipedia": "zh:陆家桥站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0566396,
+          30.7449384
+        ]
+      },
+      "id": "node/7089244005"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244006",
+        "name": "泉水路",
+        "name:en": "Quanshui Road",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81193768",
+        "wikipedia": "zh:泉水路站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.055915,
+          30.7325343
+        ]
+      },
+      "id": "node/7089244006"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244007",
+        "name": "洞子口",
+        "name:en": "Dongzikou",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81193948",
+        "wikipedia": "zh:洞子口站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0559797,
+          30.7238618
+        ]
+      },
+      "id": "node/7089244007"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244008",
+        "name": "福宁路",
+        "name:en": "Funing Road",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81194577",
+        "wikipedia": "zh:福宁路站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0573144,
+          30.7169056
+        ]
+      },
+      "id": "node/7089244008"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244009",
+        "name": "五块石",
+        "name:en": "Wukuaishi",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81194945",
+        "wikipedia": "zh:五块石站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0625173,
+          30.7092274
+        ]
+      },
+      "id": "node/7089244009"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244010",
+        "name": "赛云台",
+        "name:en": "Saiyuntai",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81195232",
+        "wikipedia": "zh:赛云台站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0640483,
+          30.7033297
+        ]
+      },
+      "id": "node/7089244010"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244011",
+        "name": "北站西二路",
+        "name:en": "2nd Beizhan West Road",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "no",
+        "wikidata": "Q44925675",
+        "wikipedia": "zh:北站西二路站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0638572,
+          30.6970402
+        ]
+      },
+      "id": "node/7089244011"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244012",
+        "name": "花牌坊",
+        "name:en": "Huapaifang",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81196210",
+        "wikipedia": "zh:花牌坊站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0462547,
+          30.6860495
+        ]
+      },
+      "id": "node/7089244012"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244015",
+        "name": "抚琴",
+        "name:en": "Fuqin",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q80630061",
+        "wikipedia": "zh:抚琴站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0391829,
+          30.6790839
+        ]
+      },
+      "id": "node/7089244015"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244016",
+        "name": "青羊宫",
+        "name:en": "Qingyang Taoist Temple",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q80427700",
+        "wikipedia": "zh:青羊宫站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0383697,
+          30.6630672
+        ]
+      },
+      "id": "node/7089244016"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244017",
+        "name": "省骨科医院",
+        "name:en": "Provincial Orthopaedics Hospital",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81043002",
+        "wikipedia": "zh:省骨科医院站 (成都市)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0386158,
+          30.6542319
+        ]
+      },
+      "id": "node/7089244017"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244018",
+        "name": "高升桥",
+        "name:en": "Gaoshengqiao",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q26261988",
+        "wikipedia": "zh:高升桥站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.039769,
+          30.6419766
+        ]
+      },
+      "id": "node/7089244018"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244020",
+        "name": "科园",
+        "name:en": "Keyuan",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q81043227",
+        "wikipedia": "zh:科园站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0353001,
+          30.63018
+        ]
+      },
+      "id": "node/7089244020"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244021",
+        "name": "九兴大道",
+        "name:en": "Jiuxing Avenue",
+        "name:zh": "九兴大道",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/21",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81241309",
+        "wikipedia": "zh:九兴大道站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0354316,
+          30.624386
+        ]
+      },
+      "id": "node/7089244021"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244022",
+        "name": "神仙树",
+        "name:en": "Shenxianshu",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q45411239",
+        "wikipedia": "zh:神仙树站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0456754,
+          30.6118923
+        ]
+      },
+      "id": "node/7089244022"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244024",
+        "name": "石羊立交",
+        "name:en": "Shiyang Flyover",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q81242015",
+        "wikipedia": "zh:石羊立交站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0483609,
+          30.5979728
+        ]
+      },
+      "id": "node/7089244024"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244025",
+        "name": "市一医院",
+        "name:en": "Chengdu First People's Hospital",
+        "name:zh": "市一医院",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "0529",
+        "start_date": "2019-12-27",
+        "station": "subway",
+        "subway": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q81242257",
+        "wikipedia": "zh:市一医院站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0480025,
+          30.5922294
+        ]
+      },
+      "id": "node/7089244025"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244026",
+        "name": "交子大道",
+        "name:en": "Jiaozi Avenue",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "no",
+        "wikidata": "Q81242723",
+        "wikipedia": "zh:交子大道站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0477168,
+          30.5841855
+        ]
+      },
+      "id": "node/7089244026"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244028",
+        "name": "锦城湖",
+        "name:en": "Jincheng Lake",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81243124",
+        "wikipedia": "zh:锦城湖站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0439781,
+          30.566911
+        ]
+      },
+      "id": "node/7089244028"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244030",
+        "name": "大源",
+        "name:en": "Dayuan",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q81243386",
+        "wikipedia": "zh:大源站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0441655,
+          30.5518852
+        ]
+      },
+      "id": "node/7089244030"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244031",
+        "name": "民乐",
+        "name:en": "Minle",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81245103",
+        "wikipedia": "zh:民乐站 (成都市)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0443811,
+          30.5428744
+        ]
+      },
+      "id": "node/7089244031"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244032",
+        "name": "骑龙",
+        "name:en": "Qilong",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81246831",
+        "wikipedia": "zh:骑龙站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0417583,
+          30.5269454
+        ]
+      },
+      "id": "node/7089244032"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244033",
+        "name": "警官学院",
+        "name:en": "The Police College",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81247158",
+        "wikipedia": "zh:警官学院站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0378676,
+          30.5158529
+        ]
+      },
+      "id": "node/7089244033"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244034",
+        "name": "二江寺",
+        "name:en": "Erjiang Temple",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81247480",
+        "wikipedia": "zh:二江寺站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0333132,
+          30.5022424
+        ]
+      },
+      "id": "node/7089244034"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244035",
+        "name": "南湖立交",
+        "name:en": "Nanhu Flyover",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81247764",
+        "wikipedia": "zh:南湖立交站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0307541,
+          30.4911674
+        ]
+      },
+      "id": "node/7089244035"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244036",
+        "name": "怡心湖",
+        "name:en": "Yixin Lake",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81247936",
+        "wikipedia": "zh:怡心湖站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.024428,
+          30.4732299
+        ]
+      },
+      "id": "node/7089244036"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244037",
+        "name": "龙马路",
+        "name:en": "Longma Road",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81248220",
+        "wikipedia": "zh:龙马路站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.017236,
+          30.4601414
+        ]
+      },
+      "id": "node/7089244037"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7089244038",
+        "name": "回龙",
+        "name:en": "Huilong",
+        "name:zh": "回龙",
+        "network": "CDRT",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/55",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q80630385",
+        "wikipedia": "zh:回龙站 (成都市)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0097479,
+          30.4471689
+        ]
+      },
+      "id": "node/7089244038"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7090395866",
+        "name": "黄水",
+        "name:en": "Huangshui",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.889244,
+          30.5218956
+        ]
+      },
+      "id": "node/7090395866"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7090395870",
+        "name": "花源",
+        "name:en": "Huayuan",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8787892,
+          30.4881396
+        ]
+      },
+      "id": "node/7090395870"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7090395871",
+        "name": "新津站",
+        "name:en": "Xinjin Railway Station",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81269307",
+        "wikipedia": "zh:新津站站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8712139,
+          30.4658244
+        ]
+      },
+      "id": "node/7090395871"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7090395873",
+        "name": "五津",
+        "name:en": "Wujin",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8108456,
+          30.4260799
+        ]
+      },
+      "id": "node/7090395873"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7090395874",
+        "name": "儒林路",
+        "name:en": "Rulin Road",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8011814,
+          30.4191446
+        ]
+      },
+      "id": "node/7090395874"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7090395875",
+        "name": "刘家碾",
+        "name:en": "Liujianian",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.78919,
+          30.4180006
+        ]
+      },
+      "id": "node/7090395875"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7090395876",
+        "name": "新平",
+        "name:en": "Xinping",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7793866,
+          30.4111674
+        ]
+      },
+      "id": "node/7090395876"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7092856891",
+        "name": "簇锦",
+        "name:en": "Cujin",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0057894,
+          30.613683
+        ]
+      },
+      "id": "node/7092856891"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7092856892",
+        "name": "金花",
+        "name:en": "Jinhua",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9679019,
+          30.5942244
+        ]
+      },
+      "id": "node/7092856892"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7213434053",
+        "name": "火车北站",
+        "name:en": "North Railway Station",
+        "name:zh": "火车北站",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "01/03;07-01",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q15915267",
+        "wikipedia": "zh:火车北站站 (成都市)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0714078,
+          30.6980375
+        ]
+      },
+      "id": "node/7213434053"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7213434054",
+        "name": "人民北路",
+        "name:en": "Renmin North Road",
+        "name:zh": "人民北路",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "01/04;06/21",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0707108,
+          30.6882719
+        ]
+      },
+      "id": "node/7213434054"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7213434055",
+        "name": "骡马市",
+        "name:en": "Luomashi",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "01/06",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0630511,
+          30.6694553
+        ]
+      },
+      "id": "node/7213434055"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7213434056",
+        "name": "省体育馆",
+        "name:en": "Sichuan Gymnasium",
+        "name:zh": "省体育馆",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0639694,
+          30.6355715
+        ]
+      },
+      "id": "node/7213434056"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7213434057",
+        "name": "火车南站",
+        "name:en": "South Railway Station",
+        "name:zh": "火车南站",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q15915368",
+        "wikipedia": "zh:火车南站站 (成都市)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0641514,
+          30.6077036
+        ]
+      },
+      "id": "node/7213434057"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7257339586",
+        "name": "倪家桥",
+        "name:en": "Nijiaqiao",
+        "name:zh": "倪家桥",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/18",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0643243,
+          30.6273321
+        ]
+      },
+      "id": "node/7257339586"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7417454927",
+        "name": "天府广场",
+        "name:en": "Tianfu Square",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "01/07",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q10939559",
+        "wikipedia": "zh:天府广场站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0638546,
+          30.6599157
+        ]
+      },
+      "id": "node/7417454927"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7619640116",
+        "name": "文殊院",
+        "name:en": "Wenshu Monastery",
+        "name:zh": "文殊院",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "01/05",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0651388,
+          30.6745013
+        ]
+      },
+      "id": "node/7619640116"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7622913629",
+        "name": "锦江宾馆",
+        "name:en": "Jinjiang Hotel",
+        "name:zh": "锦江宾馆",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "01/08",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.063646,
+          30.6519518
+        ]
+      },
+      "id": "node/7622913629"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7622913645",
+        "name": "华西坝",
+        "name:en": "Huaxiba",
+        "name:pt": "Estação Huaxiba",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q10905917"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0637578,
+          30.6453565
+        ]
+      },
+      "id": "node/7622913645"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7625847649",
+        "name": "韦家碾",
+        "name:en": "Weijianian",
+        "name:zh": "韦家碾",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "01/01",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q50661829",
+        "wikipedia": "zh:韦家碾站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0844208,
+          30.7201788
+        ]
+      },
+      "id": "node/7625847649"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7947192948",
+        "name": "孵化园",
+        "name:en": "Incubation Park",
+        "name:zh": "孵化园",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q10945729",
+        "wikipedia": "zh:孵化园站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0637315,
+          30.5778968
+        ]
+      },
+      "id": "node/7947192948"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7947192950",
+        "name": "锦城广场",
+        "name:en": "Jincheng Plaza",
+        "name:zh": "锦城广场",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.063393,
+          30.5714455
+        ]
+      },
+      "id": "node/7947192950"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7947192951",
+        "name": "锦城广场东",
+        "name:en": "Jincheng Plaza East",
+        "name:zh": "锦城广场东",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0667242,
+          30.5712237
+        ]
+      },
+      "id": "node/7947192951"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7947192953",
+        "name": "世纪城",
+        "name:en": "Century City",
+        "name:zh": "世纪城",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q10869180",
+        "wikipedia": "zh:世纪城站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0664501,
+          30.5573119
+        ]
+      },
+      "id": "node/7947192953"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7947192955",
+        "name": "海昌路",
+        "name:en": "Haichang Road",
+        "name:zh": "海昌路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q50803571",
+        "wikipedia": "zh:海昌路站 (成都市)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0677904,
+          30.4948002
+        ]
+      },
+      "id": "node/7947192955"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7947192957",
+        "name": "西博城",
+        "name:en": "Western China Int'l Expo City",
+        "name:zh": "西博城",
+        "network": "CDRT",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/50",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q50809756",
+        "wikipedia": "zh:西博城站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0731556,
+          30.427247
+        ]
+      },
+      "id": "node/7947192957"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7947192959",
+        "name": "兴隆",
+        "name:en": "Xinglong",
+        "name:zh": "兴隆",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1001247,
+          30.4121096
+        ]
+      },
+      "id": "node/7947192959"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8061878365",
+        "name": "金沙博物馆",
+        "name:en": "Jinsha Site Museum",
+        "name:zh": "金沙博物馆",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q45411156"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0101765,
+          30.6800433
+        ]
+      },
+      "id": "node/8061878365"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8061881485",
+        "name": "金科北路",
+        "name:en": "Jinke North Road",
+        "name:zh": "金科北路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0042638,
+          30.7232736
+        ]
+      },
+      "id": "node/8061881485"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8061881494",
+        "name": "迎宾大道",
+        "name:en": "Yingbin Avenue",
+        "name:zh": "迎宾大道",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0110698,
+          30.7159794
+        ]
+      },
+      "id": "node/8061881494"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8061881518",
+        "name": "茶店子客运站",
+        "name:en": "Chadianzi Bus Terminal Station",
+        "name:zh": "茶店子客运站",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0097757,
+          30.7077111
+        ]
+      },
+      "id": "node/8061881518"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8061881520",
+        "name": "羊犀立交",
+        "name:en": "Yangxi Flyover",
+        "name:zh": "羊犀立交",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0101063,
+          30.6967456
+        ]
+      },
+      "id": "node/8061881520"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8064716355",
+        "name": "成都大学",
+        "name:en": "Chengdu University",
+        "name:zh": "成都大学",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1785132,
+          30.649049
+        ]
+      },
+      "id": "node/8064716355"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8064716370",
+        "name": "十陵",
+        "name:en": "Shiling",
+        "name:zh": "十陵",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1702724,
+          30.6483203
+        ]
+      },
+      "id": "node/8064716370"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8064716371",
+        "name": "来龙",
+        "name:en": "Lailong",
+        "name:zh": "来龙",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.162016,
+          30.649248
+        ]
+      },
+      "id": "node/8064716371"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8064721016",
+        "name": "万年场",
+        "name:en": "Wannianchang",
+        "name:zh": "万年场",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1165427,
+          30.6466349
+        ]
+      },
+      "id": "node/8064721016"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8064721018",
+        "name": "双桥路",
+        "name:en": "Shuangqiao Road",
+        "name:zh": "双桥路",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/12",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q22099751",
+        "wikipedia": "zh:双桥路站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1116334,
+          30.6489153
+        ]
+      },
+      "id": "node/8064721018"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8064721021",
+        "name": "玉双路",
+        "name:en": "Yushuang Road",
+        "name:zh": "玉双路",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/26",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0960205,
+          30.6562188
+        ]
+      },
+      "id": "node/8064721021"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8064721048",
+        "name": "太升南路",
+        "name:en": "Taisheng South Road",
+        "name:zh": "太升南路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0739585,
+          30.6672447
+        ]
+      },
+      "id": "node/8064721048"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8067489075",
+        "name": "蜀汉路东",
+        "name:en": "Shuhan Road East",
+        "name:zh": "蜀汉路东",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.027148,
+          30.685106
+        ]
+      },
+      "id": "node/8067489075"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8067489077",
+        "name": "白果林",
+        "name:en": "Baiguolin",
+        "name:zh": "白果林",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.030958,
+          30.6766138
+        ]
+      },
+      "id": "node/8067489077"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8067592157",
+        "name": "通惠门",
+        "name:en": "Tonghuimen",
+        "name:zh": "通惠门",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0458682,
+          30.6647729
+        ]
+      },
+      "id": "node/8067592157"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8067592170",
+        "name": "人民公园",
+        "name:en": "People's Park",
+        "name:zh": "人民公园",
+        "network": "成都地铁",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0541497,
+          30.6619125
+        ]
+      },
+      "id": "node/8067592170"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242507060",
+        "name": "青杠",
+        "name:en": "Qinggang",
+        "name:zh": "青杠",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q17028820",
+        "wikipedia": "zh:青杠站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0235948,
+          30.727987
+        ]
+      },
+      "id": "node/8242507060"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242507061",
+        "name": "西华大道",
+        "name:en": "Xihua Avenue",
+        "name:zh": "西华大道",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/15",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q104835556",
+        "wikipedia": "zh:西华大道站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0294363,
+          30.7212116
+        ]
+      },
+      "id": "node/8242507061"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242507062",
+        "name": "金府",
+        "name:en": "Jinfu",
+        "name:zh": "金府",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q104835553",
+        "wikipedia": "zh:金府站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0345409,
+          30.7142418
+        ]
+      },
+      "id": "node/8242507062"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242507063",
+        "name": "星河",
+        "name:en": "Xinghe",
+        "name:zh": "星河",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/17",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q104835550",
+        "wikipedia": "en:Xinghe station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0416977,
+          30.7047139
+        ]
+      },
+      "id": "node/8242507063"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242507064",
+        "name": "西南交大",
+        "name:en": "Southwest Jiaotong University",
+        "name:zh": "西南交大",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/18",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q45145519",
+        "wikipedia": "zh:西南交大站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0473356,
+          30.6968576
+        ]
+      },
+      "id": "node/8242507064"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242507065",
+        "name": "沙湾",
+        "name:en": "Shawan",
+        "name:zh": "沙湾",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/19",
+        "station": "subway",
+        "subway": "yes",
+        "train": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0486518,
+          30.6920145
+        ]
+      },
+      "id": "node/8242507065"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242507068",
+        "name": "梁家巷",
+        "name:en": "Liangjiaxiang",
+        "name:zh": "梁家巷",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/22",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0804885,
+          30.684852
+        ]
+      },
+      "id": "node/8242507068"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242507070",
+        "alt_name": "电子科大建设北路",
+        "alt_name:en": "University of Electronic Science and Technology of China & Jianshe North Road",
+        "name": "建设北路",
+        "name:en": "Jianshe North Road",
+        "name:zh": "建设北路",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/24",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q104835848",
+        "wikipedia": "zh:建设北路站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0958328,
+          30.6746928
+        ]
+      },
+      "id": "node/8242507070"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242534445",
+        "name": "望丛祠",
+        "name:en": "Wangcong Temple",
+        "name:zh": "望丛祠",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/01",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8756531,
+          30.8103288
+        ]
+      },
+      "id": "node/8242534445"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242534446",
+        "name": "和平街",
+        "name:en": "Heping Street",
+        "name:zh": "和平街",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/02",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8851138,
+          30.8032022
+        ]
+      },
+      "id": "node/8242534446"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242534447",
+        "name": "郫筒",
+        "name:en": "Pitong",
+        "name:zh": "郫筒",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/03",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8924516,
+          30.7987789
+        ]
+      },
+      "id": "node/8242534447"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242534448",
+        "name": "蜀新大道",
+        "name:en": "Shuxin Avenue",
+        "name:zh": "蜀新大道",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9013811,
+          30.7937563
+        ]
+      },
+      "id": "node/8242534448"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242534449",
+        "name": "檬梓",
+        "name:en": "Mengzi",
+        "name:zh": "檬梓",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9122621,
+          30.7874135
+        ]
+      },
+      "id": "node/8242534449"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242534450",
+        "name": "尚锦路",
+        "name:en": "Shangjin Road",
+        "name:zh": "尚锦路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.921787,
+          30.7797724
+        ]
+      },
+      "id": "node/8242534450"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242534451",
+        "name": "红高路",
+        "name:en": "Honggao Road",
+        "name:zh": "红高路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9346755,
+          30.7724128
+        ]
+      },
+      "id": "node/8242534451"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242534452",
+        "name": "天宇路",
+        "name:en": "Tianyu Road",
+        "name:zh": "天宇路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9512581,
+          30.7573764
+        ]
+      },
+      "id": "node/8242534452"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242534454",
+        "alt_name": "交大兴业北街",
+        "alt_name:en": "Southwest Jiaotong University & Xingye North Street",
+        "name": "兴业北街",
+        "name:en": "Xingye North Street",
+        "name:zh": "兴业北街",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/10",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q106945450",
+        "wikipedia": "zh:兴业北街站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9811148,
+          30.7612056
+        ]
+      },
+      "id": "node/8242534454"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242534455",
+        "name": "梓潼宫",
+        "name:en": "Zitonggong",
+        "name:zh": "梓潼宫",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/11",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q104835697",
+        "wikipedia": "zh:梓潼宫站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9910493,
+          30.7504851
+        ]
+      },
+      "id": "node/8242534455"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242534456",
+        "name": "侯家桥",
+        "name:en": "Houjiaqiao",
+        "name:zh": "侯家桥",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q104835575",
+        "wikipedia": "zh:侯家桥站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0024597,
+          30.7392621
+        ]
+      },
+      "id": "node/8242534456"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242534457",
+        "name": "兴盛",
+        "name:en": "Xingsheng",
+        "name:zh": "兴盛",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/13",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q104835566",
+        "wikipedia": "zh:興盛站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0192524,
+          30.7333228
+        ]
+      },
+      "id": "node/8242534457"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242639360",
+        "name": "新鸿路",
+        "name:en": "Xinhong Road",
+        "name:zh": "新鸿路",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/25",
+        "station": "subway",
+        "subway": "yes",
+        "train": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0995264,
+          30.6654282
+        ]
+      },
+      "id": "node/8242639360"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242639362",
+        "name": "牛王庙",
+        "name:en": "Niuwangmiao",
+        "name:zh": "牛王庙",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/27",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0909279,
+          30.6480254
+        ]
+      },
+      "id": "node/8242639362"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242639364",
+        "name": "顺江路",
+        "name:en": "Shunjiang Road",
+        "name:zh": "顺江路",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/28",
+        "station": "subway",
+        "subway": "yes",
+        "train": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0905891,
+          30.6374848
+        ]
+      },
+      "id": "node/8242639364"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242639365",
+        "name": "三官堂",
+        "name:en": "Sanguantang",
+        "name:zh": "三官堂",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/29",
+        "station": "subway",
+        "subway": "yes",
+        "train": "yes",
+        "wikidata": "Q104834581"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0920676,
+          30.6308008
+        ]
+      },
+      "id": "node/8242639365"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242639366",
+        "name": "东光",
+        "name:en": "Dongguang",
+        "name:zh": "东光",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/30",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.095889,
+          30.6220368
+        ]
+      },
+      "id": "node/8242639366"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242639370",
+        "name": "琉璃场",
+        "name:en": "Liulichang",
+        "name:zh": "琉璃场",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/31;07/18",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0964561,
+          30.6101807
+        ]
+      },
+      "id": "node/8242639370"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242639372",
+        "name": "琉三路",
+        "name:en": "Liusan Road",
+        "name:zh": "琉三路",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/32",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0956096,
+          30.603023
+        ]
+      },
+      "id": "node/8242639372"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242639373",
+        "name": "金石路",
+        "name:en": "Jinshi Road",
+        "name:zh": "金石路",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "0633;3011",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q104834579",
+        "wikipedia": "zh:金石路站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0866213,
+          30.5926907
+        ]
+      },
+      "id": "node/8242639373"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242639374",
+        "name": "金融城东",
+        "name:en": "Financial City East",
+        "name:zh": "金融城东",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/34",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0818708,
+          30.5815986
+        ]
+      },
+      "id": "node/8242639374"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242639376",
+        "name": "中和",
+        "name:en": "Zhonghe",
+        "name:zh": "中和",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/35",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0939965,
+          30.5604919
+        ]
+      },
+      "id": "node/8242639376"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242639377",
+        "name": "张家寺",
+        "name:en": "Zhangjiasi",
+        "name:zh": "张家寺",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/36",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.095871,
+          30.5520241
+        ]
+      },
+      "id": "node/8242639377"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242765674",
+        "name": "陆肖",
+        "name:en": "Luxiao",
+        "name:zh": "陆肖",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/37",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0958306,
+          30.5415536
+        ]
+      },
+      "id": "node/8242765674"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242765675",
+        "name": "观东",
+        "name:en": "Guandong",
+        "name:zh": "观东",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/38",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0959197,
+          30.5333653
+        ]
+      },
+      "id": "node/8242765675"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242765676",
+        "name": "新通大道",
+        "name:en": "Xintong Avenue",
+        "name:zh": "新通大道",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/39",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0959541,
+          30.5239906
+        ]
+      },
+      "id": "node/8242765676"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242765677",
+        "name": "新川路",
+        "name:en": "Xinchuan Road",
+        "name:zh": "新川路",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/40",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0981742,
+          30.5179015
+        ]
+      },
+      "id": "node/8242765677"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242765678",
+        "name": "龙灯山",
+        "name:en": "Longdengshan",
+        "name:zh": "龙灯山",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/41",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.098728,
+          30.51144
+        ]
+      },
+      "id": "node/8242765678"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242765679",
+        "name": "蒲草塘",
+        "name:en": "Pucaotang",
+        "name:zh": "蒲草塘",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/42",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0959512,
+          30.504208
+        ]
+      },
+      "id": "node/8242765679"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242765682",
+        "name": "万安",
+        "name:en": "Wan'an",
+        "name:zh": "万安",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/43",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0968643,
+          30.4975196
+        ]
+      },
+      "id": "node/8242765682"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242765685",
+        "name": "麓山大道",
+        "name:en": "Lushan Avenue",
+        "name:zh": "麓山大道",
+        "network": "CDRT",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/44",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1007977,
+          30.485505
+        ]
+      },
+      "id": "node/8242765685"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242765686",
+        "name": "沈阳路",
+        "name:en": "Shenyang Road",
+        "name:zh": "沈阳路",
+        "network": "CDRT",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/45",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0989793,
+          30.4700294
+        ]
+      },
+      "id": "node/8242765686"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242765691",
+        "name": "昌公堰",
+        "name:en": "Changgongyan",
+        "name:zh": "昌公堰",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/47",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0921259,
+          30.4510432
+        ]
+      },
+      "id": "node/8242765691"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242765692",
+        "name": "杭州路",
+        "name:en": "Hangzhou Road",
+        "name:zh": "杭州路",
+        "network": "CDRT",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/48",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0869158,
+          30.4415065
+        ]
+      },
+      "id": "node/8242765692"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242765693",
+        "name": "天府商务区",
+        "name:en": "Tianfu Commercial District",
+        "name:zh": "天府商务区",
+        "network": "CDRT",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/49",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0839019,
+          30.4325893
+        ]
+      },
+      "id": "node/8242765693"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242765695",
+        "name": "秦皇寺",
+        "name:en": "Qinhuangsi",
+        "name:zh": "秦皇寺",
+        "network": "CDRT",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/51",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0593266,
+          30.42693
+        ]
+      },
+      "id": "node/8242765695"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242765696",
+        "name": "松林",
+        "name:en": "Songlin",
+        "name:zh": "松林",
+        "network": "CDRT",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/52",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0437342,
+          30.4285483
+        ]
+      },
+      "id": "node/8242765696"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242765697",
+        "name": "钓鱼嘴",
+        "name:en": "Diaoyuzui",
+        "name:zh": "钓鱼嘴",
+        "network": "CDRT",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/54",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0301217,
+          30.4389666
+        ]
+      },
+      "id": "node/8242765697"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242765699",
+        "name": "兰家沟",
+        "name:en": "Lanjiagou",
+        "name:zh": "兰家沟",
+        "network": "CDRT",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/56",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9943464,
+          30.4458529
+        ]
+      },
+      "id": "node/8242765699"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242891881",
+        "name": "四河",
+        "name:en": "Sihe",
+        "name:zh": "四河",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q28054967",
+        "wikipedia": "zh:四河站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0672517,
+          30.5194683
+        ]
+      },
+      "id": "node/8242891881"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242891882",
+        "name": "五根松",
+        "name:en": "Wugensong",
+        "name:zh": "五根松",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q50803356",
+        "wikipedia": "zh:五根松站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0790961,
+          30.5043226
+        ]
+      },
+      "id": "node/8242891882"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242891883",
+        "name": "广都",
+        "name:en": "Guangdu",
+        "name:zh": "广都",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q28415007",
+        "wikipedia": "zh:广都站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0733951,
+          30.5130336
+        ]
+      },
+      "id": "node/8242891883"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242891884",
+        "name": "华府大道",
+        "name:en": "Huafu Avenue",
+        "name:zh": "华府大道",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0669688,
+          30.5282891
+        ]
+      },
+      "id": "node/8242891884"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242891885",
+        "name": "天府五街",
+        "name:en": "5th Tianfu Street",
+        "name:zh": "天府五街",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0666133,
+          30.5396853
+        ]
+      },
+      "id": "node/8242891885"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242891886",
+        "name": "天府三街",
+        "name:en": "3rd Tianfu Street",
+        "name:zh": "天府三街",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0662931,
+          30.5492144
+        ]
+      },
+      "id": "node/8242891886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242891887",
+        "name": "金融城",
+        "name:en": "Financial City",
+        "name:zh": "金融城",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0614928,
+          30.5849419
+        ]
+      },
+      "id": "node/8242891887"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242891888",
+        "name": "高新",
+        "name:en": "Hi-Tech Zone",
+        "name:zh": "高新",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0614525,
+          30.5966272
+        ]
+      },
+      "id": "node/8242891888"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242891889",
+        "name": "华阳",
+        "name:en": "Huayang",
+        "name:zh": "华阳",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q50803580"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0676706,
+          30.5058106
+        ]
+      },
+      "id": "node/8242891889"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242891890",
+        "name": "广福",
+        "name:en": "Guangfu",
+        "name:zh": "广福",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0673344,
+          30.4807989
+        ]
+      },
+      "id": "node/8242891890"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242891891",
+        "name": "红石公园",
+        "name:en": "Hongshi Park",
+        "name:zh": "红石公园",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0704129,
+          30.4667408
+        ]
+      },
+      "id": "node/8242891891"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242891892",
+        "name": "麓湖",
+        "name:en": "Luhu Lake",
+        "name:zh": "麓湖",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0707118,
+          30.4568328
+        ]
+      },
+      "id": "node/8242891892"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242891893",
+        "name": "武汉路",
+        "name:en": "Wuhan Road",
+        "name:zh": "武汉路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0710243,
+          30.444821
+        ]
+      },
+      "id": "node/8242891893"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242891894",
+        "name": "天府公园",
+        "name:en": "Tianfu Park",
+        "name:zh": "天府公园",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0751717,
+          30.4355733
+        ]
+      },
+      "id": "node/8242891894"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242891895",
+        "name": "广州路",
+        "name:en": "Guangzhou Road",
+        "name:zh": "广州路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0744829,
+          30.4210176
+        ]
+      },
+      "id": "node/8242891895"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8242891896",
+        "name": "科学城",
+        "name:en": "Science City",
+        "name:zh": "科学城",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0702758,
+          30.3939183
+        ]
+      },
+      "id": "node/8242891896"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8256421490",
+        "name": "十里店",
+        "name:en": "Shilidian",
+        "name:zh": "十里店",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "train": "yes",
+        "wikidata": "Q104770951",
+        "wikipedia": "zh:十里店站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1414495,
+          30.6815925
+        ]
+      },
+      "id": "node/8256421490"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8256421498",
+        "name": "理工大学",
+        "name:en": "Chengdu University of Technology",
+        "name:zh": "理工大学",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/08",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q45068266",
+        "wikipedia": "zh:理工大学站 (成都市)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1342577,
+          30.6749233
+        ]
+      },
+      "id": "node/8256421498"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8256421499",
+        "name": "东郊记忆",
+        "name:en": "Dongjiao Memory",
+        "name:zh": "东郊记忆",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/09",
+        "station": "subway",
+        "subway": "yes",
+        "train": "yes",
+        "wikidata": "Q104815468",
+        "wikipedia": "zh:东郊记忆站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1263408,
+          30.6708301
+        ]
+      },
+      "id": "node/8256421499"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8256421500",
+        "name": "杉板桥",
+        "name:en": "Shabanqiao",
+        "name:zh": "杉板桥",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/10",
+        "station": "subway",
+        "subway": "yes",
+        "train": "yes",
+        "wikidata": "Q104815467",
+        "wikipedia": "zh:杉板桥站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1168793,
+          30.6666601
+        ]
+      },
+      "id": "node/8256421500"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8256421501",
+        "name": "万年路",
+        "name:en": "Wannian Road",
+        "name:zh": "万年路",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/11",
+        "station": "subway",
+        "subway": "yes",
+        "train": "yes",
+        "wikidata": "Q104815469",
+        "wikipedia": "zh:万年路站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1124828,
+          30.6573406
+        ]
+      },
+      "id": "node/8256421501"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8256421504",
+        "name": "净居寺",
+        "name:en": "Jingjusi",
+        "name:zh": "净居寺",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/14",
+        "station": "subway",
+        "subway": "yes",
+        "train": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1018408,
+          30.6248708
+        ]
+      },
+      "id": "node/8256421504"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8256421505",
+        "name": "东湖公园",
+        "name:en": "Donghu Park",
+        "name:zh": "东湖公园",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/16",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0853376,
+          30.6219996
+        ]
+      },
+      "id": "node/8256421505"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8256421506",
+        "name": "川大望江校区",
+        "name:en": "Sichuan University Wangjiang Campus",
+        "name:zh": "川大望江校区",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/17",
+        "station": "subway",
+        "subway": "yes",
+        "train": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0730453,
+          30.6275678
+        ]
+      },
+      "id": "node/8256421506"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8256421508",
+        "name": "芳草街",
+        "name:en": "Fangcao Street",
+        "name:zh": "芳草街",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/19",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0500268,
+          30.6283117
+        ]
+      },
+      "id": "node/8256421508"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8256421509",
+        "name": "永丰",
+        "name:en": "Yongfeng",
+        "name:zh": "永丰",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/20",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0443113,
+          30.6306762
+        ]
+      },
+      "id": "node/8256421509"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8256421512",
+        "name": "殷家林",
+        "name:en": "Yinjialin",
+        "name:zh": "殷家林",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/23",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0318327,
+          30.6087412
+        ]
+      },
+      "id": "node/8256421512"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8256421513",
+        "name": "庆安",
+        "name:en": "Qing'an",
+        "name:zh": "庆安",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/24",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0316132,
+          30.6008356
+        ]
+      },
+      "id": "node/8256421513"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8256421514",
+        "name": "石羊",
+        "name:en": "Shiyang",
+        "name:zh": "石羊",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "0825",
+        "start_date": "2020-12-18",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q105063693",
+        "wikipedia": "zh:石羊站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0281817,
+          30.5871587
+        ]
+      },
+      "id": "node/8256421514"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8256421516",
+        "name": "三元",
+        "name:en": "Sanyuan",
+        "name:zh": "三元",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/26",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q105063694"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.024014,
+          30.5836777
+        ]
+      },
+      "id": "node/8256421516"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8256422218",
+        "name": "顺风",
+        "name:en": "Shunfeng",
+        "name:zh": "顺风",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/27",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0088249,
+          30.5794371
+        ]
+      },
+      "id": "node/8256422218"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8256422219",
+        "name": "珠江路",
+        "name:en": "Zhujiang Road",
+        "name:zh": "珠江路",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "0828;3019",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q105063699",
+        "wikipedia": "zh:珠江路站 (成都市)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0055145,
+          30.5689954
+        ]
+      },
+      "id": "node/8256422219"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8256422220",
+        "name": "川大江安校区",
+        "name:en": "Sichuan University Jiang'an Campus",
+        "name:zh": "川大江安校区",
+        "network": "成都地铁",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/29",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.004721,
+          30.5577998
+        ]
+      },
+      "id": "node/8256422220"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8256422221",
+        "name": "文星",
+        "name:en": "Wenxing",
+        "name:zh": "文星",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/30",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.988352,
+          30.5532424
+        ]
+      },
+      "id": "node/8256422221"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8256422222",
+        "name": "莲花",
+        "name:en": "Lianhua",
+        "name:zh": "莲花",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "08/31",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9771124,
+          30.5485757
+        ]
+      },
+      "id": "node/8256422222"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8260922901",
+        "name": "黄田坝",
+        "name:en": "Huangtianba",
+        "name:zh": "黄田坝",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "09/13",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9690373,
+          30.7006755
+        ]
+      },
+      "id": "node/8260922901"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8260922903",
+        "name": "培风",
+        "name:en": "Peifeng",
+        "name:zh": "培风",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "09/11",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q107547285",
+        "wikipedia": "zh:培风站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9749167,
+          30.663189
+        ]
+      },
+      "id": "node/8260922903"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8260978344",
+        "name": "机投桥",
+        "name:en": "Jitouqiao",
+        "name:zh": "机投桥",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "09/10;17/19",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9758959,
+          30.6475347
+        ]
+      },
+      "id": "node/8260978344"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8260978346",
+        "name": "簇桥",
+        "name:en": "Cuqiao",
+        "name:zh": "簇桥",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "09/08",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.988095,
+          30.6097347
+        ]
+      },
+      "id": "node/8260978346"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8260978348",
+        "name": "太平寺",
+        "name:en": "Taiping Temple",
+        "name:zh": "太平寺",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "09/06",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0098745,
+          30.5936804
+        ]
+      },
+      "id": "node/8260978348"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8260978349",
+        "name": "锦城大道",
+        "name:en": "Jincheng Avenue",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "09/04",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81242882",
+        "wikipedia": "zh:锦城大道站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0479304,
+          30.5776822
+        ]
+      },
+      "id": "node/8260978349"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8260978351",
+        "name": "心岛",
+        "name:en": "Xindao",
+        "name:zh": "心岛",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "09/02",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0703225,
+          30.5782388
+        ]
+      },
+      "id": "node/8260978351"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8261614646",
+        "name": "市五医院",
+        "name:en": "Chengdu Fifth People's Hospital",
+        "name:zh": "市五医院",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "19/03",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8269906,
+          30.7019529
+        ]
+      },
+      "id": "node/8261614646"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8261614647",
+        "name": "凤溪河",
+        "name:en": "Fengxihe",
+        "name:zh": "凤溪河",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8419054,
+          30.6893466
+        ]
+      },
+      "id": "node/8261614647"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8261614649",
+        "name": "温泉大道",
+        "name:en": "Wenquan Avenue",
+        "name:zh": "温泉大道",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "19/05",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8534168,
+          30.6751951
+        ]
+      },
+      "id": "node/8261614649"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8261614650",
+        "name": "明光",
+        "name:en": "Mingguang",
+        "name:zh": "明光",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "19/06",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8662776,
+          30.6612522
+        ]
+      },
+      "id": "node/8261614650"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8261614651",
+        "name": "九江北",
+        "name:en": "Jiujiang North",
+        "name:zh": "九江北",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "17/07",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q108542207",
+        "wikipedia": "zh:九江北站 (成都市)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9195084,
+          30.6373006
+        ]
+      },
+      "id": "node/8261614651"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8261614652",
+        "name": "白佛桥",
+        "name:en": "Baifoqiao",
+        "name:zh": "白佛桥",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "17/20",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9619095,
+          30.6439854
+        ]
+      },
+      "id": "node/8261614652"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8547899003",
+        "name": "天府机场北",
+        "name:en": "Tianfu International Airport North",
+        "name:zh": "天府机场北",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q107406447",
+        "wikipedia": "zh:天府机场北站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.452572,
+          30.3369744
+        ]
+      },
+      "id": "node/8547899003"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8849562184",
+        "name": "天府机场1号2号航站楼",
+        "name:en": "Terminal 1 & 2 of Tianfu International Airport",
+        "name:zh": "天府机场1号2号航站楼",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q107406424",
+        "wikipedia": "zh:天府机场1号2号航站楼站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.4424203,
+          30.3154099
+        ]
+      },
+      "id": "node/8849562184"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9025152913",
+        "name": "天府站",
+        "name:en": "Tianfu Station",
+        "name:zh": "天府站",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1486092,
+          30.3927933
+        ]
+      },
+      "id": "node/9025152913"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9153430046",
+        "name": "青岛路",
+        "name:en": "Qingdao Road",
+        "name:zh": "青岛路",
+        "network": "CDRT",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/46",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0998407,
+          30.4615609
+        ]
+      },
+      "id": "node/9153430046"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9153430047",
+        "name": "芦角",
+        "name:en": "Lujiao",
+        "name:zh": "芦角",
+        "network": "CDRT",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "06/53",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q125826499",
+        "wikipedia": "zh:芦角站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0353001,
+          30.4340915
+        ]
+      },
+      "id": "node/9153430047"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9546933759",
+        "name": "双流西站",
+        "name:en": "Shuangliu West Railway Station",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9149062,
+          30.5459204
+        ]
+      },
+      "id": "node/9546933759"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9717933674",
+        "name": "华桂路",
+        "name:en": "Huagui Road",
+        "name:zh": "华桂路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q80630228",
+        "wikipedia": "zh:华桂路站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0958825,
+          30.8275052
+        ]
+      },
+      "id": "node/9717933674"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9717998609",
+        "name": "柏水场",
+        "name:en": "Baishuichang",
+        "name:zh": "柏水场",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81170811",
+        "wikipedia": "zh:柏水场站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0917584,
+          30.8178081
+        ]
+      },
+      "id": "node/9717998609"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9717998610",
+        "name": "廖家湾",
+        "name:en": "Liaojiawan",
+        "name:zh": "廖家湾",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81171552",
+        "wikipedia": "zh:廖家湾站 (成都市)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.088529,
+          30.8107235
+        ]
+      },
+      "id": "node/9717998610"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9717998611",
+        "name": "北部商贸城",
+        "name:en": "Beibu Shopping Mall",
+        "name:zh": "北部商贸城",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81179062",
+        "wikipedia": "zh:北部商贸城站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0864436,
+          30.7934445
+        ]
+      },
+      "id": "node/9717998611"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9717998612",
+        "name": "幸福桥",
+        "name:en": "Xingfuqiao",
+        "name:zh": "幸福桥",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81186008",
+        "wikipedia": "zh:幸福桥站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0857623,
+          30.7792827
+        ]
+      },
+      "id": "node/9717998612"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10106353072",
+        "name": "三岔",
+        "name:en": "Sancha",
+        "name:zh": "三岔",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q100411100",
+        "wikipedia": "zh:三岔站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.3148098,
+          30.3139132
+        ]
+      },
+      "id": "node/10106353072"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10203417942",
+        "name": "东门大桥",
+        "name:en": "Dongmen Bridge",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0849333,
+          30.6505473
+        ]
+      },
+      "id": "node/10203417942"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10203417943",
+        "name": "牛市口",
+        "name:en": "Niushikou",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.105206,
+          30.6400907
+        ]
+      },
+      "id": "node/10203417943"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10203417944",
+        "name": "塔子山公园",
+        "name:en": "Tazishan Park",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1202467,
+          30.631874
+        ]
+      },
+      "id": "node/10203417944"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10203417945",
+        "name": "成渝立交",
+        "name:en": "Chengyu Flyover",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1446566,
+          30.6273636
+        ]
+      },
+      "id": "node/10203417945"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10203417946",
+        "name": "惠王陵",
+        "name:en": "Huiwangling",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q27910017",
+        "wikipedia": "zh:惠王陵站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1496534,
+          30.6144336
+        ]
+      },
+      "id": "node/10203417946"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10203417947",
+        "name": "洪河",
+        "name:en": "Honghe",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1550085,
+          30.6073715
+        ]
+      },
+      "id": "node/10203417947"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10203417986",
+        "name": "书房",
+        "name:en": "Shufang",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.2397432,
+          30.5781841
+        ]
+      },
+      "id": "node/10203417986"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10203418013",
+        "name": "龙平路",
+        "name:en": "Longping Road",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q28415008"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.25654,
+          30.5755409
+        ]
+      },
+      "id": "node/10203418013"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10771129666",
+        "name": "二仙桥",
+        "name:en": "Erxianqiao",
+        "name:zh": "二仙桥",
+        "network": "成都地铁",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1233942,
+          30.6833636
+        ]
+      },
+      "id": "node/10771129666"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10771424867",
+        "name": "茶店子",
+        "name:en": "Chadianzi",
+        "name:zh": "茶店子",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q45412662"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0288976,
+          30.6989318
+        ]
+      },
+      "id": "node/10771424867"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10771424868",
+        "name": "花照壁",
+        "name:en": "Huazhaobi",
+        "name:zh": "花照壁",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q45412668"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0383912,
+          30.6990641
+        ]
+      },
+      "id": "node/10771424868"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10771424869",
+        "name": "府青路",
+        "name:en": "Fuqing Road",
+        "name:zh": "府青路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1042726,
+          30.6966033
+        ]
+      },
+      "id": "node/10771424869"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773561920",
+        "name": "火车南站",
+        "name:en": "South Railway Station",
+        "name:zh": "火车南站",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q15915368",
+        "wikipedia": "zh:火车南站站 (成都市)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.065324,
+          30.6054922
+        ]
+      },
+      "id": "node/10773561920"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773561924",
+        "name": "四川师大",
+        "name:en": "Sichuan Normal University",
+        "name:zh": "四川师大",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q45253126"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1139202,
+          30.6118915
+        ]
+      },
+      "id": "node/10773561924"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773561927",
+        "name": "大观",
+        "name:en": "Daguan",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1301329,
+          30.6239348
+        ]
+      },
+      "id": "node/10773561927"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773561928",
+        "name": "狮子山",
+        "name:en": "Shizishan",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q45254018"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1219659,
+          30.6187133
+        ]
+      },
+      "id": "node/10773561928"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773561929",
+        "name": "迎晖路",
+        "name:en": "Yinghui Road",
+        "name:zh": "迎晖路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1367194,
+          30.6404522
+        ]
+      },
+      "id": "node/10773561929"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773561933",
+        "name": "双店路",
+        "name:en": "Shaungdian Road",
+        "name:zh": "双店路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1340465,
+          30.6599581
+        ]
+      },
+      "id": "node/10773561933"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773561941",
+        "name": "八里庄",
+        "name:en": "Balizhuang",
+        "name:zh": "八里庄",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1154924,
+          30.6892515
+        ]
+      },
+      "id": "node/10773561941"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773561960",
+        "name": "九里堤",
+        "name:en": "Jiulidi",
+        "name:zh": "九里堤",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.054833,
+          30.6971098
+        ]
+      },
+      "id": "node/10773561960"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578509",
+        "name": "清江西路",
+        "name:en": "Qingjiang West Road",
+        "name:zh": "清江西路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9963482,
+          30.6791248
+        ]
+      },
+      "id": "node/10773578509"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578514",
+        "name": "中坝",
+        "name:en": "Zhongba",
+        "name:zh": "中坝",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9618332,
+          30.6760004
+        ]
+      },
+      "id": "node/10773578514"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578518",
+        "name": "蔡桥",
+        "name:en": "Caiqiao",
+        "name:zh": "蔡桥",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9429114,
+          30.6721636
+        ]
+      },
+      "id": "node/10773578518"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578523",
+        "name": "非遗博览园",
+        "name:en": "Intangible Cultural Heritage Park",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9204305,
+          30.6767607
+        ]
+      },
+      "id": "node/10773578523"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578524",
+        "name": "马厂坝",
+        "name:en": "Machangba",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9116866,
+          30.6801859
+        ]
+      },
+      "id": "node/10773578524"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578528",
+        "name": "凤凰大街",
+        "name:en": "Fenghuang Avenue",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8870905,
+          30.6798515
+        ]
+      },
+      "id": "node/10773578528"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578533",
+        "name": "涌泉",
+        "name:en": "Yongquan",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.871376,
+          30.6811232
+        ]
+      },
+      "id": "node/10773578533"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578538",
+        "name": "光华公园",
+        "name:en": "Guanghua Park",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8586226,
+          30.6870151
+        ]
+      },
+      "id": "node/10773578538"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578543",
+        "name": "南熏大道",
+        "name:en": "Nanxun Avenue",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8496842,
+          30.6922094
+        ]
+      },
+      "id": "node/10773578543"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578556",
+        "name": "杨柳河",
+        "name:en": "Yangliuhe",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8290802,
+          30.6835311
+        ]
+      },
+      "id": "node/10773578556"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578561",
+        "name": "万盛",
+        "name:en": "Wansheng",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8168308,
+          30.677956
+        ]
+      },
+      "id": "node/10773578561"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578566",
+        "name": "李家沱",
+        "name:en": "Lijiatuo",
+        "name:zh": "李家沱",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0922623,
+          30.6917763
+        ]
+      },
+      "id": "node/10773578566"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578567",
+        "name": "昭觉寺南路",
+        "name:en": "Zhaojuesi South Road",
+        "name:zh": "昭觉寺南路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0945161,
+          30.7055152
+        ]
+      },
+      "id": "node/10773578567"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578568",
+        "name": "动物园",
+        "name:en": "Chengdu Zoo",
+        "name:zh": "动物园",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1007793,
+          30.7160252
+        ]
+      },
+      "id": "node/10773578568"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578569",
+        "description": "Take Panda Base free shuttle bus from here. You pay the Panda Base ticket here.",
+        "name": "熊猫大道",
+        "name:en": "Panda Avenue",
+        "name:zh": "熊猫大道",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1056253,
+          30.7280208
+        ]
+      },
+      "id": "node/10773578569"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578570",
+        "name": "军区总医院",
+        "name:en": "Chengdu Junqu General Hospital",
+        "name:zh": "军区总医院",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1116561,
+          30.7469951
+        ]
+      },
+      "id": "node/10773578570"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578571",
+        "name": "植物园",
+        "name:en": "Botanical Garden",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.118907,
+          30.7657315
+        ]
+      },
+      "id": "node/10773578571"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578576",
+        "name": "金华寺东路",
+        "name:en": "Jinhuasi East Road",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1230129,
+          30.7728215
+        ]
+      },
+      "id": "node/10773578576"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578577",
+        "name": "三河场",
+        "name:en": "Sanhechang",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1366485,
+          30.7870605
+        ]
+      },
+      "id": "node/10773578577"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578578",
+        "name": "锦水河",
+        "name:en": "Jinshuihe",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1511586,
+          30.7996209
+        ]
+      },
+      "id": "node/10773578578"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578579",
+        "name": "团结新区",
+        "name:en": "Tuanjiexinqu",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1561144,
+          30.8061975
+        ]
+      },
+      "id": "node/10773578579"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578580",
+        "name": "马超西路",
+        "name:en": "Machao West Road",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1623251,
+          30.8152251
+        ]
+      },
+      "id": "node/10773578580"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578581",
+        "name": "钟楼",
+        "name:en": "Clock Tower",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1724055,
+          30.8230747
+        ]
+      },
+      "id": "node/10773578581"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578582",
+        "name": "石油大学",
+        "name:en": "Southwest Petroleum University",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.183892,
+          30.8210682
+        ]
+      },
+      "id": "node/10773578582"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773578583",
+        "name": "成都医学院",
+        "name:en": "Chengdu Medical College",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1920115,
+          30.8192811
+        ]
+      },
+      "id": "node/10773578583"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11048055461",
+        "name": "海昌路",
+        "name:en": "Haichang Road",
+        "name:zh": "海昌路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q50803571",
+        "wikipedia": "zh:海昌路站 (成都市)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0690177,
+          30.4953762
+        ]
+      },
+      "id": "node/11048055461"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11379620438",
+        "name": "龙桥路",
+        "name:en": "Longqiao Road",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9429889,
+          30.608723
+        ]
+      },
+      "id": "node/11379620438"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11379620439",
+        "name": "双流机场2航站楼东",
+        "name:en": "East of Terminal 2 of Shuangliu International Airport",
+        "name:zh": "双流机场2航站楼东",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "1909;3024",
+        "start_date": "2023-11-28",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q123575338",
+        "wikipedia": "zh:双流机场2航站楼东站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9558471,
+          30.5716968
+        ]
+      },
+      "id": "node/11379620439"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11379620440",
+        "name": "龙港",
+        "name:en": "Longgang",
+        "name:zh": "龙港",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.971453,
+          30.5382906
+        ]
+      },
+      "id": "node/11379620440"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11379620441",
+        "name": "温家山",
+        "name:en": "Wenjiashan",
+        "name:zh": "温家山",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0068103,
+          30.5014785
+        ]
+      },
+      "id": "node/11379620441"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11379620442",
+        "name": "牧华路",
+        "name:en": "Muhua Road",
+        "name:zh": "牧华路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0090393,
+          30.4867389
+        ]
+      },
+      "id": "node/11379620442"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11379620443",
+        "name": "正兴湾",
+        "name:en": "Zhengxingwan",
+        "name:zh": "正兴湾",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0391904,
+          30.4551304
+        ]
+      },
+      "id": "node/11379620443"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11379620444",
+        "name": "红莲",
+        "name:en": "Honglian",
+        "name:zh": "红莲",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0597979,
+          30.435233
+        ]
+      },
+      "id": "node/11379620444"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11379620447",
+        "name": "蓝家店",
+        "name:en": "Lanjiadian",
+        "name:zh": "蓝家店",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1066138,
+          30.4201954
+        ]
+      },
+      "id": "node/11379620447"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11381436619",
+        "name": "怡心湖",
+        "name:en": "Yixin Lake",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81247936",
+        "wikipedia": "zh:怡心湖站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0233715,
+          30.4735409
+        ]
+      },
+      "id": "node/11381436619"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11810702099",
+        "name": "官塘",
+        "name:en": "GuanTang",
+        "name:zh": "官塘",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0554553,
+          30.4086316
+        ]
+      },
+      "id": "node/11810702099"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11810702100",
+        "name": "煎茶",
+        "name:en": "JianCha",
+        "name:zh": "煎茶",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0456146,
+          30.3786437
+        ]
+      },
+      "id": "node/11810702100"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11810702101",
+        "name": "红碑",
+        "name:en": "HongBei",
+        "name:zh": "红碑",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0548263,
+          30.3294409
+        ]
+      },
+      "id": "node/11810702101"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11942182951",
+        "name": "福田",
+        "name:en": "Futian",
+        "name:zh": "福田",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q109356009",
+        "wikipedia": "zh:福田站 (成都市)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.3848478,
+          30.2807626
+        ]
+      },
+      "id": "node/11942182951"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12429438980",
+        "name": "蜀鑫路",
+        "name:en": "Shuxin Road",
+        "name:zh": "蜀鑫路",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q109546678",
+        "wikipedia": "zh:蜀鑫路站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9913553,
+          30.6919617
+        ]
+      },
+      "id": "node/12429438980"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12429901412",
+        "name": "桂龙路",
+        "name:en": "Guilong Road",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q123698813",
+        "wikipedia": "zh:桂龙路站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1862702,
+          30.7192938
+        ]
+      },
+      "id": "node/12429901412"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430596040",
+        "name": "金沙滨河公园",
+        "name:en": "Jinsha Binhe Park",
+        "name:zh": "金沙滨河公园",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q111223536",
+        "wikipedia": "zh:金沙滨河公园站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9991166,
+          30.6887924
+        ]
+      },
+      "id": "node/12430596040"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430596041",
+        "name": "黄忠",
+        "name:en": "Huangzhong",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q111223546",
+        "wikipedia": "zh:黄忠站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0054025,
+          30.6899624
+        ]
+      },
+      "id": "node/12430596041"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430606496",
+        "name": "新桥",
+        "name:en": "Xinqiao",
+        "name:zh": "新桥",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q111225506"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0415293,
+          30.7192253
+        ]
+      },
+      "id": "node/12430606496"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430606497",
+        "name": "沙河源",
+        "name:en": "Shaheyuan",
+        "name:zh": "沙河源",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q115038529",
+        "wikipedia": "zh:沙河源站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0481855,
+          30.725164
+        ]
+      },
+      "id": "node/12430606497"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430613120",
+        "name": "金牛公园",
+        "name:en": "Jinniu Park",
+        "name:zh": "金牛公园",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q111223451",
+        "wikipedia": "zh:金牛公园站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0206083,
+          30.7068949
+        ]
+      },
+      "id": "node/12430613120"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430613121",
+        "name": "花照壁北",
+        "name:en": "Huazhaobi North",
+        "name:zh": "花照壁北",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q111225503",
+        "wikipedia": "zh:花照壁北站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0277612,
+          30.7106265
+        ]
+      },
+      "id": "node/12430613121"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430642126",
+        "name": "王贾桥",
+        "name:en": "Wangjiaqiao",
+        "name:zh": "王贾桥",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q115041605",
+        "wikipedia": "zh:王贾桥站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0663453,
+          30.7194798
+        ]
+      },
+      "id": "node/12430642126"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430642127",
+        "name": "双水碾",
+        "name:en": "Shuangshuinian",
+        "name:zh": "双水碾",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q115041640",
+        "wikipedia": "zh:双水碾站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0736586,
+          30.7153506
+        ]
+      },
+      "id": "node/12430642127"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430686956",
+        "name": "赖家店",
+        "name:en": "Laijiadian",
+        "name:zh": "赖家店",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0865704,
+          30.7351259
+        ]
+      },
+      "id": "node/12430686956"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430686958",
+        "name": "鲤鱼湾",
+        "name:en": "Liyuwan",
+        "name:zh": "鲤鱼湾",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.096701,
+          30.7549141
+        ]
+      },
+      "id": "node/12430686958"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430686959",
+        "name": "范家巷",
+        "name:en": "Fanjia Alley",
+        "name:zh": "范家巷",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0998552,
+          30.7626965
+        ]
+      },
+      "id": "node/12430686959"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430686960",
+        "name": "三圣寺",
+        "name:en": "Sanshengsi",
+        "name:zh": "三圣寺",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0992679,
+          30.7725651
+        ]
+      },
+      "id": "node/12430686960"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430686961",
+        "name": "石门坎",
+        "name:en": "Shimenkan",
+        "name:zh": "石门坎",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q115041955"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0991415,
+          30.7790957
+        ]
+      },
+      "id": "node/12430686961"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430686962",
+        "name": "旃檀寺",
+        "name:en": "Zhantan Temple",
+        "name:zh": "旃檀寺",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q115041954"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.103018,
+          30.8018635
+        ]
+      },
+      "id": "node/12430686962"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430686963",
+        "name": "兴城大道",
+        "name:en": "Xingcheng Avenue",
+        "name:zh": "兴城大道",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q115041953",
+        "wikipedia": "zh:兴城大道站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1076319,
+          30.8124473
+        ]
+      },
+      "id": "node/12430686963"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430686964",
+        "name": "慈义",
+        "name:en": "Ciyi",
+        "name:zh": "慈义",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q115041952",
+        "wikipedia": "zh:慈义站 (成都市)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1123095,
+          30.8198702
+        ]
+      },
+      "id": "node/12430686964"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430686965",
+        "name": "石佛",
+        "name:en": "Shifo",
+        "name:zh": "石佛",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q115041951"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1092041,
+          30.8275278
+        ]
+      },
+      "id": "node/12430686965"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430692217",
+        "name": "圣灯公园",
+        "name:en": "Shengdeng Park",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q124843250",
+        "wikipedia": "zh:圣灯公园站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.14888,
+          30.6899719
+        ]
+      },
+      "id": "node/12430692217"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430692218",
+        "name": "龙潭立交",
+        "name:en": "Longtan Flyover",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1552108,
+          30.696697
+        ]
+      },
+      "id": "node/12430692218"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430692219",
+        "name": "龙潭寺",
+        "name:en": "Longtan Temple",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q124843252",
+        "wikipedia": "zh:龙潭寺站 (地铁)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1625087,
+          30.7043565
+        ]
+      },
+      "id": "node/12430692219"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430692220",
+        "name": "同乐",
+        "name:en": "Tongle",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q124843253"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1679194,
+          30.7143474
+        ]
+      },
+      "id": "node/12430692220"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430692221",
+        "name": "桂林",
+        "name:en": "Guilin",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q123698816"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1766882,
+          30.7192561
+        ]
+      },
+      "id": "node/12430692221"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430954776",
+        "name": "韦家碾",
+        "name:en": "Weijianian",
+        "name:zh": "韦家碾",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q50661829",
+        "wikipedia": "zh:韦家碾站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.083878,
+          30.7202164
+        ]
+      },
+      "id": "node/12430954776"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12430954783",
+        "name": "洞子口",
+        "name:en": "Dongzikou",
+        "name:zh": "洞子口",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q81193948",
+        "wikipedia": "zh:洞子口站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0567797,
+          30.7244183
+        ]
+      },
+      "id": "node/12430954783"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12433478145",
+        "name": "龙港",
+        "name:en": "Longgang",
+        "name:zh": "龙港",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.971648,
+          30.5373496
+        ]
+      },
+      "id": "node/12433478145"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12883578411",
+        "name": "高洪",
+        "name:en": "Gaohong",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1924001,
+          30.6925894
+        ]
+      },
+      "id": "node/12883578411"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12883578412",
+        "name": "威灵",
+        "name:en": "Weiling",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1771809,
+          30.6917697
+        ]
+      },
+      "id": "node/12883578412"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12883578413",
+        "name": "航天路",
+        "name:en": "Hangtian Road",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1630942,
+          30.6910901
+        ]
+      },
+      "id": "node/12883578413"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12883578416",
+        "name": "人民塘",
+        "name:en": "Renmintang",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1484293,
+          30.6930155
+        ]
+      },
+      "id": "node/12883578416"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12883578419",
+        "name": "机车厂",
+        "name:en": "Jichechang",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1309194,
+          30.6902371
+        ]
+      },
+      "id": "node/12883578419"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12883578424",
+        "name": "踏水桥",
+        "name:en": "Tashui Bridge",
+        "name:zh": "踏水桥",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1057191,
+          30.6775759
+        ]
+      },
+      "id": "node/12883578424"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12883578437",
+        "name": "红星桥",
+        "name:en": "Hongxing Bridge",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0881848,
+          30.676276
+        ]
+      },
+      "id": "node/12883578437"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12883578440",
+        "name": "城隍庙",
+        "name:en": "Chenghuangmiao",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0773762,
+          30.6816687
+        ]
+      },
+      "id": "node/12883578440"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12883578449",
+        "name": "西大街",
+        "name:en": "Xidajie Street",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0563946,
+          30.6766387
+        ]
+      },
+      "id": "node/12883578449"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12883578450",
+        "name": "人民公园",
+        "name:en": "People's Park",
+        "name:zh": "人民公园",
+        "network": "成都地铁",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0531263,
+          30.6610569
+        ]
+      },
+      "id": "node/12883578450"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12883578453",
+        "name": "小南街",
+        "name:en": "Xiaonan Street",
+        "name:fr": "Rue Xiao sud",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0497421,
+          30.6552916
+        ]
+      },
+      "id": "node/12883578453"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12883578466",
+        "name": "浣花里",
+        "name:en": "Huanhua Lane",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0295839,
+          30.6533257
+        ]
+      },
+      "id": "node/12883578466"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12883578469",
+        "name": "清水河大桥",
+        "name:en": "Qingshuihe Bridge",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0181245,
+          30.6542899
+        ]
+      },
+      "id": "node/12883578469"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12883578484",
+        "name": "阳公桥",
+        "name:en": "Yanggongqiao",
+        "network": "成都地铁",
+        "operator": "成都地铁",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q125826563"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9938053,
+          30.651857
+        ]
+      },
+      "id": "node/12883578484"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13102833157",
+        "name": "娇子立交",
+        "name:en": "Jiaozi Flyover",
+        "name:zh": "娇子立交",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "1305",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q123698831",
+        "wikipedia": "zh:娇子立交站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1244181,
+          30.6028547
+        ]
+      },
+      "id": "node/13102833157"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13102833158",
+        "name": "幸福梅林",
+        "name:en": "Xingfu Meilin",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1372536,
+          30.5948516
+        ]
+      },
+      "id": "node/13102833158"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13102833161",
+        "name": "三圣花乡",
+        "name:en": "Sansheng Flower Town",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1503863,
+          30.5867552
+        ]
+      },
+      "id": "node/13102833161"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13102833163",
+        "name": "龙华寺",
+        "name:en": "Longhuasi",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1775543,
+          30.573694
+        ]
+      },
+      "id": "node/13102833163"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13102833164",
+        "name": "龙安",
+        "name:en": "Long'an",
+        "name:zh": "龙安",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "1301",
+        "start_date": "2025-12-16",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q123698833",
+        "wikipedia": "zh:龙安站 (成都市)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1932902,
+          30.5661872
+        ]
+      },
+      "id": "node/13102833164"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13146678239",
+        "name": "红牌楼",
+        "name:en": "Hongpailou",
+        "name:zh": "红牌楼",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0278509,
+          30.6373596
+        ]
+      },
+      "id": "node/13146678239"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13149311157",
+        "name": "武侯祠",
+        "name:en": "Wohou Shrine",
+        "name:zh": "武侯祠",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q111225504"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0489307,
+          30.6475766
+        ]
+      },
+      "id": "node/13149311157"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13159564485",
+        "name": "高升桥",
+        "name:en": "Gaoshengqiao",
+        "name:zh": "高升桥",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q26261988",
+        "wikipedia": "zh:高升桥站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0394439,
+          30.6445944
+        ]
+      },
+      "id": "node/13159564485"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380191077",
+        "name": "龙泉驿火车站南",
+        "name:en": "Longquanyi Railway Station South",
+        "name:zh": "龙泉驿火车站南",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3001",
+        "start_date": "2025-12-16",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q135921038",
+        "wikipedia": "zh:龙泉驿火车站南站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1940965,
+          30.5957038
+        ]
+      },
+      "id": "node/13380191077"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380390397",
+        "name": "玉虹路",
+        "name:en": "Yuhong Road",
+        "name:zh": "玉虹路",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3002",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1835615,
+          30.6093251
+        ]
+      },
+      "id": "node/13380390397"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380390398",
+        "name": "分水",
+        "name:en": "Fenshui",
+        "name:zh": "分水",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3003",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1748014,
+          30.6142051
+        ]
+      },
+      "id": "node/13380390398"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380390399",
+        "name": "玉石",
+        "name:en": "Yushi",
+        "name:zh": "玉石",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3004",
+        "start_date": "2025-12-16",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1647607,
+          30.6149784
+        ]
+      },
+      "id": "node/13380390399"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380390400",
+        "name": "惠王陵",
+        "name:en": "Huiwangling",
+        "name:zh": "惠王陵",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3005",
+        "start_date": "2025-12-16",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q27910017",
+        "wikipedia": "zh:惠王陵站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1503687,
+          30.615792
+        ]
+      },
+      "id": "node/13380390400"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380439887",
+        "name": "寺圣",
+        "name:en": "Sisheng",
+        "name:zh": "寺圣",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3023",
+        "start_date": "2025-12-16",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9672911,
+          30.5629631
+        ]
+      },
+      "id": "node/13380439887"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380450501",
+        "name": "星月",
+        "name:en": "Xingyue",
+        "name:zh": "星月",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3022",
+        "start_date": "2025-12-16",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9757008,
+          30.5644428
+        ]
+      },
+      "id": "node/13380450501"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380485901",
+        "name": "航天立交",
+        "name:en": "Hangtian Flyover",
+        "name:zh": "航天立交",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3006",
+        "start_date": "2025-12-16",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.14057,
+          30.6154561
+        ]
+      },
+      "id": "node/13380485901"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380485902",
+        "name": "海桐街",
+        "name:en": "Haitong Street",
+        "name:zh": "海桐街",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3007",
+        "start_date": "2025-12-16",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q111225509",
+        "wikipedia": "zh:海桐街站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1351827,
+          30.6084152
+        ]
+      },
+      "id": "node/13380485902"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380485906",
+        "name": "娇子立交",
+        "name:en": "Jiaozi Flyover",
+        "name:zh": "娇子立交",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3008",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q123698831",
+        "wikipedia": "zh:娇子立交站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1261437,
+          30.6023345
+        ]
+      },
+      "id": "node/13380485906"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380485907",
+        "name": "锦逸",
+        "name:en": "Jinyi",
+        "name:zh": "锦逸",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3009",
+        "start_date": "2025-12-16",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1113266,
+          30.5981974
+        ]
+      },
+      "id": "node/13380485907"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380485908",
+        "name": "棬子树",
+        "name:en": "Juanzishu",
+        "name:zh": "棬子树",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3010",
+        "start_date": "2025-12-16",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1000889,
+          30.5968953
+        ]
+      },
+      "id": "node/13380485908"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380485910",
+        "name": "府城桥",
+        "name:en": "Fucheng Bridge",
+        "name:zh": "府城桥",
+        "public_transport": "station",
+        "railway": "station",
+        "start_date": "2025-12-16",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0731875,
+          30.5912769
+        ]
+      },
+      "id": "node/13380485910"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380485918",
+        "name": "金融城北",
+        "name:en": "Financial City North",
+        "name:zh": "金融城北",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3013",
+        "start_date": "2025-12-16",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0672093,
+          30.5910068
+        ]
+      },
+      "id": "node/13380485918"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380485921",
+        "name": "益州大道",
+        "name:en": "Yizhou Avenue",
+        "name:zh": "益州大道",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3014",
+        "start_date": "2025-12-16",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0579647,
+          30.5910484
+        ]
+      },
+      "id": "node/13380485921"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380485922",
+        "name": "市一医院",
+        "name:en": "Chengdu First People's Hospital",
+        "name:zh": "市一医院",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3015",
+        "start_date": "2025-12-16",
+        "station": "subway",
+        "subway": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q81242257",
+        "wikipedia": "zh:市一医院站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0494648,
+          30.590888
+        ]
+      },
+      "id": "node/13380485922"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380485923",
+        "name": "新园大道",
+        "name:en": "Xinyuan Avenue",
+        "name:zh": "新园大道",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3016",
+        "start_date": "2025-12-16",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0372783,
+          30.5904794
+        ]
+      },
+      "id": "node/13380485923"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380485924",
+        "name": "石羊东",
+        "name:en": "Shiyangdong",
+        "name:zh": "石羊东",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3017",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q135920995",
+        "wikipedia": "zh:石羊东站"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0306541,
+          30.586455
+        ]
+      },
+      "id": "node/13380485924"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380485925",
+        "name": "大同",
+        "name:en": "Datong",
+        "name:zh": "大同",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3018",
+        "start_date": "2025-12-16",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0146206,
+          30.5752522
+        ]
+      },
+      "id": "node/13380485925"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380485927",
+        "name": "谢家渡",
+        "name:en": "Xiejiadu",
+        "name:zh": "谢家渡",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3020",
+        "start_date": "2025-12-16",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9971821,
+          30.5666351
+        ]
+      },
+      "id": "node/13380485927"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13380485928",
+        "name": "光明",
+        "name:en": "Guangming",
+        "name:zh": "光明",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "3021",
+        "start_date": "2025-12-16",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9842418,
+          30.5642522
+        ]
+      },
+      "id": "node/13380485928"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13386314405",
+        "name": "文翁石室",
+        "name:en": "Wenweng Shishi",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q111225505"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0547819,
+          30.6514612
+        ]
+      },
+      "id": "node/13386314405"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13386314406",
+        "name": "华西坝",
+        "name:en": "Huaxiba",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q10905917"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.061871,
+          30.6468912
+        ]
+      },
+      "id": "node/13386314406"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13386314407",
+        "name": "九眼桥站",
+        "name:en": "Jiuyan Bridge",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "train": "yes",
+        "wikidata": "Q137407548"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0856619,
+          30.6419202
+        ]
+      },
+      "id": "node/13386314407"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13386314412",
+        "name": "杜甫草堂",
+        "name:en": "Du Fu Thatched Cottage",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q137407957"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0281107,
+          30.6649873
+        ]
+      },
+      "id": "node/13386314412"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13386314414",
+        "name": "光华村",
+        "name:en": "Guanghuacun",
+        "name:zh": "光华村",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q125826229"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0193017,
+          30.6647559
+        ]
+      },
+      "id": "node/13386314414"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13386314415",
+        "name": "万寿桥",
+        "name:en": "Wanshou Bridge",
+        "name:zh": "万寿桥",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "09/11",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q137409636"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9904311,
+          30.663953
+        ]
+      },
+      "id": "node/13386314415"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13386314419",
+        "name": "瓦窑滩",
+        "name:en": "Wayaotan",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9461183,
+          30.6647282
+        ]
+      },
+      "id": "node/13386314419"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13386314424",
+        "name": "万家湾",
+        "name:en": "Wanjiawan",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "wikidata": "Q137408397"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9609274,
+          30.6657468
+        ]
+      },
+      "id": "node/13386314424"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13545205827",
+        "name": "龙泉驿火车站",
+        "name:zh": "龙泉驿火车站",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1941205,
+          30.5977246
+        ]
+      },
+      "id": "node/13545205827"
+    }
+  ]
+}

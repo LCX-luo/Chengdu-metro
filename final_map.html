@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>成都地铁全网探索热力图 (全网黑框校正版)</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+    <style>
+        body, html { width: 100%; height: 100%; margin: 0; padding: 0; background-color: #ffffff; color: #333; font-family: sans-serif; overflow: hidden;}
+        #map-container { width: 100vw; height: 100vh; }
+        
+        .info-panel { position: absolute; top: 20px; left: 20px; z-index: 10; background: rgba(255, 255, 255, 0.9); padding: 20px; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 15px rgba(0,0,0,0.1); backdrop-filter: blur(5px);}
+        .info-panel h3 { margin-top: 0; color: #1890ff; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="info-panel">
+        <h3>成都地铁全网探索图</h3>
+        <div id="status" style="font-size: 14px; color: #ff9800;">正在加载全网轨道与站点数据...</div>
+    </div>
+
+    <div id="map-container"></div>
+
+    <script>
+        // 乘车频次记录
+        const stationFreq = {
+            "建设北路": 169, "前锋路": 52, "红星桥": 27, "春熙路": 26, "省体育馆": 20,
+            "双桥路": 19, "西博城": 15, "成都东客站": 14, "天府广场": 7, "梁家巷": 7,
+            "市二医院": 7, "双店路": 7, "西大街": 6, "锦城广场东": 5, "人民北路": 5,
+            "火车南站": 5, "孵化园": 5, "九江北": 4, "锦城广场": 3, "十陵": 3,
+            "有轨电车": 3, "沙湾": 3, "城隍庙": 3, "成都行政学院": 3, "芳草街": 3,
+            "倪家桥": 3, "世纪城": 3, "宽窄巷子": 2, "明蜀王陵": 2, "动物园": 2,
+            "海昌路": 2, "市一医院": 2, "二仙桥": 2, "凤凰大街": 2, "金华寺东路": 2,
+            "牛王庙": 2, "新南门": 2, "金花": 2, "东门大桥": 2, "玉双路": 2,
+            "人民公园": 2, "太升南路": 2, "娇子立交": 2, "天府三街": 2, "幸福梅林": 2,
+            "庆安": 2, "来龙": 2, "高洪": 2, "双流机场2航站楼": 2, "天府商务区": 2,
+            "蓝家店": 2, "龙华寺": 2, "新桥": 2, "机车厂": 2, "龙桥路": 1, "机投桥": 1, 
+            "双凤桥": 1, "蔡桥": 1, "团结新区": 1, "李家沱": 1, "牛市口": 1, "红高路": 1, 
+            "同乐": 1, "圣灯公园": 1, "三官堂": 1, "龙安": 1, "踏水桥": 1, "昭觉寺南路": 1, 
+            "大面铺": 1, "龙泉驿火车站南": 1, "民乐": 1, "骑龙": 1, "高升桥": 1, "文殊院": 1, 
+            "崔家店": 1, "天宇路": 1, "省骨科医院": 1, "新鸿路": 1, "抚琴": 1, "应天寺": 1, 
+            "武侯祠": 1, "双流西站": 1, "磨子桥": 1, "兴隆": 1, "科园": 1, "成都西站": 1, 
+            "三元": 1, "桐梓林": 1, "金府": 1, "升仙湖": 1, "火车北站": 1, "衣冠庙": 1, 
+            "寺圣": 1, "三圣花乡": 1, "光华村": 1, "锦城湖": 1, "兴隆湖": 1, "人民塘": 1, 
+            "天府机场1号2号航站楼": 1, "双流机场2航站楼东": 1, "九眼桥": 1
+        };
+
+        // 精准校正后的地理坐标字典补丁
+        const fallbackCoords = {
+            "成都行政学院": [104.1627, 30.6015],
+            "明蜀王陵": [104.1927, 30.6482],   // 精确校正：4号线东延段
+            "应天寺": [103.9061, 30.5394],     // 精确校正：10号线双流西与黄水之间
+            "升仙湖": [104.0786, 30.7111],     // 精确校正：1号线火车北站北侧
+            "有轨电车": [103.9660, 30.7300] 
+        };
+
+        const maxFreq = 169;
+        let chartInstance = echarts.init(document.getElementById('map-container'));
+
+        // 三段式色彩插值算法
+        function getStationColor(freq) {
+            if (freq === 0) return '#ffffff'; // 未去过的站点内部填充保持纯白
+
+            const lerp = (c1, c2, t) => {
+                return [
+                    Math.round(c1[0] + (c2[0] - c1[0]) * t),
+                    Math.round(c1[1] + (c2[1] - c1[1]) * t),
+                    Math.round(c1[2] + (c2[2] - c1[2]) * t)
+                ];
+            };
+
+            let rgb;
+            if (freq >= 1 && freq <= 10) {
+                let t = (freq - 1) / 9;
+                rgb = lerp([161, 217, 155], [35, 139, 69], t);
+            } else if (freq > 10 && freq <= 30) {
+                let t = (freq - 11) / 19;
+                rgb = lerp([255, 235, 59], [230, 81, 0], t);
+            } else {
+                let t = Math.min((freq - 31) / (maxFreq - 31), 1);
+                t = Math.pow(t, 0.5); 
+                rgb = lerp([244, 67, 54], [139, 0, 0], t);
+            }
+            return `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, 0.95)`;
+        }
+
+        window.onload = function() {
+            Promise.all([
+                fetch('https://geo.datav.aliyun.com/areas_v3/bound/510100_full.json').then(res => res.json()),
+                fetch('./export.geojson').then(res => res.json()),
+                fetch('./routes.geojson').then(res => res.json()).catch(() => ({ features: [] }))
+            ])
+            .then(([chengduMap, stationData, routeDataGeoJson]) => {
+                
+                echarts.registerMap('chengdu', chengduMap);
+                
+                let stationCoords = {};
+                stationData.features.forEach(feature => {
+                    let name = feature.properties?.name;
+                    if (name) {
+                        let cleanName = name.replace(/站$/, "").replace(/\(.*?\)/g, "").replace(/（.*?）/g, "").split(" ")[0].trim();
+                        let coords = feature.geometry.type === 'Point' ? feature.geometry.coordinates : 
+                                     feature.geometry.type === 'Polygon' ? feature.geometry.coordinates[0][0] : null;
+                        if (coords && coords[0] > 102 && coords[0] < 105 && coords[1] > 29 && coords[1] < 32) {
+                            stationCoords[cleanName] = coords;
+                        }
+                    }
+                });
+
+                // 覆盖合并精确校正字典
+                Object.assign(stationCoords, fallbackCoords);
+
+                let scatterData = [];
+                let visitedCount = 0;
+                let totalCount = 0;
+
+                for (let geoStation in stationCoords) {
+                    let coord = stationCoords[geoStation];
+                    let freq = 0;
+
+                    if (stationFreq[geoStation]) {
+                        freq = stationFreq[geoStation];
+                    } else {
+                        for (let myStation in stationFreq) {
+                            if (geoStation.includes(myStation) || myStation.includes(geoStation)) {
+                                freq = stationFreq[myStation];
+                                break;
+                            }
+                        }
+                    }
+
+                    if (freq > 0) visitedCount++;
+                    totalCount++;
+
+                    scatterData.push({
+                        name: geoStation,
+                        value: [coord[0], coord[1], freq]
+                    });
+                }
+
+                // 排序确保彩色高频点覆盖在底层普通白点之上
+                scatterData.sort((a, b) => a.value[2] - b.value[2]);
+
+                let routesDataList = [];
+                routeDataGeoJson.features.forEach(feature => {
+                    if (feature.geometry.type === 'LineString') {
+                        routesDataList.push({ coords: feature.geometry.coordinates });
+                    } else if (feature.geometry.type === 'MultiLineString') {
+                        feature.geometry.coordinates.forEach(lineSegment => {
+                            routesDataList.push({ coords: lineSegment });
+                        });
+                    }
+                });
+
+                document.getElementById('status').innerText = `全网共 ${totalCount} 站，您已点亮 ${visitedCount} 站。`;
+                document.getElementById('status').style.color = '#4caf50';
+
+                const option = {
+                    backgroundColor: '#ffffff', 
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: function (params) {
+                            if (params.seriesType === 'scatter') {
+                                return `${params.name}<br/>去过 <b>${params.value[2]}</b> 次`;
+                            }
+                        }
+                    },
+                    geo: {
+                        map: 'chengdu',
+                        roam: true, 
+                        zoom: 1.2,
+                        itemStyle: {
+                            areaColor: '#f5f7fa', 
+                            borderColor: '#dcdfe6' 
+                        },
+                        emphasis: { itemStyle: { areaColor: '#e4e7ed' } }
+                    },
+                    series: [
+                        {
+                            name: '地铁线网',
+                            type: 'lines',
+                            coordinateSystem: 'geo',
+                            polyline: true, 
+                            data: routesDataList,
+                            lineStyle: {
+                                color: '#1890ff', 
+                                width: 1.2,
+                                opacity: 0.15     
+                            },
+                            zlevel: 1 
+                        },
+                        {
+                            name: '地铁站点',
+                            type: 'scatter',
+                            coordinateSystem: 'geo',
+                            data: scatterData,
+                            symbolSize: function (val) {
+                                if (val[2] === 0) return 4.5; // 缩小没去过的站点尺寸，使其不显嘈杂
+                                let ratio = Math.pow(val[2] / maxFreq, 0.4);
+                                return 7 + ratio * 18; 
+                            },
+                            itemStyle: {
+                                color: function(params) {
+                                    return getStationColor(params.value[2]);
+                                },
+                                borderColor: '#000000', // 强制任意情况都保留黑色轮廓框
+                                borderWidth: 1.2        // 统一外边框线条粗细
+                            },
+                            label: {
+                                show: true,
+                                formatter: function(params) {
+                                    return params.value[2] >= 10 ? params.name : ''; 
+                                },
+                                position: 'right',
+                                color: '#333', 
+                                fontSize: 11,
+                                textBorderColor: '#fff', 
+                                textBorderWidth: 2
+                            },
+                            zlevel: 2 
+                        }
+                    ]
+                };
+                chartInstance.setOption(option);
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = '数据加载或渲染发生故障。';
+                document.getElementById('status').style.color = '#f44336';
+                console.error("整体流程失败:", error);
+            });
+        };
+
+        window.addEventListener('resize', () => chartInstance.resize());
+    </script>
+</body>
+</html>
