@@ -44,6 +44,20 @@
             background: #1890ff;
             border-radius: 3px 3px 0 0;
         }
+        
+        /* Github Star 链接样式 */
+        .github-star-link {
+            position: absolute;
+            right: 20px;
+            text-decoration: none;
+            color: #1890ff;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
+        }
+        .github-star-link:hover { color: #40a9ff; }
 
         /* 页面主体容器 */
         .main-content {
@@ -175,6 +189,10 @@
         <button class="nav-btn active" id="navBoard" onclick="switchMainTab('dashboard')">数据看板</button>
         <button class="nav-btn" id="navImport" onclick="switchMainTab('import')">导入数据</button>
         <button class="nav-btn" id="navHelp" onclick="switchMainTab('help')">使用教程</button>
+        
+        <a href="https://github.com/LCX-luo/Chengdu-metro" target="_blank" class="github-star-link">
+            ⭐ 喜欢吗？那就为项目点个star吧！
+        </a>
     </div>
 
     <div class="main-content">
@@ -228,7 +246,7 @@
                     <li>打开 <b>成都地铁</b> APP，进入底部【我的】页面</li>
                     <li>点击【我的行程】，查看全部乘车记录</li>
                     <li>页面右上角选择【开发票】功能</li>
-                    <li>填写个人接收邮箱，提交申请</li>
+                    <li>点击左下角 全选行程</li> <li>填写个人接收邮箱，提交申请</li>
                     <li>登录邮箱，下载收到的行程 PDF 文件</li>
                 </ol>
 
