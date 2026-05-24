@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>成都地铁数据探索看板 (全局导航版)</title>
+    <title>成都地铁数据探索看板 (默认底图可视版)</title>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
     <style>
         /* 基础样式复位 */
@@ -52,9 +52,46 @@
             position: relative;
         }
 
+        /* ------------------ 子视图：看板区 (默认显示) ------------------ */
+        .view-dashboard {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: block; /* ★ 修改：默认显示数据看板 */
+        }
+        #map-container { width: 100%; height: 100%; }
+        
+        /* 看板内部悬浮的小工具栏 */
+        .board-toolbar {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-width: 220px;
+            backdrop-filter: blur(5px);
+        }
+        .toggle-btn { padding: 6px 12px; font-size: 12px; border: 1px solid #dcdfe6; background: #fff; cursor: pointer; border-radius: 4px; font-weight: bold; flex: 1;}
+        .toggle-btn.active { background: #1890ff; color: #fff; border-color: #1890ff; }
+        .stats-summary { font-size: 12px; color: #555; line-height: 1.6; border-top: 1px dashed #eee; padding-top: 8px; margin-top: 2px;}
+
+        /* 加载动画遮罩 */
+        #global-loading {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255,255,255,0.9); z-index: 50;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 16px; font-weight: bold; color: #1890ff; flex-direction: column;
+        }
+
         /* ------------------ 子视图：导入区 ------------------ */
         .view-import {
-            display: flex;
+            display: none; /* ★ 修改：默认隐藏导入区 */
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -83,42 +120,15 @@
             cursor: pointer;
             font-size: 14px;
             transition: background 0.3s;
+            display: inline-block;
         }
         .custom-file-upload:hover { background: #40a9ff; }
-        .custom-file-upload.disabled { background: #ccc; cursor: not-allowed; }
         
         #sysStatus { margin-top: 20px; font-size: 14px; font-weight: bold; color: #ff9800; }
 
-        /* ------------------ 子视图：看板区 ------------------ */
-        .view-dashboard {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            display: none; /* 默认隐藏 */
-        }
-        #map-container { width: 100%; height: 100%; }
-        
-        /* 看板内部悬浮的小工具栏 */
-        .board-toolbar {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            z-index: 10;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .toggle-btn { padding: 6px 12px; font-size: 12px; border: 1px solid #dcdfe6; background: #fff; cursor: pointer; border-radius: 4px; font-weight: bold; }
-        .toggle-btn.active { background: #1890ff; color: #fff; border-color: #1890ff; }
-        .stats-summary { font-size: 12px; color: #555; line-height: 1.6; border-top: 1px dashed #eee; padding-top: 8px; margin-top: 2px;}
-
         /* ------------------ 子视图：教程区 ------------------ */
         .view-help {
-            display: none; /* 默认隐藏 */
+            display: none;
             height: 100%;
             overflow-y: auto;
             background: #f9fafc;
@@ -138,15 +148,9 @@
         .help-article ol { padding-left: 20px; color: #555; }
         .help-article li { margin-bottom: 8px; }
         .prompt-code {
-            background: #f4f6f9;
-            border: 1px solid #e1e4e8;
-            padding: 15px;
-            border-radius: 6px;
-            font-family: monospace;
-            font-size: 13px;
-            color: #d63200;
-            white-space: pre-wrap;
-            margin: 10px 0;
+            background: #f4f6f9; border: 1px solid #e1e4e8; padding: 15px;
+            border-radius: 6px; font-family: monospace; font-size: 13px;
+            color: #d63200; white-space: pre-wrap; margin: 10px 0;
         }
 
     </style>
@@ -155,33 +159,41 @@
 <body>
 
     <div class="top-navbar">
-        <button class="nav-btn active" id="navImport" onclick="switchMainTab('import')">导入数据</button>
-        <button class="nav-btn" id="navBoard" onclick="switchMainTab('dashboard')" style="display:none;">数据看板</button>
+        <button class="nav-btn active" id="navBoard" onclick="switchMainTab('dashboard')">数据看板</button>
+        <button class="nav-btn" id="navImport" onclick="switchMainTab('import')">导入数据</button>
         <button class="nav-btn" id="navHelp" onclick="switchMainTab('help')">使用教程</button>
     </div>
 
     <div class="main-content">
-        <div id="pageImport" class="view-import">
-            <div class="upload-card">
-                <div class="upload-title">导入成都地铁乘车记录</div>
-                <div class="upload-desc">请选择标准格式的 CSV 行程文件。数据仅在浏览器本地解析，绝不上云。</div>
-                <label for="csvInput" id="uploadLabel" class="custom-file-upload disabled">
-                    等待地图引擎就绪...
-                </label>
-                <input type="file" id="csvInput" accept=".csv" disabled />
-            </div>
-            <div id="sysStatus">正在拉取基础地理数据...</div>
-        </div>
-
+        
         <div id="pageDashboard" class="view-dashboard">
+            <div id="global-loading">
+                <div style="margin-bottom: 10px; font-size: 20px;">🗺️</div>
+                <div>正在连接底图数据...</div>
+            </div>
+
             <div class="board-toolbar">
                 <div style="display: flex; gap: 5px;">
                     <button id="btnMap" class="toggle-btn active" onclick="switchBoardType('map')">全网地图</button>
                     <button id="btnChart" class="toggle-btn" onclick="switchBoardType('chart')">频次排行</button>
                 </div>
-                <div id="statsSummary" class="stats-summary"></div>
+                <div id="statsSummary" class="stats-summary">
+                    <span style="color:#ff9800;">ℹ️ 当前为基础地图<br>请前往【导入数据】生成足迹</span>
+                </div>
             </div>
             <div id="map-container"></div>
+        </div>
+
+        <div id="pageImport" class="view-import">
+            <div class="upload-card">
+                <div class="upload-title">导入成都地铁乘车记录</div>
+                <div class="upload-desc">请选择标准格式的 CSV 行程文件。数据仅在浏览器本地解析，绝不上云。</div>
+                <label for="csvInput" id="uploadLabel" class="custom-file-upload">
+                    点击选择 CSV 文件
+                </label>
+                <input type="file" id="csvInput" accept=".csv" />
+            </div>
+            <div id="sysStatus"></div>
         </div>
 
         <div id="pageHelp" class="view-help">
@@ -220,10 +232,11 @@
                 <p style="color:#555;">获取 CSV 文件后，切换至本页面的 <b>[导入数据]</b> 板块，选择文件即可瞬间生成您的个人专属乘车足迹图表与排行分析。</p>
             </div>
         </div>
+
     </div>
 
     <script>
-        // ================= 坐标域别名库库 =================
+        // ================= 坐标与白名单配置 =================
         const fallbackCoords = {
             "成都行政学院": [104.1627, 30.6015], "明蜀王陵": [104.1927, 30.6482],   
             "应天寺": [103.9061, 30.5394], "升仙湖": [104.0786, 30.7111],     
@@ -245,14 +258,14 @@
         };
 
         // ================= 全局状态与 ECharts 初始化 =================
-        let chartInstance = null; // 延迟初始化
+        let chartInstance = null; 
         
         let globalStationCoords = {};
         let globalRoutesList = [];
         let globalStationFreq = {};
         let globalMaxFreq = 1;
         let globalTotalTrips = 0;
-        let boardType = 'map'; // 看板内部状态：'map' 或 'chart'
+        let boardType = 'map'; 
 
         function getStationColor(freq, maxFreq) {
             if (freq === 0) return '#ffffff'; 
@@ -275,18 +288,15 @@
 
         // ================= 视图流控 =================
         function switchMainTab(tab) {
-            // 控制导航栏高亮
-            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-            if(tab === 'import') document.getElementById('navImport').classList.add('active');
+            document.querySelectorAll('.top-navbar .nav-btn').forEach(btn => btn.classList.remove('active'));
             if(tab === 'dashboard') document.getElementById('navBoard').classList.add('active');
+            if(tab === 'import') document.getElementById('navImport').classList.add('active');
             if(tab === 'help') document.getElementById('navHelp').classList.add('active');
 
-            // 控制页面显示隐藏
-            document.getElementById('pageImport').style.display = tab === 'import' ? 'flex' : 'none';
             document.getElementById('pageDashboard').style.display = tab === 'dashboard' ? 'block' : 'none';
+            document.getElementById('pageImport').style.display = tab === 'import' ? 'flex' : 'none';
             document.getElementById('pageHelp').style.display = tab === 'help' ? 'block' : 'none';
 
-            // 如果切入看板页，触发重绘保证自适应
             if(tab === 'dashboard' && chartInstance) {
                 chartInstance.resize();
             }
@@ -314,7 +324,7 @@
 
                 const mapOption = {
                     backgroundColor: '#ffffff',
-                    tooltip: { trigger: 'item', formatter: p => p.seriesType === 'scatter' ? `${p.name}<br/>涉足: <b>${p.value[2]}</b> 次` : '' },
+                    tooltip: { trigger: 'item', formatter: p => p.seriesType === 'scatter' ? (p.value[2] > 0 ? `${p.name}<br/>涉足: <b>${p.value[2]}</b> 次` : `${p.name}<br/>尚未涉足`) : '' },
                     geo: {
                         map: 'chengdu', roam: true, zoom: 1.2,
                         itemStyle: { areaColor: '#f5f7fa', borderColor: '#dcdfe6' },
@@ -339,6 +349,16 @@
                     let freq = globalStationFreq[geoStation] || 0;
                     if (freq > 0) chartData.push({ name: geoStation, value: freq });
                 }
+                
+                // 如果没有数据，给个空状态提示
+                if (chartData.length === 0) {
+                    chartInstance.clear();
+                    chartInstance.setOption({
+                        title: { text: '暂无数据，请先导入乘车记录', left: 'center', top: 'center', textStyle: { color: '#999', fontWeight: 'normal' } }
+                    }, true);
+                    return;
+                }
+
                 chartData.sort((a, b) => b.value - a.value);
 
                 let xNames = chartData.map(item => item.name);
@@ -361,7 +381,7 @@
             }
         }
 
-        // ================= 引擎启动与数据拉取 =================
+        // ================= 引擎启动与底图拉取 =================
         window.onload = function() {
             Promise.all([
                 fetch('./chengdu_bound.geojson').then(res => res.json()),
@@ -402,18 +422,17 @@
                     }
                 });
 
-                // 基础数据就绪，激活上传组件
-                document.getElementById('sysStatus').innerText = '✅ 地图引擎已就绪，等待数据注入';
-                document.getElementById('sysStatus').style.color = '#4caf50';
-                
-                const uploadLabel = document.getElementById('uploadLabel');
-                uploadLabel.innerText = '点击选择 CSV 文件';
-                uploadLabel.classList.remove('disabled');
-                document.getElementById('csvInput').disabled = false;
+                // ★ 关键改动：底图数据加载完成后，立刻渲染看板地图并隐藏遮罩
+                document.getElementById('global-loading').style.display = 'none';
+                renderECharts();
+
             })
             .catch(error => {
-                document.getElementById('sysStatus').innerText = '❌ 底层地理数据拉取失败，请检查网络。';
-                document.getElementById('sysStatus').style.color = '#f44336';
+                document.getElementById('global-loading').innerHTML = `
+                    <div style="color:#f44336; font-size:24px; margin-bottom:10px;">❌</div>
+                    <div style="color:#f44336;">底层地理数据拉取失败</div>
+                    <div style="font-size:12px; color:#666; margin-top:10px;">请确保您已开启本地 HTTP 服务器</div>
+                `;
                 console.error(error);
             });
         };
@@ -423,7 +442,7 @@
             const file = e.target.files[0];
             if (!file) return;
 
-            document.getElementById('sysStatus').innerText = '正在执行运算...';
+            document.getElementById('sysStatus').innerText = '正在解析并映射空间坐标...';
             document.getElementById('sysStatus').style.color = '#1890ff';
 
             const reader = new FileReader();
@@ -461,20 +480,23 @@
                     let visitedCount = Object.keys(globalStationFreq).length;
                     let totalStations = Object.keys(globalStationCoords).length;
 
-                    // 更新统计面板
+                    // 更新看板浮窗的统计文案
                     document.getElementById('statsSummary').innerHTML = `
-                        总记录: <b>${globalTotalTrips}</b> 笔 | 
-                        已打卡: <b>${visitedCount}</b> / ${totalStations} 站 | 
-                        极值: <b>${globalMaxFreq}</b> 次
+                        总记录: <b>${globalTotalTrips}</b> 笔 <br/> 
+                        已打卡: <b>${visitedCount}</b> / ${totalStations} 站 <br/> 
+                        最高极值: <b>${globalMaxFreq}</b> 次
                     `;
 
-                    // 数据解析成功，解锁并跳转到看板视图
-                    document.getElementById('navBoard').style.display = 'block';
-                    switchMainTab('dashboard');
-                    renderECharts();
-
-                    document.getElementById('sysStatus').innerText = '✅ 数据已成功注入';
+                    // 数据解析成功，重置导入区提示，并强制跳转到数据看板
+                    document.getElementById('sysStatus').innerText = '✅ 数据注入成功，已为您切换至看板';
                     document.getElementById('sysStatus').style.color = '#4caf50';
+                    setTimeout(() => {
+                        document.getElementById('sysStatus').innerText = ''; // 延时清理提示
+                    }, 3000);
+                    
+                    switchMainTab('dashboard');
+                    switchBoardType('map'); // 默认看地图
+                    renderECharts();
 
                 } catch (error) {
                     document.getElementById('sysStatus').innerText = '❌ 文件格式错误无法解析';
