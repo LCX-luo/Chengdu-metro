@@ -470,6 +470,7 @@
         }
 
         // ================= 核心渲染逻辑 =================
+        // ================= 核心渲染逻辑 =================
         function renderECharts() {
             if (!chartInstance) chartInstance = echarts.init(document.getElementById('map-container'));
 
@@ -484,14 +485,31 @@
 
                 const mapOption = {
                     backgroundColor: '#ffffff',
-                    tooltip: { trigger: 'item', formatter: p => p.seriesType === 'scatter' ? (p.value[2] > 0 ? `${p.name}<br/>涉足: <b>${p.value[2]}</b> 次` : `${p.name}<br/>尚未涉足`) : '' },
-                    geo: {
-                        map: 'chengdu', roam: true, zoom: 1.2,
-                        itemStyle: { areaColor: '#f5f7fa', borderColor: '#dcdfe6' },
-                        emphasis: { itemStyle: { areaColor: '#e4e7ed' } }
+
+                    // 🌟 核心拦截器逻辑重构
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: function (p) {
+                            // 判断事件触发对象：如果当前悬浮的是散点图（地铁站点），则正常返回数据文本
+                            if (p.seriesType === 'scatter') {
+                                return p.value[2] > 0 ? `${p.name}<br/>涉足: <b>${p.value[2]}</b> 次` : `${p.name}<br/>尚未涉足`;
+                            }
+                            // 如果悬浮的是底图行政区划，这里不执行 return，函数自动返回 undefined
+                            // 借此特性，ECharts 将完全不会渲染任何提示框背景
+                        }
                     },
+
+                    geo: {
+                        map: 'chengdu',
+                        roam: true,
+                        zoom: 1.2,
+                        itemStyle: { areaColor: '#f5f7fa', borderColor: '#dcdfe6' },
+                        // 仅保留关闭高亮变色的设置，绝不去碰 tooltip
+                        emphasis: { disabled: true }
+                    },
+
                     series: [
-                        // 🌟 新增：基础路网层（颜色浅，线宽细，置于最底层 zlevel: 0）
+                        // zlevel 0: 基础路网层
                         {
                             name: '基础路网',
                             type: 'lines',
@@ -499,16 +517,17 @@
                             polyline: true,
                             data: globalBasicRoads,
                             lineStyle: { color: '#999999', width: 0.5, opacity: 0.3 },
-                            silent: true,
+                            silent: true, // 开启静默，防止鼠标拦截
                             zlevel: 0
                         },
-                        // 地铁线网层 (zlevel: 1)
+                        // zlevel 1: 地铁线网层
                         {
                             name: '地铁线网', type: 'lines', coordinateSystem: 'geo', polyline: true,
                             data: globalRoutesList, lineStyle: { color: '#1890ff', width: 1.2, opacity: 0.15 },
+                            silent: true, // 开启静默，防止线网干扰站点点击范围
                             zlevel: 1
                         },
-                        // 地铁站点层 (zlevel: 2)
+                        // zlevel 2: 地铁站点层
                         {
                             name: '地铁站点', type: 'scatter', coordinateSystem: 'geo', data: scatterData,
                             symbolSize: val => val[2] === 0 ? 4.5 : 7 + Math.pow(val[2] / globalMaxFreq, 0.4) * 18,
@@ -521,6 +540,7 @@
                 chartInstance.setOption(mapOption, true);
 
             } else if (boardType === 'chart') {
+                // ... (下方 chart 的代码保持原样不动)
                 let chartData = [];
                 for (let geoStation in globalStationCoords) {
                     let freq = globalStationFreq[geoStation] || 0;
@@ -556,7 +576,6 @@
                 chartInstance.setOption(chartOption, true);
             }
         }
-
         // ================= 引擎启动与底图拉取 =================
         window.onload = function () {
             Promise.all([
