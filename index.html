@@ -153,6 +153,19 @@
             color: #d63200; white-space: pre-wrap; margin: 10px 0;
         }
 
+        /* 报销提醒 - 红色加粗 */
+        .reimbursement-warning {
+            color: #d32f2f;
+            font-weight: bold;
+            background: #fff3f3;
+            border: 1px solid #ffcdd2;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 16px 0;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
     </style>
     <link rel="icon" href="data:,">
 </head>
@@ -202,6 +215,9 @@
                 <p style="color:#666;">本教程用于指导您如何导出个人乘车记录，并生成可直接导入本可视化项目的 CSV 文件。</p>
                 
                 <h2>一、APP 端导出行程 PDF</h2>
+                <div class="reimbursement-warning">
+                    ⚠️ 重要提醒：申请报销（开发票）仅有<u>一次机会</u>！如果您有报销需求，务必正确填写接收邮箱，并确认需要的报销格式（电子发票/纸质发票）。<b><u>强烈建议不要在 AI 免费转换环节浪费这次机会</u></b>——请先用少量行程测试 CSV 生成效果，确认无误后，再用真实完整数据正式走报销流程。
+                </div>
                 <ol>
                     <li>打开 <b>成都地铁</b> APP，进入底部【我的】页面</li>
                     <li>点击【我的行程】，查看全部乘车记录</li>
