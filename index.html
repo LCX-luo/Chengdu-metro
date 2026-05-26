@@ -389,6 +389,36 @@
 
                 <h2>三、使用说明</h2>
                 <p style="color:#555;">获取 CSV 文件后，切换至本页面的 <b>[导入数据]</b> 板块，选择文件即可瞬间生成您的个人专属乘车足迹图表与排行分析。</p>
+
+                <h2>四、数据异常处理（控制台警告）</h2>
+                <p style="color:#555;">导入 CSV 后，如果发现某些站点未显示在地图上，或统计数量与预期不符，请按以下步骤排查：</p>
+                <ol>
+                    <li>在页面中按 <b>F12</b> 或 <b>Ctrl+Shift+I</b> 打开浏览器开发者工具</li>
+                    <li>切换到 <b>Console（控制台）</b> 面板</li>
+                    <li>查看是否存在形如 <code>【警告】以下 CSV 行程中的站点无法在底图中匹配...</code> 的黄色警告输出</li>
+                    <li>警告中会列出所有未能匹配的站点名称 —— 这些站点的数据已被自动跳过，因此未计入统计</li>
+                </ol>
+                <p style="color:#555;">根本原因是 CSV 中的站点名称与底图数据中的名称存在差异（如多字、少字、错别字等），需要通过配置别名映射来解决。</p>
+
+                <h2>五、修复站点匹配问题（配置 stationAliasMap）</h2>
+                <p style="color:#555;">本项目提供了 <code>stationAliasMap</code> 别名映射机制，可将 CSV 中的名称重定向到底图中正确的站名：</p>
+                <ol>
+                    <li>用文本编辑器打开本页面 <code>index.html</code>（如果是本地版则打开 <code>final_map.html</code>）</li>
+                    <li>搜索 <code>stationAliasMap</code> 找到别名配置区域（约在第 413 行）</li>
+                    <li>按照现有格式添加映射条目：<br>
+                        <code>"CSV 中的原始站名": "底图中的标准站名"</code></li>
+                    <li>保存文件，刷新页面，<b>重新导入 CSV</b> 即可生效</li>
+                </ol>
+                <div class="prompt-code">// stationAliasMap 配置示例
+// 格式： "CSV里的写法": "地图里的标准名称"
+
+"火车北站": "火车北站",      // 别名与原值一致，强制参与匹配
+"春熙路站": "春熙路",        // CSV 多了一个"站"字，映射到无"站"的底图名称
+"天府广场站": "天府广场",    // 同上
+"界碑": "界牌"               // CSV 写了错别字，纠正到正确站名</div>
+                <div class="reimbursement-warning">
+                    ⚠️ 每次修改 <code>stationAliasMap</code> 后，必须刷新页面并<u>重新导入 CSV</u> 才能生效。建议先用少量数据测试确认匹配无误，再处理完整数据集。
+                </div>
             </div>
         </div>
 
@@ -653,6 +683,7 @@
                 globalTotalTrips = 0;
 
                 const lines = csvText.trim().split(/\r?\n/);
+                let unmappedStations = new Set();
                 for (let i = 1; i < lines.length; i++) {
                     const cols = lines[i].split(',');
                     if (cols.length >= 3) {
@@ -665,11 +696,19 @@
 
                         if (fromStation && globalStationCoords[fromStation]) {
                             globalStationFreq[fromStation] = (globalStationFreq[fromStation] || 0) + 1;
+                        } else if (fromStation) {
+                            unmappedStations.add(fromStation);
                         }
                         if (toStation && globalStationCoords[toStation]) {
                             globalStationFreq[toStation] = (globalStationFreq[toStation] || 0) + 1;
+                        } else if (toStation) {
+                            unmappedStations.add(toStation);
                         }
                     }
+                }
+
+                if (unmappedStations.size > 0) {
+                    console.warn("【警告】以下 CSV 行程中的站点无法在底图中匹配，已被舍弃。请在 stationAliasMap 中配置对应关系：", Array.from(unmappedStations));
                 }
 
                 for (let station in globalStationFreq) {

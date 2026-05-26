@@ -1,115 +1,490 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
-    <title>成都地铁数据探索看板 (严格白名单匹配版)</title>
+    <title>成都地铁数据探索看板 (本地运行版 · 严格匹配)</title>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
     <style>
-        body, html { width: 100%; height: 100%; margin: 0; padding: 0; background-color: #ffffff; color: #333; font-family: sans-serif; overflow: hidden;}
-        #map-container { width: 100vw; height: 100vh; position: absolute; top:0; left:0; z-index: 1; }
-        
-        .control-sidebar { 
-            position: absolute; 
-            top: 20px; 
-            left: 20px; 
-            z-index: 10; 
-            background: rgba(255, 255, 255, 0.95); 
-            padding: 12px; 
-            border-radius: 8px; 
-            border: 1px solid #ddd; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
-            backdrop-filter: blur(5px); 
-            width: 200px;
+        /* 基础样式复位 */
+        * {
+            box-sizing: border-box;
         }
-        
-        .view-tabs { display: flex; gap: 5px; margin-bottom: 10px; }
-        .tab-btn { 
-            flex: 1; 
-            padding: 6px 0; 
-            font-size: 12px; 
-            border: 1px solid #dcdfe6; 
-            background: #fff; 
-            cursor: pointer; 
-            border-radius: 4px; 
-            transition: all 0.2s;
-            font-weight: bold;
-        }
-        .tab-btn.active { 
-            background: #1890ff; 
-            color: #fff; 
-            border-color: #1890ff; 
-        }
-        .tab-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-        input[type="file"] { font-size: 11px; width: 100%; margin-top: 5px;}
-        .status-text { font-size: 12px; font-weight: bold; margin-top: 8px; color: #ff9800; }
-        .stats-summary { font-size: 11px; color: #666; line-height: 1.5; border-top: 1px dashed #eee; margin-top: 8px; padding-top: 8px; }
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        /* 顶部全局导航栏 */
+        .top-navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #ffffff;
+            height: 50px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: none;
+            padding: 0 20px;
+            height: 100%;
+            font-size: 15px;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-btn:hover {
+            color: #1890ff;
+        }
+
+        .nav-btn.active {
+            color: #1890ff;
+        }
+
+        .nav-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            width: 60%;
+            height: 3px;
+            background: #1890ff;
+            border-radius: 3px 3px 0 0;
+        }
+
+        /* Github Star 链接样式 */
+        .github-star-link {
+            position: absolute;
+            right: 20px;
+            text-decoration: none;
+            color: #1890ff;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .github-star-link:hover {
+            color: #40a9ff;
+        }
+
+        /* 页面主体容器 */
+        .main-content {
+            width: 100%;
+            height: calc(100vh - 50px);
+            position: relative;
+        }
+
+        /* ------------------ 子视图：看板区 (默认显示) ------------------ */
+        .view-dashboard {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: block;
+        }
+
+        #map-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 看板内部悬浮小工具栏 */
+        .board-toolbar {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-width: 220px;
+            backdrop-filter: blur(5px);
+        }
+
+        .toggle-btn {
+            padding: 6px 12px;
+            font-size: 12px;
+            border: 1px solid #dcdfe6;
+            background: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+            flex: 1;
+        }
+
+        .toggle-btn.active {
+            background: #1890ff;
+            color: #fff;
+            border-color: #1890ff;
+        }
+
+        .toggle-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .stats-summary {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.6;
+            border-top: 1px dashed #eee;
+            padding-top: 8px;
+            margin-top: 2px;
+        }
+
+        /* 加载动画遮罩 */
+        #global-loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: #1890ff;
+            flex-direction: column;
+        }
+
+        /* ------------------ 子视图：导入区 ------------------ */
+        .view-import {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background: #ffffff;
+            padding: 20px;
+        }
+
+        .upload-card {
+            background: #fff;
+            border: 1px dashed #d9d9d9;
+            border-radius: 8px;
+            padding: 40px 60px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            transition: border 0.3s;
+        }
+
+        .upload-card:hover {
+            border-color: #1890ff;
+        }
+
+        .upload-title {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .upload-desc {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 25px;
+        }
+
+        #csvInput {
+            display: none;
+        }
+
+        .custom-file-upload {
+            background: #1890ff;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .custom-file-upload:hover {
+            background: #40a9ff;
+        }
+
+        #sysStatus {
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #ff9800;
+        }
+
+        /* ------------------ 子视图：教程区 ------------------ */
+        .view-help {
+            display: none;
+            height: 100%;
+            overflow-y: auto;
+            background: #f9fafc;
+            padding: 40px 20px;
+        }
+
+        .help-article {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            line-height: 1.8;
+        }
+
+        .help-article h1 {
+            font-size: 24px;
+            color: #2c3e50;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .help-article h2 {
+            font-size: 18px;
+            color: #34495e;
+            margin-top: 30px;
+        }
+
+        .help-article ol {
+            padding-left: 20px;
+            color: #555;
+        }
+
+        .help-article li {
+            margin-bottom: 8px;
+        }
+
+        .prompt-code {
+            background: #f4f6f9;
+            border: 1px solid #e1e4e8;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 13px;
+            color: #d63200;
+            white-space: pre-wrap;
+            margin: 10px 0;
+        }
+
+        /* 报销提醒 - 红色加粗 */
+        .reimbursement-warning {
+            color: #d32f2f;
+            font-weight: bold;
+            background: #fff3f3;
+            border: 1px solid #ffcdd2;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 16px 0;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* 本地运行提醒 */
+        .local-run-box {
+            color: #096dd9;
+            font-weight: bold;
+            background: #e6f7ff;
+            border: 1px solid #91d5ff;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 16px 0;
+            font-size: 14px;
+            line-height: 1.7;
+        }
     </style>
+    <link rel="icon" href="data:,">
 </head>
+
 <body>
 
-    <div class="control-sidebar">
-        <div class="view-tabs">
-            <button id="tabMap" class="tab-btn active" onclick="switchView('map')">地图视图</button>
-            <button id="tabChart" class="tab-btn" onclick="switchView('chart')" disabled>数据排行</button>
-        </div>
-        
-        <div style="border-top: 1px solid #f0f0f0; padding-top: 6px;">
-            <span style="font-size: 11px; color: #888;">上传记录 (CSV):</span>
-            <input type="file" id="csvInput" accept=".csv" disabled />
-        </div>
-        
-        <div id="status" class="status-text">基础地理加载中...</div>
-        <div id="stats" class="stats-summary" style="display:none;"></div>
+    <div class="top-navbar">
+        <button class="nav-btn active" id="navBoard" onclick="switchMainTab('dashboard')">数据看板</button>
+        <button class="nav-btn" id="navImport" onclick="switchMainTab('import')">导入数据</button>
+        <button class="nav-btn" id="navHelp" onclick="switchMainTab('help')">使用教程</button>
+
+        <a href="https://github.com/LCX-luo/Chengdu-metro" target="_blank" class="github-star-link">
+            ⭐ 喜欢吗？那就为项目点个star吧！
+        </a>
     </div>
 
-    <div id="map-container"></div>
+    <div class="main-content">
+
+        <div id="pageDashboard" class="view-dashboard">
+            <div id="global-loading">
+                <div style="margin-bottom: 10px; font-size: 20px;">🗺️</div>
+                <div>正在加载地理数据...</div>
+            </div>
+
+            <div class="board-toolbar">
+                <div style="display: flex; gap: 5px;">
+                    <button id="btnMap" class="toggle-btn active" onclick="switchBoardType('map')">全网地图</button>
+                    <button id="btnChart" class="toggle-btn" onclick="switchBoardType('chart')" disabled>频次排行</button>
+                </div>
+                <div id="statsSummary" class="stats-summary">
+                    <span style="color:#ff9800;">ℹ️ 当前为基础地图<br>请前往【导入数据】生成足迹</span>
+                </div>
+            </div>
+            <div id="map-container"></div>
+        </div>
+
+        <div id="pageImport" class="view-import">
+            <div class="upload-card">
+                <div class="upload-title">导入成都地铁乘车记录</div>
+                <div class="upload-desc">请选择标准格式的 CSV 行程文件。数据仅在浏览器本地解析，绝不上云。</div>
+                <label for="csvInput" id="uploadLabel" class="custom-file-upload">
+                    点击选择 CSV 文件
+                </label>
+                <input type="file" id="csvInput" accept=".csv" />
+
+                <div style="border-top: 1px solid #eee; margin: 20px 0 14px;"></div>
+                <div style="font-size:13px; color:#888; margin-bottom:12px;">或直接加载仓库内置的示范数据体验</div>
+                <button id="loadDemoBtn" class="custom-file-upload" style="border:none; background:#52c41a;">
+                    🚇 加载示范数据
+                </button>
+            </div>
+            <div id="sysStatus"></div>
+        </div>
+
+        <div id="pageHelp" class="view-help">
+            <div class="help-article">
+                <h1>成都地铁个人行程数据获取指南</h1>
+                <p style="color:#666;">本教程用于指导您如何导出个人乘车记录，并生成可直接导入本可视化项目的 CSV 文件。</p>
+
+                <div class="local-run-box">
+                    🖥️ 本地运行说明：本页面（final_map.html）专为将整个仓库拉取到本地后运行而设计。<br>
+                    确保仓库根目录包含以下文件：<code>chengdu_bound.geojson</code>、<code>export.geojson</code>、<code>routes.geojson</code>、<code>chengdu_roads.geojson</code>、<code>test.csv</code>。<br><br>
+                    <b>运行方式：</b>由于浏览器安全策略，不能直接双击 HTML 文件（<code>file://</code> 协议会被拦截），必须通过 HTTP 服务器访问：<br>
+                    ① 使用 <b>VS Code</b> 安装 Live Server 插件，右键 <code>final_map.html</code> 选择 "Open with Live Server"<br>
+                    ② 或使用 <b>Python</b>：在仓库目录执行 <code>python -m http.server 8080</code>，然后访问 <a href="http://localhost:8080/final_map.html" target="_blank">http://localhost:8080/final_map.html</a><br>
+                    ③ 或使用 <b>Node.js</b>：执行 <code>npx serve .</code>，然后访问输出的 URL
+                </div>
+
+                <h2>一、APP 端导出行程 PDF</h2>
+                <div class="reimbursement-warning">
+                    ⚠️ 重要提醒：申请报销（开发票）仅有<u>一次机会</u>！如果您有报销需求，务必正确填写接收邮箱，并确认需要的报销格式（电子发票/纸质发票）。<b><u>强烈建议不要在 AI
+                            免费转换环节浪费这次机会</u></b>——请先用少量行程测试 CSV 生成效果，确认无误后，再用真实完整数据正式走报销流程。
+                </div>
+                <ol>
+                    <li>打开 <b>成都地铁</b> APP，进入底部【我的】页面</li>
+                    <li>点击【我的行程】，查看全部乘车记录</li>
+                    <li>页面右上角选择【开发票】功能</li>
+                    <li>点击左下角 全选行程</li>
+                    <li>填写个人接收邮箱，提交申请</li>
+                    <li>登录邮箱，下载收到的行程 PDF 文件</li>
+                </ol>
+
+                <h2>二、AI 转换为标准 CSV</h2>
+                <ol>
+                    <li>将下载好的行程 PDF 上传至您常用的 AI 助手（如 ChatGPT、Kimi 等）</li>
+                    <li>复制下方提示词发送，等待数据解析转换：</li>
+                </ol>
+                <div class="prompt-code">请解析这份地铁行程PDF文件，严格按照`序号,出发站,到达站,日期`的逗号分隔格式整理数据，输出标准CSV文本内容。
+                    如果遇到 -- 或 00 等无意义符号，说明是有轨电车数据，请将出发和到达站均统计为"有轨电车"。
+
+                    格式示例：
+                    序号,出发站,到达站,时间
+                    1,犀浦,洪河,2025.06.07
+                    2,建设北路,春熙路,2025.06.19
+
+                    整理完成后直接生成可下载的CSV文件。站点名称原样保留，日期统一保留年月日格式即可。</div>
+                <ol start="3">
+                    <li>下载 AI 生成的 CSV 文件</li>
+                </ol>
+
+                <h2>三、使用说明</h2>
+                <p style="color:#555;">获取 CSV 文件后，切换至本页面的 <b>[导入数据]</b> 板块，选择文件即可瞬间生成您的个人专属乘车足迹图表与排行分析。</p>
+
+                <h2>四、数据异常处理（控制台警告）</h2>
+                <p style="color:#555;">导入 CSV 后，如果发现某些站点未显示在地图上，或统计数量与预期不符，请按以下步骤排查：</p>
+                <ol>
+                    <li>在页面中按 <b>F12</b> 或 <b>Ctrl+Shift+I</b> 打开浏览器开发者工具</li>
+                    <li>切换到 <b>Console（控制台）</b> 面板</li>
+                    <li>查看是否存在形如 <code>【警告】以下 CSV 行程中的站点无法在底图中匹配...</code> 的黄色警告输出</li>
+                    <li>警告中会列出所有未能匹配的站点名称 —— 这些站点的数据已被自动跳过，因此未计入统计</li>
+                </ol>
+                <p style="color:#555;">根本原因是 CSV 中的站点名称与底图数据中的名称存在差异（如多字、少字、错别字等），需要通过配置别名映射来解决。</p>
+
+                <h2>五、修复站点匹配问题（配置 stationAliasMap）</h2>
+                <p style="color:#555;">本项目提供了 <code>stationAliasMap</code> 别名映射机制，可将 CSV 中的名称重定向到底图中正确的站名：</p>
+                <ol>
+                    <li>用文本编辑器打开 <code>final_map.html</code>（本地版）或 <code>index.html</code>（在线版）</li>
+                    <li>搜索 <code>stationAliasMap</code> 找到别名配置区域</li>
+                    <li>按照现有格式添加映射条目：<br>
+                        <code>"CSV 中的原始站名": "底图中的标准站名"</code></li>
+                    <li>保存文件，刷新页面，<b>重新导入 CSV</b> 即可生效</li>
+                </ol>
+                <div class="prompt-code">// stationAliasMap 配置示例
+// 格式： "CSV里的写法": "地图里的标准名称"
+
+"火车北站": "火车北站",      // 别名与原值一致，强制参与匹配
+"春熙路站": "春熙路",        // CSV 多了一个"站"字，映射到无"站"的底图名称
+"天府广场站": "天府广场",    // 同上
+"界碑": "界牌"               // CSV 写了错别字，纠正到正确站名</div>
+                <div class="reimbursement-warning">
+                    ⚠️ 每次修改 <code>stationAliasMap</code> 后，必须刷新页面并<u>重新导入 CSV</u> 才能生效。建议先用少量数据测试确认匹配无误，再处理完整数据集。
+                </div>
+            </div>
+        </div>
+
+    </div>
 
     <script>
-        // 1. 地理坐标库补丁 (WGS-84) - 移除了错误的龙泉驿火车站系列补丁
+        // ================= 坐标与白名单配置 =================
         const fallbackCoords = {
-            "成都行政学院": [104.1627, 30.6015],
-            "明蜀王陵": [104.1927, 30.6482],   
-            "应天寺": [103.9061, 30.5394],     
-            "升仙湖": [104.0786, 30.7111],     
-            "有轨电车": [103.9660, 30.7300],
-            "金星": [103.7919, 30.7586],
-            "黄石": [103.8118, 30.7243],
-            "市五医院": [103.8269, 30.7069],
-            "凤溪河": [103.8420, 30.6894],
-            "温泉大道": [103.8534, 30.6752],
-            "明光": [103.8663, 30.6612], 
-            "九江北": [103.9195, 30.6373]
+            "成都行政学院": [104.1627, 30.6015], "明蜀王陵": [104.1927, 30.6482],
+            "应天寺": [103.9061, 30.5394], "升仙湖": [104.0786, 30.7111],
+            "有轨电车": [103.9660, 30.7300], "金星": [103.7919, 30.7586],
+            "黄石": [103.8118, 30.7243], "市五医院": [103.8269, 30.7069],
+            "凤溪河": [103.8420, 30.6894], "温泉大道": [103.8534, 30.6752],
+            "明光": [103.8663, 30.6612], "九江北": [103.9195, 30.6373]
         };
 
-        // ★ 2. 截断白名单 (Preserved Station Names)
-        // 包含这些字眼的站名，绝对不允许被砍掉最后的“站”字
         const preserveSuffixList = [
-            "天府站", "成都东客站", "成都南站", "成都西站", "成都北站", 
-            "火车南站", "火车北站", "双流西站",  "龙泉驿火车站南"
+            "天府站", "成都东客站", "成都南站", "成都西站", "成都北站",
+            "火车南站", "火车北站", "双流西站", "龙泉驿火车站南"
         ];
 
-        // 3. 别名同义词库 (Alias Dictionary)
-        // 如果你的 CSV 里叫 A，但 OSM 地图里叫 B，就在这里写 "A": "B"
-        // 3. 别名同义词库 (Alias Dictionary)
         const stationAliasMap = {
             "天府机场1号2号航站楼": "天府机场1号2号航站楼",
             "双流机场2航站楼东": "双流机场2航站楼东",
-            "界碑": "界牌",               // ★ 新增：将错别字强制重定向到真实的“界牌”站
-            "茶店子客运站": "茶店子"      // ★ 新增：尝试匹配 OSM 地图中的简称
+            "界碑": "界牌",
+            "茶店子客运站": "茶店子"
         };
 
-        let chartInstance = echarts.init(document.getElementById('map-container'));
-        
+        // ================= 全局状态与 ECharts 初始化 =================
+        let chartInstance = null;
+
         let globalStationCoords = {};
         let globalRoutesList = [];
+        let globalBasicRoads = [];
         let globalStationFreq = {};
         let globalMaxFreq = 1;
         let globalTotalTrips = 0;
-        let currentView = 'map'; 
+        let boardType = 'map';
 
         function getStationColor(freq, maxFreq) {
-            if (freq === 0) return '#ffffff'; 
+            if (freq === 0) return '#ffffff';
             const lerp = (c1, c2, t) => [
                 Math.round(c1[0] + (c2[0] - c1[0]) * t),
                 Math.round(c1[1] + (c2[1] - c1[1]) * t),
@@ -117,46 +492,89 @@
             ];
             let rgb;
             if (freq >= 1 && freq <= 10) {
-                let t = (freq - 1) / 9;
-                rgb = lerp([161, 217, 155], [35, 139, 69], t || 0);
+                rgb = lerp([161, 217, 155], [35, 139, 69], ((freq - 1) / 9) || 0);
             } else if (freq > 10 && freq <= 30) {
-                let t = (freq - 11) / 19;
-                rgb = lerp([255, 235, 59], [230, 81, 0], t || 0);
+                rgb = lerp([255, 235, 59], [230, 81, 0], ((freq - 11) / 19) || 0);
             } else {
                 let maxRef = maxFreq > 31 ? maxFreq : 32;
-                let t = Math.min((freq - 31) / (maxRef - 31), 1);
-                rgb = lerp([244, 67, 54], [139, 0, 0], Math.pow(t, 0.5));
+                rgb = lerp([244, 67, 54], [139, 0, 0], Math.pow(Math.min((freq - 31) / (maxRef - 31), 1), 0.5));
             }
             return `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, 0.95)`;
         }
 
-        function updateDisplay() {
-            if (currentView === 'map') {
+        // ================= 视图流控 =================
+        function switchMainTab(tab) {
+            document.querySelectorAll('.top-navbar .nav-btn').forEach(btn => btn.classList.remove('active'));
+            if (tab === 'dashboard') document.getElementById('navBoard').classList.add('active');
+            if (tab === 'import') document.getElementById('navImport').classList.add('active');
+            if (tab === 'help') document.getElementById('navHelp').classList.add('active');
+
+            document.getElementById('pageDashboard').style.display = tab === 'dashboard' ? 'block' : 'none';
+            document.getElementById('pageImport').style.display = tab === 'import' ? 'flex' : 'none';
+            document.getElementById('pageHelp').style.display = tab === 'help' ? 'block' : 'none';
+
+            if (tab === 'dashboard' && chartInstance) {
+                chartInstance.resize();
+            }
+        }
+
+        function switchBoardType(type) {
+            boardType = type;
+            document.getElementById('btnMap').className = 'toggle-btn' + (type === 'map' ? ' active' : '');
+            document.getElementById('btnChart').className = 'toggle-btn' + (type === 'chart' ? ' active' : '');
+            renderECharts();
+        }
+
+        // ================= 核心渲染逻辑 =================
+        function renderECharts() {
+            if (!chartInstance) chartInstance = echarts.init(document.getElementById('map-container'));
+
+            if (boardType === 'map') {
                 let scatterData = [];
-                
-                // ★ 严格渲染逻辑
                 for (let geoStation in globalStationCoords) {
                     let coord = globalStationCoords[geoStation];
                     let freq = globalStationFreq[geoStation] || 0;
-                    
                     scatterData.push({ name: geoStation, value: [coord[0], coord[1], freq] });
                 }
-                
                 scatterData.sort((a, b) => a.value[2] - b.value[2]);
 
                 const mapOption = {
                     backgroundColor: '#ffffff',
+
                     tooltip: {
                         trigger: 'item',
-                        formatter: p => p.seriesType === 'scatter' ? `${p.name}<br/>涉足: <b>${p.value[2]}</b> 次` : ''
+                        formatter: function (p) {
+                            if (p.seriesType === 'scatter') {
+                                return p.value[2] > 0 ? `${p.name}<br/>涉足: <b>${p.value[2]}</b> 次` : `${p.name}<br/>尚未涉足`;
+                            }
+                        }
                     },
+
                     geo: {
-                        map: 'chengdu', roam: true, zoom: 1.2,
+                        map: 'chengdu',
+                        roam: true,
+                        zoom: 1.2,
                         itemStyle: { areaColor: '#f5f7fa', borderColor: '#dcdfe6' },
-                        emphasis: { itemStyle: { areaColor: '#e4e7ed' } }
+                        emphasis: { disabled: true }
                     },
+
                     series: [
-                        { name: '地铁线网', type: 'lines', coordinateSystem: 'geo', polyline: true, data: globalRoutesList, lineStyle: { color: '#1890ff', width: 1.2, opacity: 0.15 }, zlevel: 1 },
+                        {
+                            name: '基础路网',
+                            type: 'lines',
+                            coordinateSystem: 'geo',
+                            polyline: true,
+                            data: globalBasicRoads,
+                            lineStyle: { color: '#999999', width: 0.5, opacity: 0.3 },
+                            silent: true,
+                            zlevel: 0
+                        },
+                        {
+                            name: '地铁线网', type: 'lines', coordinateSystem: 'geo', polyline: true,
+                            data: globalRoutesList, lineStyle: { color: '#1890ff', width: 1.2, opacity: 0.15 },
+                            silent: true,
+                            zlevel: 1
+                        },
                         {
                             name: '地铁站点', type: 'scatter', coordinateSystem: 'geo', data: scatterData,
                             symbolSize: val => val[2] === 0 ? 4.5 : 7 + Math.pow(val[2] / globalMaxFreq, 0.4) * 18,
@@ -168,16 +586,21 @@
                 };
                 chartInstance.setOption(mapOption, true);
 
-            } else if (currentView === 'chart') {
+            } else if (boardType === 'chart') {
                 let chartData = [];
-                
                 for (let geoStation in globalStationCoords) {
                     let freq = globalStationFreq[geoStation] || 0;
-                    if (freq > 0) {
-                        chartData.push({ name: geoStation, value: freq });
-                    }
+                    if (freq > 0) chartData.push({ name: geoStation, value: freq });
                 }
-                
+
+                if (chartData.length === 0) {
+                    chartInstance.clear();
+                    chartInstance.setOption({
+                        title: { text: '暂无数据，请先导入乘车记录', left: 'center', top: 'center', textStyle: { color: '#999', fontWeight: 'normal' } }
+                    }, true);
+                    return;
+                }
+
                 chartData.sort((a, b) => b.value - a.value);
 
                 let xNames = chartData.map(item => item.name);
@@ -185,16 +608,13 @@
 
                 const chartOption = {
                     backgroundColor: '#ffffff',
-                    title: { text: '已去过车站频次排行', left: 'center', top: '15', textStyle: { fontSize: 16, color: '#333' } },
                     tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
-                    grid: { top: '70', left: '50', right: '40', bottom: '70', containLabel: true },
-                    xAxis: { type: 'category', data: xNames, axisLabel: { interval: 0, rotate: 35, fontStyle: 'normal', color: '#444' } },
-                    yAxis: { type: 'value', name: '乘车次数(进出站总计)', nameTextStyle: { color: '#666' } },
-                    dataZoom: [
-                        { type: 'slider', show: true, xAxisIndex: 0, startValue: 0, endValue: xNames.length > 15 ? 15 : xNames.length - 1, bottom: 15, height: 20 }
-                    ],
+                    grid: { top: '30', left: '50', right: '40', bottom: '70', containLabel: true },
+                    xAxis: { type: 'category', data: xNames, axisLabel: { interval: 0, rotate: 35, color: '#444' } },
+                    yAxis: { type: 'value', name: '乘车频次', nameTextStyle: { color: '#666' } },
+                    dataZoom: [{ type: 'slider', show: true, xAxisIndex: 0, startValue: 0, endValue: xNames.length > 15 ? 15 : xNames.length - 1, bottom: 15, height: 20 }],
                     series: [{
-                        name: '乘车次数', type: 'bar', barWidth: '55%', data: yValues,
+                        type: 'bar', barWidth: '55%', data: yValues,
                         itemStyle: { color: p => getStationColor(p.data, globalMaxFreq), borderColor: '#000000', borderWidth: 1.2 },
                         label: { show: true, position: 'top', color: '#333', fontSize: 10 }
                     }]
@@ -203,163 +623,173 @@
             }
         }
 
-        window.switchView = function(viewType) {
-            currentView = viewType;
-            document.getElementById('tabMap').className = 'tab-btn' + (viewType === 'map' ? ' active' : '');
-            document.getElementById('tabChart').className = 'tab-btn' + (viewType === 'chart' ? ' active' : '');
-            updateDisplay();
-        };
-
-        window.onload = function() {
+        // ================= 引擎启动与底图拉取（本地文件） =================
+        window.onload = function () {
             Promise.all([
-                fetch('https://geo.datav.aliyun.com/areas_v3/bound/510100_full.json').then(res => res.json()),
+                fetch('./chengdu_bound.geojson').then(res => res.json()),
                 fetch('./export.geojson').then(res => res.json()),
-                fetch('./routes.geojson').then(res => res.json()).catch(() => ({ features: [] }))
+                fetch('./routes.geojson').then(res => res.json()).catch(() => ({ features: [] })),
+                fetch('./chengdu_roads.geojson').then(res => res.json()).catch(() => ({ features: [] }))
             ])
-            .then(([chengduMap, stationData, routeDataGeoJson]) => {
-                
-                echarts.registerMap('chengdu', chengduMap);
+                .then(([chengduMap, stationData, routeDataGeoJson, roadDataGeoJson]) => {
 
-                // ★ 精密提取底图站点，加入白名单保护
-                stationData.features.forEach(feature => {
-                    let name = feature.properties?.name;
-                    if (name) {
-                        let cleanName = name;
-                        
-                        // 清理括号
-                        cleanName = cleanName.replace(/\(.*?\)/g, "").replace(/（.*?）/g, "").split(" ")[0].trim();
-                        
-                        // 判断是否在保护白名单中，如果不在，才切掉最后的“站”字
-                        let shouldTrim = true;
-                        for (let i=0; i<preserveSuffixList.length; i++) {
-                            if (cleanName === preserveSuffixList[i]) {
-                                shouldTrim = false;
-                                break;
+                    echarts.registerMap('chengdu', chengduMap);
+
+                    stationData.features.forEach(feature => {
+                        let name = feature.properties?.name;
+                        if (name) {
+                            let cleanName = name.replace(/\(.*?\)/g, "").replace(/（.*?）/g, "").split(" ")[0].trim();
+                            if (!preserveSuffixList.includes(cleanName)) {
+                                cleanName = cleanName.replace(/站$/, "");
+                            }
+                            let coords = feature.geometry.type === 'Point' ? feature.geometry.coordinates :
+                                feature.geometry.type === 'Polygon' ? feature.geometry.coordinates[0][0] : null;
+                            if (coords && coords[0] > 102 && coords[0] < 105 && coords[1] > 29 && coords[1] < 32) {
+                                globalStationCoords[cleanName] = coords;
                             }
                         }
-                        
-                        if (shouldTrim) {
-                            cleanName = cleanName.replace(/站$/, "");
-                        }
+                    });
+                    Object.assign(globalStationCoords, fallbackCoords);
 
-                        let coords = feature.geometry.type === 'Point' ? feature.geometry.coordinates : 
-                                     feature.geometry.type === 'Polygon' ? feature.geometry.coordinates[0][0] : null;
-                        if (coords && coords[0] > 102 && coords[0] < 105 && coords[1] > 29 && coords[1] < 32) {
-                            globalStationCoords[cleanName] = coords;
+                    routeDataGeoJson.features.forEach(feature => {
+                        if (feature.geometry.type === 'LineString') {
+                            globalRoutesList.push({ coords: feature.geometry.coordinates });
+                        } else if (feature.geometry.type === 'MultiLineString') {
+                            feature.geometry.coordinates.forEach(lineSegment => {
+                                globalRoutesList.push({ coords: lineSegment });
+                            });
                         }
-                    }
-                });
-                
-                Object.assign(globalStationCoords, fallbackCoords);
+                    });
 
-                routeDataGeoJson.features.forEach(feature => {
-                    if (feature.geometry.type === 'LineString') {
-                        globalRoutesList.push({ coords: feature.geometry.coordinates });
-                    } else if (feature.geometry.type === 'MultiLineString') {
-                        feature.geometry.coordinates.forEach(lineSegment => {
-                            globalRoutesList.push({ coords: lineSegment });
+                    if (roadDataGeoJson && roadDataGeoJson.features) {
+                        roadDataGeoJson.features.forEach(feature => {
+                            if (feature.geometry.type === 'LineString') {
+                                globalBasicRoads.push({ coords: feature.geometry.coordinates });
+                            } else if (feature.geometry.type === 'MultiLineString') {
+                                feature.geometry.coordinates.forEach(lineSegment => {
+                                    globalBasicRoads.push({ coords: lineSegment });
+                                });
+                            }
                         });
                     }
+
+                    document.getElementById('global-loading').style.display = 'none';
+                    renderECharts();
+
+                })
+                .catch(error => {
+                    document.getElementById('global-loading').innerHTML = `
+            <div style="color:#f44336; font-size:24px; margin-bottom:10px;">❌</div>
+            <div style="color:#f44336;">底层地理数据拉取失败</div>
+            <div style="font-size:12px; color:#666; margin-top:10px;">请确保您已开启本地 HTTP 服务器（参考使用教程中的本地运行说明）</div>
+        `;
+                    console.error(error);
                 });
-
-                updateDisplay();
-
-                document.getElementById('status').innerText = '底图就绪，请导入记录';
-                document.getElementById('status').style.color = '#1890ff';
-                document.getElementById('csvInput').disabled = false;
-            })
-            .catch(error => {
-                document.getElementById('status').innerText = '基础数据拉取故障。';
-                document.getElementById('status').style.color = '#f44336';
-                console.error(error);
-            });
         };
 
-        document.getElementById('csvInput').addEventListener('change', function(e) {
+        // ================= CSV 解析核心函数（严格匹配版） =================
+        function processCSVData(csvText) {
+            try {
+                globalStationFreq = {};
+                globalMaxFreq = 1;
+                globalTotalTrips = 0;
+
+                let unmappedStations = new Set();
+
+                const lines = csvText.trim().split(/\r?\n/);
+                for (let i = 1; i < lines.length; i++) {
+                    const cols = lines[i].split(',');
+                    if (cols.length >= 3) {
+                        globalTotalTrips++;
+                        let fromStation = cols[1].trim();
+                        let toStation = cols[2].trim();
+
+                        if (stationAliasMap[fromStation]) fromStation = stationAliasMap[fromStation];
+                        if (stationAliasMap[toStation]) toStation = stationAliasMap[toStation];
+
+                        if (fromStation && globalStationCoords[fromStation]) {
+                            globalStationFreq[fromStation] = (globalStationFreq[fromStation] || 0) + 1;
+                        } else if (fromStation) {
+                            unmappedStations.add(fromStation);
+                        }
+                        if (toStation && globalStationCoords[toStation]) {
+                            globalStationFreq[toStation] = (globalStationFreq[toStation] || 0) + 1;
+                        } else if (toStation) {
+                            unmappedStations.add(toStation);
+                        }
+                    }
+                }
+
+                if (unmappedStations.size > 0) {
+                    console.warn("【警告】以下 CSV 行程中的站点无法在底图中匹配，已被舍弃。请在 stationAliasMap 中配置对应关系：", Array.from(unmappedStations));
+                }
+
+                for (let station in globalStationFreq) {
+                    if (globalStationFreq[station] > globalMaxFreq) globalMaxFreq = globalStationFreq[station];
+                }
+
+                let visitedCount = Object.keys(globalStationFreq).length;
+                let totalStations = Object.keys(globalStationCoords).length;
+
+                document.getElementById('statsSummary').innerHTML = `
+            总记录: <b>${globalTotalTrips}</b> 笔 <br/>
+            已打卡: <b>${visitedCount}</b> / ${totalStations} 站 <br/>
+            最高极值: <b>${globalMaxFreq}</b> 次
+        `;
+
+                document.getElementById('btnChart').disabled = false;
+                document.getElementById('sysStatus').innerText = '✅ 数据注入成功，已为您切换至看板';
+                document.getElementById('sysStatus').style.color = '#4caf50';
+                setTimeout(() => {
+                    document.getElementById('sysStatus').innerText = '';
+                }, 3000);
+
+                switchMainTab('dashboard');
+                switchBoardType('map');
+                renderECharts();
+
+            } catch (error) {
+                document.getElementById('sysStatus').innerText = '❌ 文件格式错误无法解析';
+                document.getElementById('sysStatus').style.color = '#f44336';
+            }
+        }
+
+        // ================= CSV 注入：上传文件 =================
+        document.getElementById('csvInput').addEventListener('change', function (e) {
             const file = e.target.files[0];
             if (!file) return;
 
-            document.getElementById('status').innerText = '行程解析中...';
-            document.getElementById('status').style.color = '#ff9800';
+            document.getElementById('sysStatus').innerText = '正在解析并映射空间坐标...';
+            document.getElementById('sysStatus').style.color = '#1890ff';
 
             const reader = new FileReader();
-            reader.onload = function(event) {
-                try {
-                    const csvText = event.target.result;
-                    globalStationFreq = {};
-                    globalMaxFreq = 1;
-                    globalTotalTrips = 0;
-                    
-                    let unmappedStations = new Set(); // 记录未能在底图中找到的 CSV 孤儿站名
-
-                    const lines = csvText.trim().split(/\r?\n/);
-                    for (let i = 1; i < lines.length; i++) {
-                        const cols = lines[i].split(',');
-                        if (cols.length >= 3) {
-                            globalTotalTrips++;
-                            let fromStation = cols[1].trim();
-                            let toStation = cols[2].trim();
-                            
-                            // 先进行一次别名转换
-                            if (stationAliasMap[fromStation]) fromStation = stationAliasMap[fromStation];
-                            if (stationAliasMap[toStation]) toStation = stationAliasMap[toStation];
-                            
-                            // ★ 严格校验：只统计底图中真实存在的站点，不存在的直接扔进警告合集
-                            if (fromStation) {
-                                if(globalStationCoords[fromStation]) {
-                                    globalStationFreq[fromStation] = (globalStationFreq[fromStation] || 0) + 1;
-                                } else {
-                                    unmappedStations.add(fromStation);
-                                }
-                            }
-                            
-                            if (toStation) {
-                                if(globalStationCoords[toStation]) {
-                                    globalStationFreq[toStation] = (globalStationFreq[toStation] || 0) + 1;
-                                } else {
-                                    unmappedStations.add(toStation);
-                                }
-                            }
-                        }
-                    }
-
-                    // 抛出警告，通知开发者进行别名配置
-                    if (unmappedStations.size > 0) {
-                        console.warn("【警告】以下您的 CSV 行程站点无法在底图中匹配，已被舍弃。请在 `stationAliasMap` 中配置对应关系：", Array.from(unmappedStations));
-                    }
-
-                    for (let station in globalStationFreq) {
-                        if (globalStationFreq[station] > globalMaxFreq) {
-                            globalMaxFreq = globalStationFreq[station];
-                        }
-                    }
-
-                    let visitedCount = Object.keys(globalStationFreq).length;
-                    let totalStations = Object.keys(globalStationCoords).length;
-
-                    document.getElementById('tabChart').disabled = false;
-                    document.getElementById('status').innerText = '数据解析成功！';
-                    document.getElementById('status').style.color = '#4caf50';
-                    
-                    document.getElementById('stats').style.display = 'block';
-                    document.getElementById('stats').innerHTML = `
-                        总记录: <b>${globalTotalTrips}</b> 笔<br/>
-                        已打卡: <b>${visitedCount}</b> / ${totalStations} 站<br/>
-                        最高单站: <b>${globalMaxFreq}</b> 次
-                    `;
-
-                    updateDisplay();
-
-                } catch (error) {
-                    document.getElementById('status').innerText = 'CSV结构无法解析。';
-                    document.getElementById('status').style.color = '#f44336';
-                    console.error(error);
-                }
+            reader.onload = function (event) {
+                processCSVData(event.target.result);
             };
-            reader.readAsText(file, 'UTF-8'); 
+            reader.readAsText(file, 'UTF-8');
         });
 
-        window.addEventListener('resize', () => chartInstance.resize());
+        // ================= CSV 注入：一键加载示范数据 =================
+        document.getElementById('loadDemoBtn').addEventListener('click', function () {
+            document.getElementById('sysStatus').innerText = '正在拉取示范数据...';
+            document.getElementById('sysStatus').style.color = '#1890ff';
+
+            fetch('./test.csv')
+                .then(res => {
+                    if (!res.ok) throw new Error('HTTP ' + res.status);
+                    return res.text();
+                })
+                .then(csvText => {
+                    processCSVData(csvText);
+                })
+                .catch(err => {
+                    document.getElementById('sysStatus').innerText = '❌ 示范数据拉取失败：' + err.message;
+                    document.getElementById('sysStatus').style.color = '#f44336';
+                });
+        });
+
+        window.addEventListener('resize', () => { if (chartInstance) chartInstance.resize(); });
     </script>
 </body>
+
 </html>
