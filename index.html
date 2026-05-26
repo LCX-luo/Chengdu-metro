@@ -122,6 +122,36 @@
             backdrop-filter: blur(5px);
         }
 
+        .board-toolbar.chart-mode {
+            display: none;
+        }
+
+        /* 排行模式下小小的「回到地图」按钮 */
+        .back-to-map-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            display: none;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: bold;
+            border: 1px solid #dcdfe6;
+            background: rgba(255, 255, 255, 0.9);
+            color: #1890ff;
+            cursor: pointer;
+            border-radius: 4px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            transition: all 0.2s;
+        }
+
+        .back-to-map-btn:hover {
+            background: #1890ff;
+            color: #fff;
+            border-color: #1890ff;
+        }
+
         .toggle-btn {
             padding: 6px 12px;
             font-size: 12px;
@@ -320,7 +350,7 @@
                 <div>正在连接底图数据...</div>
             </div>
 
-            <div class="board-toolbar">
+            <div class="board-toolbar" id="boardToolbar">
                 <div style="display: flex; gap: 5px;">
                     <button id="btnMap" class="toggle-btn active" onclick="switchBoardType('map')">全网地图</button>
                     <button id="btnChart" class="toggle-btn" onclick="switchBoardType('chart')">频次排行</button>
@@ -329,6 +359,7 @@
                     <span style="color:#ff9800;">ℹ️ 当前为基础地图<br>请前往【导入数据】生成足迹</span>
                 </div>
             </div>
+            <button id="backToMapBtn" class="back-to-map-btn" onclick="switchBoardType('map')">← 回到地图</button>
             <div id="map-container"></div>
         </div>
 
@@ -496,6 +527,18 @@
             boardType = type;
             document.getElementById('btnMap').className = 'toggle-btn' + (type === 'map' ? ' active' : '');
             document.getElementById('btnChart').className = 'toggle-btn' + (type === 'chart' ? ' active' : '');
+
+            const toolbar = document.getElementById('boardToolbar');
+            const backBtn = document.getElementById('backToMapBtn');
+
+            if (type === 'chart') {
+                toolbar.classList.add('chart-mode');
+                backBtn.style.display = 'block';
+            } else {
+                toolbar.classList.remove('chart-mode');
+                backBtn.style.display = 'none';
+            }
+
             renderECharts();
         }
 
