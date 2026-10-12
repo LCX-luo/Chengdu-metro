@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 def main():
-    root = Path(__file__).resolve().parent
+    root = Path(__file__).resolve().parent.parent
     handler = partial(SimpleHTTPRequestHandler, directory=str(root))
     server = None
     for port in range(8000, 8011):

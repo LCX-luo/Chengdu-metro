@@ -21,20 +21,23 @@
 
 ```text
 .
-├── export.geojson    # 基础点位数据（成都地铁全网站点 GeoJSON）
-├── routes.geojson    # 基础线网数据（成都地铁轨道路径 GeoJSON）
-├── index.html        # 统一入口与地图渲染引擎
-├── final_map.html    # 旧入口兼容跳转
-├── time_analysis.html # 行程时间分析页面
-├── time_analysis.js   # CSV 解析与时间统计
-├── trip_insights.js   # 探索洞察计算与图表
-├── cost_analysis.js   # 金额覆盖检查与花费分析
-├── pdf_import.js     # PDF 表格还原与账单核对
-├── vendor/pdfjs/      # 本地 PDF.js 组件与许可证
-├── start_dashboards.bat # Windows 一键启动综合看板
-├── launch_local.py    # 本地服务器启动器
-├── test.csv           # 演示数据（个人 CSV / PDF 不提交）
-└── README.md         # 项目说明文档
+├── index.html             # 综合看板入口
+├── time_analysis.html     # 共享分析视图
+├── final_map.html         # 旧地图入口跳转
+├── start_dashboards.bat   # 一键启动
+├── assets/
+│   ├── js/                # 时间、探索、花费及 PDF 解析脚本
+│   ├── maps/              # GeoJSON 底图与线网
+│   └── data/test.csv      # 可公开的演示数据
+├── scripts/launch_local.py # 本地服务器启动器
+├── docs/                  # 行程获取与使用指南
+├── tests/                 # 解析和筛选测试
+├── vendor/pdfjs/          # PDF.js 与许可证
+├── personal/              # 仅本地保留，不提交远端
+│   ├── pdf/               # 三份原始行程单
+│   ├── csv/               # 当前汇总 CSV
+│   └── archive/           # 历史 CSV 和旧处理脚本
+└── README.md
 ```
 
 ## 🚀 快速启动与使用方法
@@ -113,7 +116,7 @@ Windows 双击 `start_dashboards.bat`：自动在脚本目录启动服务器，�
 
 分析交互参考 [Power BI 日期层级](https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-inline-hierarchy-labels)；图表缩放参考 [ECharts 时间轴](https://echarts.apache.org/handbook/en/concepts/axis/)。
 
-`.gitignore` 忽略个人 CSV、PDF、临时导出和本地环境，只保留 `test.csv` 演示数据。请将个人行程文件保留在本机。
+`.gitignore` 忽略个人 CSV、PDF、临时导出和本地环境，只保留 `assets/data/test.csv` 演示数据。请将个人行程文件保留在本机。
 
 为了让解析器正常工作，你上传的 CSV 文件必须包含合法的表头。程序主要读取 `出发站` 和 `到达站` 两列。
 
@@ -161,3 +164,7 @@ const stationAliasMap = {
 
 * **原因**：CSV 文件使用了不支持的编码，或者数据列被损坏。
 * **排查**：请确保 CSV 文件使用 `UTF-8` 编码保存。你可以用记事本打开 CSV，选择“另存为”，在编码选项中选择 `UTF-8`。同时确认文件包含正确的逗号分隔符 `,`。
+
+## 本地文件整理
+
+原始 PDF 已放入 `personal/pdf/`，最新四列汇总在 `personal/csv/20261012汇总.csv`；历史 CSV 与旧处理脚本在 `personal/archive/`。个人文件保留且不推送；临时测试输出和 Python 缓存已清理。网页地址保持不变，仍可双击根目录启动脚本。旧处理脚本仅供归档参考，其中原硬编码路径未调整。

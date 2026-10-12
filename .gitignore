@@ -3,11 +3,8 @@
 !test.csv
 *.pdf
 
-# Legacy local data-processing helpers
-/check.py
-/extract_pdf.py
-/merge.py
-/verify.py
+# Original bills, private exports and archived local scripts
+/personal/
 
 # Python, development tools and temporary exports
 __pycache__/

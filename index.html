@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>成都地铁 · 地图与行程综合分析</title>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
-    <script src="time_analysis.js"></script>
+    <script src="assets/js/time_analysis.js"></script>
     <style>
         /* 基础样式复位 */
         * {
@@ -666,14 +666,14 @@
         // ================= 引擎启动与底图拉取 =================
         window.onload = function () {
             Promise.all([
-                fetch('./chengdu_bound.geojson').then(res => res.json()),
-                fetch('./export.geojson').then(res => {
+                fetch('./assets/maps/chengdu_bound.geojson').then(res => res.json()),
+                fetch('./assets/maps/export.geojson').then(res => {
                     const ct = res.headers.get("content-type");
                     if (ct && ct.includes("text/html")) throw new Error("GitHub拦截");
                     return res.json();
                 }),
-                fetch('./routes.geojson').then(res => res.json()).catch(() => ({ features: [] })),
-                fetch('./chengdu_roads.geojson').then(res => res.json()).catch(() => ({ features: [] })) // 🌟 新增：基础路网请求
+                fetch('./assets/maps/routes.geojson').then(res => res.json()).catch(() => ({ features: [] })),
+                fetch('./assets/maps/chengdu_roads.geojson').then(res => res.json()).catch(() => ({ features: [] })) // 🌟 新增：基础路网请求
             ])
                 .then(([chengduMap, stationData, routeDataGeoJson, roadDataGeoJson]) => {
 
@@ -813,7 +813,7 @@
             status.textContent = '正在加载 PDF 解析组件…';
             let fileName='';
             try {
-                const parser = await import('./pdf_import.js');
+                const parser = await import('./assets/js/pdf_import.js');
                 const results=[];
                 for(const file of files) {
                     fileName=file.name;
@@ -842,7 +842,7 @@
             document.getElementById('sysStatus').innerText = '正在拉取示范数据...';
             document.getElementById('sysStatus').style.color = '#1890ff';
 
-            fetch('./test.csv')
+            fetch('./assets/data/test.csv')
                 .then(res => {
                     if (!res.ok) throw new Error('HTTP ' + res.status);
                     return res.text();

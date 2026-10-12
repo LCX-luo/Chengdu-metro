@@ -75,8 +75,8 @@ export function toCSV(rows){return '\uFEFF'+rows.map(row=>row.map(value=>'"'+Str
 
 let engine;
 async function getEngine(){
-  if(!engine)engine=import('./vendor/pdfjs/pdf.min.js').then(lib=>{
-    lib.GlobalWorkerOptions.workerSrc=new URL('./vendor/pdfjs/pdf.worker.min.js',import.meta.url).href;
+  if(!engine)engine=import('../../vendor/pdfjs/pdf.min.js').then(lib=>{
+    lib.GlobalWorkerOptions.workerSrc=new URL('../../vendor/pdfjs/pdf.worker.min.js',import.meta.url).href;
     return lib;
   }).catch(error=>{engine=null;throw new TripPDFError('PDF 解析组件加载失败，请刷新页面重试。',{cause:String(error),stack:error.stack});});
   return engine;
