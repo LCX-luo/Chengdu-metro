@@ -25,18 +25,18 @@
 ├── time_analysis.html     # 共享分析视图
 ├── final_map.html         # 旧地图入口跳转
 ├── start_dashboards.bat   # 一键启动
-├── assets/
-│   ├── js/                # 时间、探索、花费及 PDF 解析脚本
-│   ├── maps/              # GeoJSON 底图与线网
-│   └── data/test.csv      # 可公开的演示数据
-├── scripts/launch_local.py # 本地服务器启动器
-├── docs/                  # 行程获取与使用指南
-├── tests/                 # 解析和筛选测试
-├── vendor/pdfjs/          # PDF.js 与许可证
-├── personal/              # 仅本地保留，不提交远端
-│   ├── pdf/               # 三份原始行程单
-│   ├── csv/               # 当前汇总 CSV
-│   └── archive/           # 历史 CSV 和旧处理脚本
+├── 网站资源/
+│   ├── 脚本/                # 时间、探索、花费及 PDF 解析脚本
+│   ├── 地图/              # GeoJSON 底图与线网
+│   └── 示例数据/test.csv      # 可公开的演示数据
+├── 启动脚本/launch_local.py # 本地服务器启动器
+├── 使用说明/                  # 行程获取与使用指南
+├── 测试/                 # 解析和筛选测试
+├── 第三方组件/PDF解析组件/          # PDF.js 与许可证
+├── 个人数据/              # 仅本地保留，不提交远端
+│   ├── 原始行程单/               # 三份原始行程单
+│   ├── 汇总CSV/               # 当前汇总 CSV
+│   └── 历史归档/           # 历史 CSV 和旧处理脚本
 └── README.md
 ```
 
@@ -80,11 +80,11 @@ Windows 双击 `start_dashboards.bat`：自动在脚本目录启动服务器，�
 
 ### PDF 行程单导入
 
-在“导入数据”中点击“选择 PDF 行程单”，可多选同类型文件。支持成都地铁 App 导出的文字型 PDF，自动处理重复加粗文字、特殊字形、分页续接和有轨电车标记。每个账单的序号、笔数、金额、交易时间均需校验通过；全部所选文件成功后，才替换旧数据并进入地图。当前不支持扫描件、加密文件或其他平台账单。
+开发票邮件可能包含发票 PDF、XML、OFD 等附件，下载其中的“行程单.pdf”即可。然后在“导入数据”中点击“选择 PDF 行程单”，可多选同类型文件。支持成都地铁 App 导出的文字型 PDF，自动处理重复加粗文字、特殊字形、分页续接和有轨电车标记。每个账单的序号、笔数、金额、交易时间均需校验通过；全部所选文件成功后，才替换旧数据并进入地图。当前不支持扫描件、加密文件或其他平台账单。
 
 页面显示逐页进度和简短错误原因；F12 → Console 中的 `[行程导入]` 日志包含文件名、每页提取数量、账单预期 / 实际笔数及金额、未识别记录、错误堆栈。失败后保留原数据，可以重新选择文件。PDF 解析保留秒级交易时间，导出筛选行程 CSV 可保存这些记录。
 
-解析使用随网站提供的 PDF.js 5.6.205（Apache-2.0），核心组件和 worker 在 `vendor/pdfjs/`，不依赖额外 PDF CDN，也不上传行程单。PDF.js API 参考 [官方示例](https://mozilla.github.io/pdf.js/examples/)，许可证见 `vendor/pdfjs/LICENSE`。
+解析使用随网站提供的 PDF.js 5.6.205（Apache-2.0），核心组件和 worker 在 `第三方组件/PDF解析组件/`，不依赖额外 PDF CDN，也不上传行程单。PDF.js API 参考 [官方示例](https://mozilla.github.io/pdf.js/examples/)，许可证见 `第三方组件/PDF解析组件/LICENSE`。
 
 ### 花费分析与新版 CSV
 
@@ -116,7 +116,7 @@ Windows 双击 `start_dashboards.bat`：自动在脚本目录启动服务器，�
 
 分析交互参考 [Power BI 日期层级](https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-inline-hierarchy-labels)；图表缩放参考 [ECharts 时间轴](https://echarts.apache.org/handbook/en/concepts/axis/)。
 
-`.gitignore` 忽略个人 CSV、PDF、临时导出和本地环境，只保留 `assets/data/test.csv` 演示数据。请将个人行程文件保留在本机。
+`.gitignore` 忽略个人 CSV、PDF、临时导出和本地环境，只保留 `网站资源/示例数据/test.csv` 演示数据。请将个人行程文件保留在本机。
 
 为了让解析器正常工作，你上传的 CSV 文件必须包含合法的表头。程序主要读取 `出发站` 和 `到达站` 两列。
 
@@ -167,4 +167,4 @@ const stationAliasMap = {
 
 ## 本地文件整理
 
-原始 PDF 已放入 `personal/pdf/`，最新四列汇总在 `personal/csv/20261012汇总.csv`；历史 CSV 与旧处理脚本在 `personal/archive/`。个人文件保留且不推送；临时测试输出和 Python 缓存已清理。网页地址保持不变，仍可双击根目录启动脚本。旧处理脚本仅供归档参考，其中原硬编码路径未调整。
+原始 PDF 已放入 `个人数据/原始行程单/`，最新四列汇总在 `个人数据/汇总CSV/20261012汇总.csv`；历史 CSV 与旧处理脚本在 `个人数据/历史归档/`。个人文件保留且不推送；临时测试输出和 Python 缓存已清理。网页地址保持不变，仍可双击根目录启动脚本。旧处理脚本仅供归档参考，其中原硬编码路径未调整。

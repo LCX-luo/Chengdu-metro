@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
-import { parsePages, reconstructLines } from '../assets/js/pdf_import.js';
-import '../assets/js/cost_analysis.js';
+import { parsePages, reconstructLines } from '../网站资源/脚本/pdf_import.js';
+import '../网站资源/脚本/cost_analysis.js';
 
 const T=globalThis.TripTime;
 const bill=lines=>[{page:1,lines}];

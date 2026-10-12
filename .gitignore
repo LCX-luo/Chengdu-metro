@@ -1,10 +1,10 @@
 # Personal trip data stays local; retain the tracked demonstration fixture.
 *.csv
-!test.csv
+!/网站资源/示例数据/test.csv
 *.pdf
 
 # Original bills, private exports and archived local scripts
-/personal/
+/个人数据/
 
 # Python, development tools and temporary exports
 __pycache__/

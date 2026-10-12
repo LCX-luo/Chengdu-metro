@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>成都地铁 · 地图与行程综合分析</title>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
-    <script src="assets/js/time_analysis.js"></script>
+    <script src="网站资源/脚本/time_analysis.js"></script>
     <style>
         /* 基础样式复位 */
         * {
@@ -395,7 +395,7 @@
                 <div style="border-top:1px solid #eee;margin:18px 0"></div>
                 <label for="pdfInput" class="custom-file-upload" id="pdfUploadLabel">选择 PDF 行程单</label>
                 <input type="file" id="pdfInput" accept=".pdf,application/pdf" multiple hidden />
-                <p style="font-size:13px;color:#667d7b;text-align:left;line-height:1.7">支持成都地铁 App 导出的文字型行程单 PDF，可一次选择多份。自动提取站点、秒级交易时间，核对每份账单的笔数与金额，默认去重后展示。扫描件、加密文件和其他格式暂不支持；失败原因显示在下方，诊断详情见 F12 → Console。有轨电车两端统一为“有轨电车”，每行计一笔行程。</p>
+                <p style="font-size:13px;color:#667d7b;text-align:left;line-height:1.7">请从开发票邮件中下载附件“行程单.pdf”。支持成都地铁 App 导出的文字型行程单 PDF，可一次选择多份。自动提取站点、秒级交易时间，核对每份账单的笔数与金额，默认去重后展示。扫描件、加密文件和其他格式暂不支持；失败原因显示在下方，诊断详情见 F12 → Console。有轨电车两端统一为“有轨电车”，每行计一笔行程。</p>
 
                 <div style="border-top: 1px solid #eee; margin: 20px 0 14px;"></div>
                 <div style="font-size:13px; color:#888; margin-bottom:12px;">或直接加载仓库内置的示范数据体验</div>
@@ -414,7 +414,7 @@
                 <ol>
                     <li>在成都地铁 App 的“我的 → 我的行程”中，按 App 当前提供的流程导出所需行程单。</li>
                     <li>如果通过“开发票”接收行程单，请核对邮箱和所选行程，并按实际报销要求操作。</li>
-                    <li>从收到的邮件中下载原始 PDF；无需先转换成 CSV，也无需截图。</li>
+                    <li>开发票邮件可能同时附有发票 PDF、XML、OFD 和行程单。请下载附件中的 <b>“行程单.pdf”</b>，导入这个文件即可。</li>
                 </ol>
                 <h2>二、导入 PDF 或 CSV</h2>
                 <ol>
@@ -666,14 +666,14 @@
         // ================= 引擎启动与底图拉取 =================
         window.onload = function () {
             Promise.all([
-                fetch('./assets/maps/chengdu_bound.geojson').then(res => res.json()),
-                fetch('./assets/maps/export.geojson').then(res => {
+                fetch('./网站资源/地图/chengdu_bound.geojson').then(res => res.json()),
+                fetch('./网站资源/地图/export.geojson').then(res => {
                     const ct = res.headers.get("content-type");
                     if (ct && ct.includes("text/html")) throw new Error("GitHub拦截");
                     return res.json();
                 }),
-                fetch('./assets/maps/routes.geojson').then(res => res.json()).catch(() => ({ features: [] })),
-                fetch('./assets/maps/chengdu_roads.geojson').then(res => res.json()).catch(() => ({ features: [] })) // 🌟 新增：基础路网请求
+                fetch('./网站资源/地图/routes.geojson').then(res => res.json()).catch(() => ({ features: [] })),
+                fetch('./网站资源/地图/chengdu_roads.geojson').then(res => res.json()).catch(() => ({ features: [] })) // 🌟 新增：基础路网请求
             ])
                 .then(([chengduMap, stationData, routeDataGeoJson, roadDataGeoJson]) => {
 
@@ -813,7 +813,7 @@
             status.textContent = '正在加载 PDF 解析组件…';
             let fileName='';
             try {
-                const parser = await import('./assets/js/pdf_import.js');
+                const parser = await import('./网站资源/脚本/pdf_import.js');
                 const results=[];
                 for(const file of files) {
                     fileName=file.name;
@@ -842,7 +842,7 @@
             document.getElementById('sysStatus').innerText = '正在拉取示范数据...';
             document.getElementById('sysStatus').style.color = '#1890ff';
 
-            fetch('./assets/data/test.csv')
+            fetch('./网站资源/示例数据/test.csv')
                 .then(res => {
                     if (!res.ok) throw new Error('HTTP ' + res.status);
                     return res.text();
