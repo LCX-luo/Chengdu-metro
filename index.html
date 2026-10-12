@@ -7,6 +7,8 @@
     <title>成都地铁 · 地图与行程综合分析</title>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
     <script src="网站资源/脚本/time_analysis.js"></script>
+    <script src="网站资源/脚本/访问统计配置.js"></script>
+    <script src="网站资源/脚本/访问统计.js"></script>
     <style>
         /* 基础样式复位 */
         * {
@@ -461,6 +463,10 @@ CSV 格式示例（金额仅用于展示格式）：
                 <p>旧版 CSV 没有金额时，打开本页会提示，但其他分析照常使用。部分缺失或不合法的金额不按 0 元计算，页面显示金额覆盖率；实际 0 元记录保留。同一行程金额冲突时不计入花费，控制台列出原因。出发站、到达站花费分别归组，不可相加；有轨电车每笔费用只汇总一次。花费页同样遵循确认后的筛选。</p>
                 <h2>七、导出与本地使用</h2>
                 <p>时间分析和探索洞察底部可“导出统计 CSV”“导出筛选行程 CSV”，也可打印或保存 PDF。导出的行程保留秒级时间和金额列，无金额记录留空；统计导出也包含花费指标。Windows 双击 <code>start_dashboards.bat</code> 启动本地服务器并打开综合看板；保持窗口运行，关闭或 Ctrl+C 停止。</p>
+                <h2>访问统计与隐私</h2>
+                <p>启用访问统计后，网站使用 Umami 汇总浏览量、估算独立访客及功能使用次数，包括成功导入、筛选和导出操作。统计服务会接收基本访问元数据（如页面路径、浏览器语言和访问来源域名），并可利用请求 IP 等信息匿名估算访客。个人行程单、文件名、站点、时间、金额、筛选内容和解析日志均不发送；不记录操作回放，也不创建永久个人身份编号。</p>
+                <p>独立访客是估算值，更换设备、网络或浏览器可能影响计数。浏览器隐私设置、拦截器或网络故障可能使统计遗漏，不影响网页正常使用。</p>
+                <label><input type="checkbox" data-analytics-optout> 关闭此浏览器的访问与功能使用统计</label>
                 <h2>八、解析失败与诊断</h2>
                 <ol>
                     <li>失败时页面显示简短原因，原有数据保留，不导入未核对成功的部分结果。</li>
@@ -533,6 +539,7 @@ CSV 格式示例（金额仅用于展示格式）：
 
         // ================= 视图流控 =================
         function switchMainTab(tab) {
+            if (currentTab !== tab) window.MetroAnalytics.track('view-' + tab);
             currentTab = tab;
             document.querySelectorAll('.top-navbar .nav-btn').forEach(btn => btn.classList.remove('active'));
             if (tab === 'dashboard') document.getElementById('navBoard').classList.add('active');
@@ -818,7 +825,7 @@ CSV 格式示例（金额仅用于展示格式）：
                     rows.push(...records.map(row => [...indexes.map(i => row[i] || ''),amountIndex<0?'':row[amountIndex]||'']));
                 }
                 const text = [['出发站','到达站','时间','金额'], ...rows].map(row => row.map(s => '"' + s.replace(/"/g, '""') + '"').join(',')).join('\r\n');
-                processCSVData(text, files.map(f => f.name).join(' + '));
+                if (processCSVData(text, files.map(f => f.name).join(' + '))) window.MetroAnalytics.track('import-csv-success');
             } catch(error) { document.getElementById('sysStatus').textContent = '导入失败：'+error.message;console.error('[行程导入] CSV 读取失败',error); }
         });
 
@@ -844,6 +851,7 @@ CSV 格式示例（金额仅用于展示格式）：
                 const rows=results.flatMap(result=>result.rows.map(row=>[row.from,row.to,row.time,(row.cents/100).toFixed(2)]));
                 const csv=parser.toCSV([['出发站','到达站','时间','金额'],...rows]);
                 if(processCSVData(csv,files.map(file=>file.name).join(' + '))) {
+                    window.MetroAnalytics.track('import-pdf-success');
                     status.textContent += ' PDF 笔数与金额核对通过。';
                     console.info('[行程导入] PDF 合并完成',{files:files.map(f=>f.name),records:rows.length});
                 }
@@ -867,7 +875,7 @@ CSV 格式示例（金额仅用于展示格式）：
                     return res.text();
                 })
                 .then(csvText => {
-                    processCSVData(csvText);
+                    if (processCSVData(csvText)) window.MetroAnalytics.track('load-demo-success');
                 })
                 .catch(err => {
                     document.getElementById('sysStatus').innerText = '❌ 示范数据拉取失败：' + err.message;
