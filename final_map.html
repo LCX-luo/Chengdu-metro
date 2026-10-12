@@ -48,6 +48,11 @@
             position: relative;
         }
 
+        a.nav-btn {
+            display: inline-flex;
+            align-items: center;
+        }
+
         .nav-btn:hover {
             color: #1890ff;
         }
@@ -352,6 +357,7 @@
         <button class="nav-btn active" id="navBoard" onclick="switchMainTab('dashboard')">数据看板</button>
         <button class="nav-btn" id="navImport" onclick="switchMainTab('import')">导入数据</button>
         <button class="nav-btn" id="navHelp" onclick="switchMainTab('help')">使用教程</button>
+        <a class="nav-btn" href="time_analysis.html" target="_blank" rel="noopener noreferrer" style="text-decoration:none">时间分析 ↗</a>
 
         <a href="https://github.com/LCX-luo/Chengdu-metro" target="_blank" class="github-star-link">
             ⭐ 喜欢吗？那就为项目点个star吧！
@@ -382,7 +388,7 @@
         <div id="pageImport" class="view-import">
             <div class="upload-card">
                 <div class="upload-title">导入成都地铁乘车记录</div>
-                <a href="time_analysis.html" style="display:block;margin-bottom:12px;color:#087f70">打开行程时间分析 ↗</a>
+                <a href="time_analysis.html" target="_blank" rel="noopener noreferrer" style="display:block;margin-bottom:12px;color:#087f70">打开行程时间分析 ↗</a>
                 <div class="upload-desc">请选择标准格式的 CSV 行程文件。数据仅在浏览器本地解析，绝不上云。</div>
                 <label for="csvInput" id="uploadLabel" class="custom-file-upload">
                     点击选择 CSV 文件
