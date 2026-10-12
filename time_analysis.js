@@ -24,7 +24,8 @@
     if(indexes.some(i=>i<0))throw Error('缺少表头：出发站、到达站、时间');
     const trips=[], errors=[], seen=new Set(); let duplicates=0;
     rows.forEach((r,i)=>{
-      const [from,to,time]=indexes.map(j=>(r[j]||'').trim());
+      let [from,to,time]=indexes.map(j=>normalise((r[j]||'').trim()));
+      if([from,to].some(s=>s==='有轨电车'||/^(?:--|00|--00|0|-)$/.test(s)))from=to='有轨电车';
       const m=/^(\d{4})[.\/-](\d{2})[.\/-](\d{2})[ T](\d{2}):(\d{2})(?::(\d{2}))?$/.exec(time);
       let d;
       if(m) {d=new Date(0);d.setUTCFullYear(+m[1],+m[2]-1,+m[3]);d.setUTCHours(+m[4],+m[5],+(m[6]||0),0);}
@@ -70,5 +71,6 @@
     const times=filtered.map(t=>t.hour*60+t.date.getUTCMinutes()).sort((a,b)=>a-b),median=times.length?(times[Math.floor((times.length-1)/2)]+times[Math.ceil((times.length-1)/2)])/2:null;
     return {filtered,counts,hours,weekdays,heat,origins,destinations,routes,days,periods,start,end,active,best,maxGap,morning,evening,peak,weekdayTrips,busiest:sorted[0],median};
   }
-  const api={csv,parse,aggregate,bucket,weekKey,dayKey};root.TripTime=api;if(typeof module!=='undefined')module.exports=api;
+  function normalise(s){return s.normalize('NFKC').replace(/[⻰⻋⺠⻔⻣]/g,c=>({'⻰':'龙','⻋':'车','⺠':'民','⻔':'门','⻣':'骨'}[c]));}
+  const api={csv,parse,aggregate,bucket,weekKey,dayKey,normalise};root.TripTime=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof globalThis!=='undefined'?globalThis:this);

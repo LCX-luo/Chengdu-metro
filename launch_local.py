@@ -1,4 +1,4 @@
-"""Start an owned loopback HTTP server and open both dashboards."""
+"""Start an owned loopback HTTP server and open the unified dashboard."""
 import os
 import threading
 import webbrowser
@@ -24,7 +24,7 @@ def main():
     base = f'http://127.0.0.1:{server.server_port}'
     print(f'Serving {root}\n{base}\nClose this window or press Ctrl+C to stop.', flush=True)
     if '--no-browser' not in os.sys.argv:
-        for page in ('final_map.html', 'time_analysis.html'):
+        for page in ('index.html',):
             webbrowser.open(f'{base}/{page}', new=2)
     try:
         while thread.is_alive():
