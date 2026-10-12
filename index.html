@@ -213,9 +213,10 @@
             display: none;
             /* ★ 修改：默认隐藏导入区 */
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             height: 100%;
+            overflow-y: auto;
             background: #ffffff;
             padding: 20px;
         }
@@ -224,7 +225,10 @@
             background: #fff;
             border: 1px dashed #d9d9d9;
             border-radius: 8px;
-            padding: 40px 60px;
+            padding: clamp(18px, 4vw, 40px);
+            max-width: 720px;
+            width: 100%;
+            flex-shrink: 0;
             text-align: center;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
             transition: border 0.3s;
@@ -350,6 +354,7 @@
         <button class="nav-btn" id="navHelp" onclick="switchMainTab('help')">使用教程</button>
         <button class="nav-btn" id="navTime" onclick="switchMainTab('time')">时间分析</button>
         <button class="nav-btn" id="navExplore" onclick="switchMainTab('explore')">探索洞察</button>
+        <button class="nav-btn" id="navCosts" onclick="switchMainTab('costs')">花费分析</button>
 
         <a href="https://github.com/LCX-luo/Chengdu-metro" target="_blank" class="github-star-link">
             ⭐ 喜欢吗？那就为项目点个star吧！
@@ -381,12 +386,16 @@
         <div id="pageImport" class="view-import">
             <div class="upload-card">
                 <div class="upload-title">导入成都地铁乘车记录</div>
-                <p style="color:#087f70">一次导入，地图、时间分析与探索洞察共享数据和筛选。</p>
-                <div class="upload-desc">请选择标准格式的 CSV 行程文件。数据仅在浏览器本地解析，绝不上云。</div>
+                <p style="color:#087f70">一次导入，地图、时间分析、探索洞察与花费分析共享数据和筛选。</p>
+                <div class="upload-desc">选择 CSV 或成都地铁 PDF 行程单，支持同类型文件多选合并。数据仅在浏览器本地解析，不上传。</div>
                 <label for="csvInput" id="uploadLabel" class="custom-file-upload">
                     点击选择 CSV 文件
                 </label>
                 <input type="file" id="csvInput" accept=".csv" multiple />
+                <div style="border-top:1px solid #eee;margin:18px 0"></div>
+                <label for="pdfInput" class="custom-file-upload" id="pdfUploadLabel">选择 PDF 行程单</label>
+                <input type="file" id="pdfInput" accept=".pdf,application/pdf" multiple hidden />
+                <p style="font-size:13px;color:#667d7b;text-align:left;line-height:1.7">支持成都地铁 App 导出的文字型行程单 PDF，可一次选择多份。自动提取站点、秒级交易时间，核对每份账单的笔数与金额，默认去重后展示。扫描件、加密文件和其他格式暂不支持；失败原因显示在下方，诊断详情见 F12 → Console。有轨电车两端统一为“有轨电车”，每行计一笔行程。</p>
 
                 <div style="border-top: 1px solid #eee; margin: 20px 0 14px;"></div>
                 <div style="font-size:13px; color:#888; margin-bottom:12px;">或直接加载仓库内置的示范数据体验</div>
@@ -394,78 +403,56 @@
                     🚇 加载示范数据
                 </button>
             </div>
-            <div id="sysStatus"></div>
+            <div id="sysStatus" role="status" aria-live="polite"></div>
         </div>
 
         <div id="pageHelp" class="view-help">
             <div class="help-article">
-                <h1>成都地铁个人行程数据获取指南</h1>
-                <p style="color:#666;">本教程用于指导您如何导出个人乘车记录，并生成可直接导入本可视化项目的 CSV 文件。</p>
-
-                <h2>一、APP 端导出行程 PDF</h2>
-                <div class="reimbursement-warning">
-                    ⚠️ 重要提醒：申请报销（开发票）仅有<u>一次机会</u>！如果您有报销需求，务必正确填写接收邮箱，并确认需要的报销格式（电子发票/纸质发票）。<b><u>强烈建议不要在 AI
-                            免费转换环节浪费这次机会</u></b>——请先用少量行程测试 CSV 生成效果，确认无误后，再用真实完整数据正式走报销流程。
-                </div>
+                <h1>成都地铁综合看板使用教程</h1>
+                <p>从行程单到足迹与习惯分析：一次导入，在地图看板、时间分析、探索洞察、花费分析之间切换。个人文件只在浏览器内存处理，刷新页面后需要重新导入。</p>
+                <h2>一、准备行程单</h2>
                 <ol>
-                    <li>打开 <b>成都地铁</b> APP，进入底部【我的】页面</li>
-                    <li>点击【我的行程】，查看全部乘车记录</li>
-                    <li>页面右上角选择【开发票】功能</li>
-                    <li>点击左下角 全选行程</li>
-                    <li>填写个人接收邮箱，提交申请</li>
-                    <li>登录邮箱，下载收到的行程 PDF 文件</li>
+                    <li>在成都地铁 App 的“我的 → 我的行程”中，按 App 当前提供的流程导出所需行程单。</li>
+                    <li>如果通过“开发票”接收行程单，请核对邮箱和所选行程，并按实际报销要求操作。</li>
+                    <li>从收到的邮件中下载原始 PDF；无需先转换成 CSV，也无需截图。</li>
                 </ol>
-
-                <h2>二、AI 转换为标准 CSV</h2>
+                <h2>二、导入 PDF 或 CSV</h2>
                 <ol>
-                    <li>将下载好的行程 PDF 上传至您常用的 AI 助手（如 ChatGPT、Kimi 等）</li>
-                    <li>复制下方提示词发送，等待数据解析转换：</li>
+                    <li>点击顶部“导入数据”。PDF 点击“选择 PDF 行程单”；CSV 点击“选择 CSV 文件”。可以多选同类型文件，每次选择替换之前的数据。</li>
+                    <li>PDF 支持成都地铁文字型行程单，自动处理分页、重复文字、特殊汉字和有轨电车。每个账单的数量与金额核对通过后，才更新看板。加密 PDF 请先解锁；扫描件目前不支持识别。</li>
+                    <li>CSV 需要“出发站、到达站、时间”表头，UTF-8 编码；时间需包含年月日和小时分钟，可保留秒。</li>
+                    <li>解析成功后自动进入地图。多份文件按站点和完整交易时间去重，重复行开关可在分析页调整。</li>
                 </ol>
-                <div class="prompt-code">请解析这份地铁行程PDF文件，严格按照`序号,出发站,到达站,日期`的逗号分隔格式整理数据，输出标准CSV文本内容。
-                    如果遇到 -- 或 00 等无意义符号，说明是有轨电车数据，请将出发和到达站均统计为“有轨电车”。
-
-                    格式示例：
-                    序号,出发站,到达站,时间
-                    1,犀浦,洪河,2025.06.07
-                    2,建设北路,春熙路,2025.06.19
-
-                    整理完成后直接生成可下载的CSV文件。站点名称原样保留，日期统一保留年月日格式即可。</div>
-                <ol start="3">
-                    <li>下载 AI 生成的 CSV 文件</li>
-                </ol>
-
-                <h2>三、使用说明</h2>
-                <p style="color:#555;">获取 CSV 文件后，切换至本页面的 <b>[导入数据]</b> 板块，选择文件即可瞬间生成您的个人专属乘车足迹图表与排行分析。</p>
-
-                <h2>四、数据异常处理（控制台警告）</h2>
-                <p style="color:#555;">导入 CSV 后，如果发现某些站点未显示在地图上，或统计数量与预期不符，请按以下步骤排查：</p>
+                <div class="prompt-code">序号,出发站,到达站,时间
+1,犀浦,洪河,2026.10.01 12:15:19
+2,有轨电车,有轨电车,2026.10.05 21:07:40</div>
+                <h2>三、地图看板</h2>
+                <p>查看站点足迹和频次排行，切换“全网地图 / 频次排行”。顶部摘要显示当前筛选行程数、涉及站点和未匹配站点数。出发与到达各增加一次站点频次；一笔有轨电车计一笔行程、两次站点频次。</p>
+                <h2>四、时间分析</h2>
                 <ol>
-                    <li>在页面中按 <b>F12</b> 或 <b>Ctrl+Shift+I</b> 打开浏览器开发者工具</li>
-                    <li>切换到 <b>Console（控制台）</b> 面板</li>
-                    <li>查看是否存在形如 <code>【警告】以下 CSV 行程中的站点无法在底图中匹配...</code> 的黄色警告输出</li>
-                    <li>警告中会列出所有未能匹配的站点名称 —— 这些站点的数据已被自动跳过，因此未计入统计</li>
+                    <li>设置起止日期、每天的开始 / 结束时刻、站点关键词、星期范围和重复行开关，修改后点击“确认筛选”才生效；未修改时按钮灰色。已确认的筛选同时作用于地图和探索洞察。点击“重置筛选”恢复完整范围。</li>
+                    <li>切换年、季度、月、ISO 周或日，查看趋势、环比、小时分布、星期热力图、活跃日历和累计行程。图表下方滑块可缩放时间范围。</li>
+                    <li>每天时刻精确到分钟，开始包含、结束不包含，支持跨午夜，留空表示不限，起止相同表示空区间。调整早晚高峰开始与结束小时也需点击确认。开始包含、结束不包含，支持跨午夜，重叠部分不重复计数。</li>
+                    <li>日均包含没有行程的日期；活跃日均只统计有行程天数。周一至周五不是法定工作日口径，未处理节假日和调休。</li>
                 </ol>
-                <p style="color:#555;">根本原因是 CSV 中的站点名称与底图数据中的名称存在差异（如多字、少字、错别字等），需要通过配置别名映射来解决。</p>
-
-                <h2>五、修复站点匹配问题（配置 stationAliasMap）</h2>
-                <p style="color:#555;">本项目提供了 <code>stationAliasMap</code> 别名映射机制，可将 CSV 中的名称重定向到底图中正确的站名：</p>
+                <h2>五、探索洞察</h2>
+                <p>查看站点首次出现进度、常用路线集中度、各年月份对比、月度画像、双向路线、站点常见小时与高频日期提示。所有结论来自当前筛选记录：首次出现不等于真实首次到访，双向路线不等于同日往返，相邻交易间隔不等于乘车时长。</p>
+                <h2>六、花费分析</h2>
+                <p>点击顶部“花费分析”，查看已知总花费、单次平均与中位费用、分期花费、费用分布、累计花费、高峰 / 周末对比，以及出发站、到达站和路线花费排行。PDF 自动读取金额；CSV 可添加“金额”或“金额(元)”列，单位为元，支持最多两位小数。</p>
+                <p>旧版 CSV 没有金额时，打开本页会提示，但其他分析照常使用。部分缺失或不合法的金额不按 0 元计算，页面显示金额覆盖率；实际 0 元记录保留。同一行程金额冲突时不计入花费，控制台列出原因。出发站、到达站花费分别归组，不可相加；有轨电车每笔费用只汇总一次。花费页同样遵循确认后的筛选。</p>
+                <h2>七、导出与本地使用</h2>
+                <p>时间分析和探索洞察底部可“导出统计 CSV”“导出筛选行程 CSV”，也可打印或保存 PDF。导出的行程保留秒级时间和金额列，无金额记录留空；统计导出也包含花费指标。Windows 双击 <code>start_dashboards.bat</code> 启动本地服务器并打开综合看板；保持窗口运行，关闭或 Ctrl+C 停止。</p>
+                <h2>八、解析失败与诊断</h2>
                 <ol>
-                    <li>用文本编辑器打开本页面 <code>index.html</code>（如果是本地版则打开 <code>final_map.html</code>）</li>
-                    <li>搜索 <code>stationAliasMap</code> 找到别名配置区域（约在第 413 行）</li>
-                    <li>按照现有格式添加映射条目：<br>
-                        <code>"CSV 中的原始站名": "底图中的标准站名"</code></li>
-                    <li>保存文件，刷新页面，<b>重新导入 CSV</b> 即可生效</li>
+                    <li>失败时页面显示简短原因，原有数据保留，不导入未核对成功的部分结果。</li>
+                    <li>按 F12 或 Ctrl+Shift+I，进入 Console，查找“[行程导入]”日志。PDF 诊断包括文件名、页码、各页提取数量、每个账单的预期与实际笔数和金额、未识别行及错误堆栈。</li>
+                    <li>“没有可提取文字”通常意味着扫描件；“数量或金额核对不一致”可能是模板变化或漏行；“组件加载失败”请刷新并检查浏览器 Network 面板。</li>
+                    <li>未匹配地图的站点只缺少地图显示，行程仍参加时间和探索统计。可在 <code>index.html</code> 中搜索 <code>stationAliasMap</code> 添加精确别名，刷新后重新导入。</li>
                 </ol>
-                <div class="prompt-code">// stationAliasMap 配置示例
-// 格式： "CSV里的写法": "地图里的标准名称"
+                <div class="prompt-code">// stationAliasMap 示例
+"界碑": "界牌",
+"茶店子客运站": "茶店子"</div>
 
-"火车北站": "火车北站",      // 别名与原值一致，强制参与匹配
-"春熙路站": "春熙路",        // CSV 多了一个"站"字，映射到无"站"的底图名称
-"天府广场站": "天府广场",    // 同上
-"界碑": "界牌"               // CSV 写了错别字，纠正到正确站名</div>
-                <div class="reimbursement-warning">
-                    ⚠️ 每次修改 <code>stationAliasMap</code> 后，必须刷新页面并<u>重新导入 CSV</u> 才能生效。建议先用少量数据测试确认匹配无误，再处理完整数据集。
-                </div>
             </div>
         </div>
 
@@ -534,9 +521,10 @@
             if (tab === 'help') document.getElementById('navHelp').classList.add('active');
             if (tab === 'time') document.getElementById('navTime').classList.add('active');
             if (tab === 'explore') document.getElementById('navExplore').classList.add('active');
-            document.getElementById('pageAnalysis').style.display = ['time','explore'].includes(tab) ? 'block' : 'none';
+            if (tab === 'costs') document.getElementById('navCosts').classList.add('active');
+            document.getElementById('pageAnalysis').style.display = ['time','explore','costs'].includes(tab) ? 'block' : 'none';
             const analysis = document.getElementById('analysisFrame').contentWindow;
-            if (analysis.TripAnalysis) analysis.TripAnalysis.show(tab === 'explore' ? 'explore' : 'time');
+            if (analysis.TripAnalysis) analysis.TripAnalysis.show(['explore','costs'].includes(tab) ? tab : 'time');
 
             document.getElementById('pageDashboard').style.display = tab === 'dashboard' ? 'block' : 'none';
             document.getElementById('pageImport').style.display = tab === 'import' ? 'flex' : 'none';
@@ -773,7 +761,7 @@
         function syncAnalysis() {
             const api = document.getElementById('analysisFrame').contentWindow.TripAnalysis;
             if (api && sharedCSV) api.load(sharedCSV, sharedName);
-            if (api) api.show(currentTab === 'explore' ? 'explore' : 'time');
+            if (api) api.show(['explore','costs'].includes(currentTab) ? currentTab : 'time');
         }
         document.getElementById('analysisFrame').addEventListener('load', syncAnalysis);
         function processCSVData(csvText, name = '已导入行程') {
@@ -783,11 +771,18 @@
                 sharedCSV = csvText; sharedName = name;
                 window.updateSharedMap(TripTime.aggregate(result.trips, {dedup:true}).filtered);
                 syncAnalysis();
-                document.getElementById('sysStatus').textContent = `已导入 ${result.trips.length} 条有效记录，跳过 ${result.errors.length} 条，重复 ${result.duplicates} 条；三个视图共享筛选。`;
+                document.getElementById('sysStatus').textContent = `已导入 ${result.trips.length} 条有效记录，跳过 ${result.errors.length} 条，重复 ${result.duplicates} 条；所有视图共享筛选。`;
                 switchMainTab('dashboard');
                 switchBoardType('map');
+                console.info('[行程导入] CSV 解析成功', {name,total:result.total,valid:result.trips.length,duplicates:result.duplicates,skipped:result.errors.length});
+                if(result.errors.length)console.warn('[行程导入] 跳过的 CSV 行',result.errors);
+                if(result.amountErrors.length)console.warn('[行程导入] 金额缺失或冲突',result.amountErrors);
+                console.info('[行程导入] 金额检查',{withAmount:result.trips.filter(t=>t.amountCents!==null).length,total:result.trips.length});
+                return true;
             } catch (error) {
                 document.getElementById('sysStatus').textContent = '导入失败：' + error.message;
+                console.error('[行程导入] 导入失败', {name,error,stack:error.stack});
+                return false;
             }
         }
         document.getElementById('csvInput').addEventListener('change', async function(e) {
@@ -800,11 +795,46 @@
                     const header = records.shift() || [];
                     const indexes = ['出发站','到达站','时间'].map(key => header.findIndex(s => s.trim() === key));
                     if (indexes.some(i => i < 0)) throw Error(file.name + ' 缺少所需表头');
-                    rows.push(...records.map(row => indexes.map(i => row[i] || '')));
+                    const amountIndex=header.findIndex(s=>/^金额(?:\(元\))?$/.test(TripTime.normalise(s.trim())));
+                    rows.push(...records.map(row => [...indexes.map(i => row[i] || ''),amountIndex<0?'':row[amountIndex]||'']));
                 }
-                const text = [['出发站','到达站','时间'], ...rows].map(row => row.map(s => '"' + s.replace(/"/g, '""') + '"').join(',')).join('\r\n');
+                const text = [['出发站','到达站','时间','金额'], ...rows].map(row => row.map(s => '"' + s.replace(/"/g, '""') + '"').join(',')).join('\r\n');
                 processCSVData(text, files.map(f => f.name).join(' + '));
-            } catch(error) { document.getElementById('sysStatus').textContent = error.message; }
+            } catch(error) { document.getElementById('sysStatus').textContent = '导入失败：'+error.message;console.error('[行程导入] CSV 读取失败',error); }
+        });
+
+        // All PDF files are validated before replacing the shared dataset.
+        document.getElementById('pdfInput').addEventListener('change', async function(e) {
+            const files = [...e.target.files];
+            if (!files.length) return;
+            const status = document.getElementById('sysStatus');
+            const controls = ['pdfInput','csvInput','loadDemoBtn'].map(id=>document.getElementById(id));
+            controls.forEach(el=>el.disabled=true);
+            status.textContent = '正在加载 PDF 解析组件…';
+            let fileName='';
+            try {
+                const parser = await import('./pdf_import.js');
+                const results=[];
+                for(const file of files) {
+                    fileName=file.name;
+                    const result=await parser.readTripPDF(file, p=>status.textContent=`正在解析 ${p.file}：第 ${p.page} / ${p.total} 页…`);
+                    results.push(result);
+                    console.info('[行程导入] PDF 核对通过', result.diagnostics);
+                    console.table(result.diagnostics.sections);
+                }
+                const rows=results.flatMap(result=>result.rows.map(row=>[row.from,row.to,row.time,(row.cents/100).toFixed(2)]));
+                const csv=parser.toCSV([['出发站','到达站','时间','金额'],...rows]);
+                if(processCSVData(csv,files.map(file=>file.name).join(' + '))) {
+                    status.textContent += ' PDF 笔数与金额核对通过。';
+                    console.info('[行程导入] PDF 合并完成',{files:files.map(f=>f.name),records:rows.length});
+                }
+            } catch(error) {
+                status.textContent='PDF 导入失败：'+(error.name==='TripPDFError'?error.message:'解析组件加载失败，请刷新页面重试。');
+                console.error('[行程导入] PDF 解析失败',{file:fileName||files.map(f=>f.name),message:error.message,details:error.details,error,stack:error.stack});
+            } finally {
+                controls.forEach(el=>el.disabled=false);
+                e.target.value='';
+            }
         });
 
         // ================= CSV 注入：一键加载示范数据 =================

@@ -19,10 +19,11 @@
     return rows;
   }
   function parse(text) {
-    const rows=csv(text), header=(rows.shift()||[]).map(s=>s.trim());
+    const rows=csv(text), header=(rows.shift()||[]).map(s=>normalise(s.trim()));
     const indexes=['出发站','到达站','时间'].map(s=>header.indexOf(s));
     if(indexes.some(i=>i<0))throw Error('缺少表头：出发站、到达站、时间');
-    const trips=[], errors=[], seen=new Set(); let duplicates=0;
+    const amountIndex=header.findIndex(s=>/^金额(?:\(元\))?$/.test(s));
+    const trips=[], errors=[], amountErrors=[], seen=new Set(); let duplicates=0;
     rows.forEach((r,i)=>{
       let [from,to,time]=indexes.map(j=>normalise((r[j]||'').trim()));
       if([from,to].some(s=>s==='有轨电车'||/^(?:--|00|--00|0|-)$/.test(s)))from=to='有轨电车';
@@ -31,10 +32,19 @@
       if(m) {d=new Date(0);d.setUTCFullYear(+m[1],+m[2]-1,+m[3]);d.setUTCHours(+m[4],+m[5],+(m[6]||0),0);}
       if(!m||!from||!to||!d||d.getUTCFullYear()!==+m[1]||d.getUTCMonth()!==+m[2]-1||d.getUTCDate()!==+m[3]||d.getUTCHours()!==+m[4]||d.getUTCMinutes()!==+m[5]||d.getUTCSeconds()!==+(m[6]||0)) {errors.push(`数据行 ${i+1}：站名缺失或时间不合法 (${time})`);return;}
       const key=JSON.stringify([from,to,d.getTime()]);if(seen.has(key))duplicates++;seen.add(key);
-      trips.push({from,to,time,date:d,day:dayKey(d),hour:d.getUTCHours(),weekday:(d.getUTCDay()+6)%7,key});
+      const rawAmount=amountIndex<0?'':normalise((r[amountIndex]||'').trim());
+      let amountCents=null;
+      if(rawAmount){if(/^\d+(?:\.\d{1,2})?$/.test(rawAmount)&&Number.isSafeInteger(Math.round(Number(rawAmount)*100)))amountCents=Math.round(Number(rawAmount)*100);else amountErrors.push(`数据行 ${i+1}：金额不合法 (${rawAmount})`);}
+      trips.push({from,to,time,amountCents,date:d,day:dayKey(d),hour:d.getUTCHours(),weekday:(d.getUTCDay()+6)%7,key});
     });
+    const groups=new Map();trips.forEach(t=>{if(!groups.has(t.key))groups.set(t.key,[]);groups.get(t.key).push(t);});
+    for(const group of groups.values()){
+      const amounts=new Set(group.map(t=>t.amountCents).filter(v=>v!==null));
+      if(amounts.size>1){group.forEach(t=>t.amountCents=null);amountErrors.push(`同一行程金额冲突：${group[0].from} → ${group[0].to} ${group[0].time}`);}
+      else if(amounts.size===1){const cents=[...amounts][0];group.forEach(t=>t.amountCents=cents);}
+    }
     trips.sort((a,b)=>a.date-b.date);
-    return {trips,errors,duplicates,total:rows.length};
+    return {trips,errors,amountErrors,hasAmountColumn:amountIndex>=0,duplicates,total:rows.length};
   }
   function weekKey(d) {
     const x=new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate()));
@@ -48,10 +58,13 @@
     return grain==='year'?key.slice(0,4):grain==='quarter'?`${key.slice(0,4)}-Q${Math.floor(d.getUTCMonth()/3)+1}`:grain==='month'?key.slice(0,7):grain==='week'?weekKey(d):key;
   }
   function aggregate(trips,options={}) {
+    const minute=value=>Number(value.slice(0,2))*60+Number(value.slice(3,5));
+    const fromMinute=options.startTime?minute(options.startTime):0,toMinute=options.endTime?minute(options.endTime):1440;
+    const inTime=t=>{if(!options.startTime&&!options.endTime)return true;const m=t.hour*60+t.date.getUTCMinutes();return fromMinute<toMinute?m>=fromMinute&&m<toMinute:fromMinute>toMinute?m>=fromMinute||m<toMinute:false;};
     const unique=new Set();
     const filtered=trips.filter(t=>{
       if(options.dedup){if(unique.has(t.key))return false;unique.add(t.key);}
-      return (!options.start||t.day>=options.start)&&(!options.end||t.day<=options.end)&&(!options.station||t.from.includes(options.station)||t.to.includes(options.station))&&(!options.kind||options.kind==='all'||(options.kind==='weekday'?t.weekday<5:t.weekday>=5));
+      return inTime(t)&&(!options.start||t.day>=options.start)&&(!options.end||t.day<=options.end)&&(!options.station||t.from.includes(options.station)||t.to.includes(options.station))&&(!options.kind||options.kind==='all'||(options.kind==='weekday'?t.weekday<5:t.weekday>=5));
     });
     const counts={}, hours=Array(24).fill(0), weekdays=Array(7).fill(0), heat=Array.from({length:7},()=>Array(24).fill(0)), origins={}, destinations={}, routes={};
     const inc=(o,k)=>o[k]=(o[k]||0)+1;
