@@ -22,8 +22,11 @@
 ├── export.geojson    # 基础点位数据（成都地铁全网站点 GeoJSON）
 ├── routes.geojson    # 基础线网数据（成都地铁轨道路径 GeoJSON）
 ├── final_map.html    # 项目主入口与核心渲染引擎
-├── lcx.csv           # 用户的乘车记录样本 1
-├── route2.csv        # 用户的乘车记录样本 2
+├── time_analysis.html # 行程时间分析页面
+├── time_analysis.js   # CSV 解析与时间统计
+├── start_dashboards.bat # Windows 一键启动两页
+├── launch_local.py    # 本地服务器启动器
+├── test.csv           # 演示数据（个人 CSV / PDF 不提交）
 └── README.md         # 项目说明文档
 ```
 
@@ -43,17 +46,41 @@ cd C:\Users\10109\Desktop\metro
 
 3. 启动一个轻量的本地 HTTP 服务器：
 ```bash
-python -m http.server 8000
+python -m http.server 8000 --bind 127.0.0.1
 
 ```
 
 
 4. 打开浏览器，访问以下地址：
-[http://localhost:8000/final_map.html](https://www.google.com/search?q=http://localhost:8000/final_map.html)
-5. 在页面左侧控制面板，点击 **“选择文件”**，选择你的 `lcx.csv` 或 `route2.csv`。
+[http://127.0.0.1:8000/final_map.html](http://127.0.0.1:8000/final_map.html)
+5. 在页面左侧控制面板，点击 **“选择文件”**，选择自己的行程 CSV。
 6. 享受你的地铁足迹探索！
 
 ## 📄 数据准备 (CSV 格式说明)
+
+### 一键启动与时间分析
+
+Windows 双击 `start_dashboards.bat`：自动在脚本目录启动服务器，并打开地图和时间分析两个浏览器页面。优先使用端口 8000；端口占用时尝试 8001–8010，实际地址显示在窗口中。保持窗口开启，关闭窗口或按 Ctrl+C 停止服务器。需要已安装 Python 3。
+
+手动启动服务器后，时间分析地址为 [http://127.0.0.1:8000/time_analysis.html](http://127.0.0.1:8000/time_analysis.html)。操作与地图相同：选择 CSV 文件。时间分析支持多选合并，并默认按出发站、到达站、完整时间去重。
+
+时间分析功能：
+
+- 日期范围、站点关键词、周一至周五 / 周末筛选，以及重复行保留开关。
+- 年、季度、月、ISO 周、日统计；缺失日期补零，上一期环比。
+- 24 小时分布、每星期分布、星期 × 小时热力图、每日活跃日历。
+- 每日次数、7 日移动均值、累计次数、每日次数分布。
+- 自定义早晚高峰（含跨午夜）与高峰占比，重叠时段不重复计数。
+- 日均、活跃日均、最长连续活跃 / 空白天数、最繁忙日期和小时、最早 / 最晚 / 中位时刻。
+- 出发站、到达站 Top 15、全部有向路线排行、行程预览。
+- 导出统计 CSV、导出筛选行程 CSV、浏览器打印 / 保存 PDF。
+- 非法日期与重复记录检查；图表 CDN 不可用时仍可查看统计表和导出。
+
+统计按行程单交易时间归组，不代表实际进站时刻或乘车时长。周一至周五没有扣除节假日，也未加入调休；日均分母为筛选范围的日历天数。首末期可能不完整，环比需结合覆盖范围理解。所有行程数据在浏览器内存中处理，刷新后清空；图表 CDN 需要联网。
+
+分析交互参考 [Power BI 日期层级](https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-inline-hierarchy-labels)；图表缩放参考 [ECharts 时间轴](https://echarts.apache.org/handbook/en/concepts/axis/)。
+
+`.gitignore` 忽略个人 CSV、PDF、临时导出和本地环境，只保留 `test.csv` 演示数据。请将个人行程文件保留在本机。
 
 为了让解析器正常工作，你上传的 CSV 文件必须包含合法的表头。程序主要读取 `出发站` 和 `到达站` 两列。
 

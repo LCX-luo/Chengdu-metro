@@ -1,2 +1,24 @@
-lcx.csv
-route2.csv
+# Personal trip data stays local; retain the tracked demonstration fixture.
+*.csv
+!test.csv
+*.pdf
+
+# Legacy local data-processing helpers
+/check.py
+/extract_pdf.py
+/merge.py
+/verify.py
+
+# Python, development tools and temporary exports
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+tmp/
+output/
+outputs/
